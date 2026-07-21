@@ -1,0 +1,22 @@
+{
+  "name": "AC03",
+  "tagType": "Folder",
+  "tags": [
+    {
+      "valueSource": "opc",
+      "historyMaxAge": 1,
+      "historyTimeDeadband": 0,
+      "opcItemPath": "ns\u003d1;s\u003d[BAOS_Autocoiner03]Global.DATA_COLLECTION.DATA_COLLECTION[1]",
+      "historicalDeadband": 1.0,
+      "historicalDeadbandStyle": "Discrete",
+      "tooltip": "Machine Running State - 2 If Running",
+      "tagGroup": "10s",
+      "tagType": "AtomicTag",
+      "readOnly": true,
+      "historyProvider": "hp_BAOS_1_Year_Storage",
+      "name": "State",
+      "historyEnabled": true,
+      "opcServer": "Ignition OPC-UA Server"
+    }
+  ]
+}

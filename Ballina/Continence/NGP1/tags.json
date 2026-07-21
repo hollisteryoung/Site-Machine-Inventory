@@ -1,0 +1,2225 @@
+{
+  "name": "NGP1",
+  "tagType": "Folder",
+  "tags": [
+    {
+      "name": "MainMetrics",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "Roll",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "historyTimeDeadband": 5,
+              "historyMaxAge": 24,
+              "historyProvider": "hp_bacc_ps_ngp",
+              "name": "Roll_ID",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "value": 1,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 5,
+              "historyMaxAge": 24,
+              "opcItemPath": "BACC_NGP1.Application.TmpHmi_Var.TmpHmiC5.St152_Winder1Active",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "name": "NumberOfRollChanges",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "tagType": "AtomicTag",
+              "opcServer": "CoDeSys"
+            }
+          ]
+        },
+        {
+          "name": "QualityData",
+          "typeId": "BACC_PunchSleevingNGP/NGP/MainMetrics/MainMetrics5-8",
+          "parameters": {
+            "TagPath2": {
+              "dataType": "String",
+              "value": "TmpHmiC6"
+            },
+            "TagPath3": {
+              "dataType": "String",
+              "value": "Application.TmpHmi_Var.TmpHmi"
+            },
+            "TagPath": {
+              "dataType": "String",
+              "value": "Application.TmpHmi_Var.TmpHmiRO"
+            },
+            "MachineName": {
+              "dataType": "String",
+              "value": "NGP1"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "RunningScaled",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "AverageSpeed",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Performance",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "CycleCountStatus",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "WasteCountStatus",
+              "tagType": "AtomicTag"
+            },
+            {
+              "value": 0,
+              "name": "Previous_RunningTotalTime",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "TotalBad",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Fault",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "RunningTotalTime",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "OEE",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "PreselectionGoodParts",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "RunningTime",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "TotalParts",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Current_RunningTime",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Quality",
+              "tagType": "AtomicTag"
+            },
+            {
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\t\tif \"Female\" in currentValue :\n\t\t\t\"[.]../../General/FamilyCheck\" \u003d 1"
+                }
+              ],
+              "name": "Recipe",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Running",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "WasteLimits",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "WasteTarget",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "AvailableMinutes",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "ActiveStations",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Availibility",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "CounterReset",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "IdealParts",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "MachineState",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "TotalGood",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "FirstFault",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "TotalTime",
+              "tagType": "AtomicTag"
+            },
+            {
+              "value": 1783434990570,
+              "name": "TimeOfRunningStart",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "ExpectedPPM",
+              "tagType": "AtomicTag"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StationQuality",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "BadPartsCounter",
+          "typeId": "BACC_PunchSleevingNGP/NGP/QualityData/BadPartsCounter",
+          "parameters": {
+            "MachineName": {
+              "dataType": "String",
+              "value": "NGP1"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "St56SpliceDetectionBottomFoilL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St53ThumbHolePunchingL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St41VisionSystemPrintingL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St26SpliceDetectionTopFoilL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St49BrandStickyLabelCheckL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St17CatheterIntroductionL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "opcItemPath": {
+                "bindType": "parameter",
+                "binding": "BACC_{MachineName}.Application.TmpHmi_Var.TmpHmiC4.CounterBad_Station_Lane[17,1]"
+              },
+              "name": "St17CatheterIntroductionL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St56SpliceDetectionBottomFoilL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St17CatheterIntroductionL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St19DosingDirectL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St49BrandStickyLabelCheckL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St62DetectionFilledPouchesL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St60DetectionSealingAreaL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St62DetectionFilledPouchesL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St65PackAdvanceL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St65PackAdvanceL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St41VisionSystemPrintingL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St53ThumbHolePunchingL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St63PackPullRollersL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St29TopFoilPullRollsL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St55BottomFoilPullRollersL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St17CatheterIntroductionL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St49BrandStickyLabelCheckL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St41VisionSystemPrintingL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St57RotarySealingL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St39TopFoilPullRollersL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St26SpliceDetectionTopFoilL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St62DetectionFilledPouchesL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St55BottomFoilPullRollersL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St26SpliceDetectionTopFoilL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St67PackContourCutL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St19DosingDirectL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St17CatheterIntroductionL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St55BottomFoilPullRollersL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St41VisionSystemPrintingL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St39TopFoilPullRollersL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St53ThumbHolePunchingL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St62DetectionFilledPouchesL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St57RotarySealingL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St63PackPullRollersL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St41VisionSystemPrintingL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St49BrandStickyLabelCheckL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St51BottomFoilPullRollersL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St26SpliceDetectionTopFoilL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St19DosingDirectL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St55BottomFoilPullRollersL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St29TopFoilPullRollsL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St51BottomFoilPullRollersL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St65PackAdvanceL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St62DetectionFilledPouchesL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St39TopFoilPullRollersL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St51BottomFoilPullRollersL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St29TopFoilPullRollsL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St63PackPullRollersL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St29TopFoilPullRollsL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St51BottomFoilPullRollersL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St67PackContourCutL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St53ThumbHolePunchingL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St19DosingDirectL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St65PackAdvanceL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St63PackPullRollersL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St63PackPullRollersL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St60DetectionSealingAreaL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St53ThumbHolePunchingL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St56SpliceDetectionBottomFoilL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St57RotarySealingL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St55BottomFoilPullRollersL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St57RotarySealingL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St39TopFoilPullRollersL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St29TopFoilPullRollsL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St60DetectionSealingAreaL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St67PackContourCutL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St56SpliceDetectionBottomFoilL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St60DetectionSealingAreaL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St67PackContourCutL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St65PackAdvanceL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St51BottomFoilPullRollersL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St60DetectionSealingAreaL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St49BrandStickyLabelCheckL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St39TopFoilPullRollersL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St56SpliceDetectionBottomFoilL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St19DosingDirectL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St57RotarySealingL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St26SpliceDetectionTopFoilL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St67PackContourCutL4",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "StationTotalAtStation",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St57RotarySealingL1.value}+\r\n{[.]../StationQuality/St57RotarySealingL2.value}+\r\n{[.]../StationQuality/St57RotarySealingL3.value}+\r\n{[.]../StationQuality/St57RotarySealingL4.value}+\r\n{[.]../StationQuality/St57RotarySealingL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St57RotarySealing",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St17CatheterIntroductionL1}+\r\n{[.]../StationQuality/St17CatheterIntroductionL2}+\r\n{[.]../StationQuality/St17CatheterIntroductionL3}+\r\n{[.]../StationQuality/St17CatheterIntroductionL4}+\r\n{[.]../StationQuality/St17CatheterIntroductionL5}\r\n\r\n",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "dataType": "Float4",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St17CatheterIntroduction",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St65PackAdvanceL1.value}+\r\n{[.]../StationQuality/St65PackAdvanceL2.value}+\r\n{[.]../StationQuality/St65PackAdvanceL3.value}+\r\n{[.]../StationQuality/St65PackAdvanceL4.value}+\r\n{[.]../StationQuality/St65PackAdvanceL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St65PackAdvance",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St63PackPullRollersL1.value}+\r\n{[.]../StationQuality/St63PackPullRollersL2.value}+\r\n{[.]../StationQuality/St63PackPullRollersL3.value}+\r\n{[.]../StationQuality/St63PackPullRollersL4.value}+\r\n{[.]../StationQuality/St63PackPullRollersL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St63PackPullRollers",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St56SpliceDetectionBottomFoilL1.value}+\r\n{[.]../StationQuality/St56SpliceDetectionBottomFoilL2.value}+\r\n{[.]../StationQuality/St56SpliceDetectionBottomFoilL3.value}+\r\n{[.]../StationQuality/St56SpliceDetectionBottomFoilL4.value}+\r\n{[.]../StationQuality/St56SpliceDetectionBottomFoilL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St56SpliceDetectionBottomFoil",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St29TopFoilPullRollsL1.value}+\r\n{[.]../StationQuality/St29TopFoilPullRollsL2.value}+\r\n{[.]../StationQuality/St29TopFoilPullRollsL3.value}+\r\n{[.]../StationQuality/St29TopFoilPullRollsL4.value}+\r\n{[.]../StationQuality/St29TopFoilPullRollsL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St29TopFoilPullRolls",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St39TopFoilPullRollersL1.value}+\r\n{[.]../StationQuality/St39TopFoilPullRollersL2.value}+\r\n{[.]../StationQuality/St39TopFoilPullRollersL3.value}+\r\n{[.]../StationQuality/St39TopFoilPullRollersL4.value}+\r\n{[.]../StationQuality/St39TopFoilPullRollersL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St39TopFoilPullRollers",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St26SpliceDetectionTopFoilL1.value}+\r\n{[.]../StationQuality/St26SpliceDetectionTopFoilL2.value}+\r\n{[.]../StationQuality/St26SpliceDetectionTopFoilL3.value}+\r\n{[.]../StationQuality/St26SpliceDetectionTopFoilL4.value}+\r\n{[.]../StationQuality/St26SpliceDetectionTopFoilL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St26SpliceDetectionTopFoil",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St53ThumbHolePunchingL1.value}+\r\n{[.]../StationQuality/St53ThumbHolePunchingL2.value}+\r\n{[.]../StationQuality/St53ThumbHolePunchingL3.value}+\r\n{[.]../StationQuality/St53ThumbHolePunchingL4.value}+\r\n{[.]../StationQuality/St53ThumbHolePunchingL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St53ThumbHolePunching",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St67PackContourCutL1.value}+\r\n{[.]../StationQuality/St67PackContourCutL2.value}+\r\n{[.]../StationQuality/St67PackContourCutL3.value}+\r\n{[.]../StationQuality/St67PackContourCutL4.value}+\r\n{[.]../StationQuality/St67PackContourCutL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St67PackContourCut",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St19DosingDirectL1.value}+\r\n{[.]../StationQuality/St19DosingDirectL2.value}+\r\n{[.]../StationQuality/St19DosingDirectL3.value}+\r\n{[.]../StationQuality/St19DosingDirectL4.value}+\r\n{[.]../StationQuality/St19DosingDirectL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St19DosingDirect",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St55BottomFoilPullRollersL1.value}+\r\n{[.]../StationQuality/St55BottomFoilPullRollersL2.value}+\r\n{[.]../StationQuality/St55BottomFoilPullRollersL3.value}+\r\n{[.]../StationQuality/St55BottomFoilPullRollersL4.value}+\r\n{[.]../StationQuality/St55BottomFoilPullRollersL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St55BottomFoilPullRollers",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St41VisionSystemPrintingL1.value}+\r\n{[.]../StationQuality/St41VisionSystemPrintingL2.value}+\r\n{[.]../StationQuality/St41VisionSystemPrintingL3.value}+\r\n{[.]../StationQuality/St41VisionSystemPrintingL4.value}+\r\n{[.]../StationQuality/St41VisionSystemPrintingL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St41VisionSystemPrinting",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St51BottomFoilPullRollersL1.value}+\r\n{[.]../StationQuality/St51BottomFoilPullRollersL2.value}+\r\n{[.]../StationQuality/St51BottomFoilPullRollersL3.value}+\r\n{[.]../StationQuality/St51BottomFoilPullRollersL4.value}+\r\n{[.]../StationQuality/St51BottomFoilPullRollersL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St51BottomFoilPullRollers",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St60DetectionSealingAreaL1.value}+\r\n{[.]../StationQuality/St60DetectionSealingAreaL2.value}+\r\n{[.]../StationQuality/St60DetectionSealingAreaL3.value}+\r\n{[.]../StationQuality/St60DetectionSealingAreaL4.value}+\r\n{[.]../StationQuality/St60DetectionSealingAreaL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St60DetectionSealingArea",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St62DetectionFilledPouchesL1.value}+\r\n{[.]../StationQuality/St62DetectionFilledPouchesL2.value}+\r\n{[.]../StationQuality/St62DetectionFilledPouchesL3.value}+\r\n{[.]../StationQuality/St62DetectionFilledPouchesL4.value}+\r\n{[.]../StationQuality/St62DetectionFilledPouchesL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St62DetectionFilledPouches",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../StationQuality/St49BrandStickyLabelCheckL1.value}+\r\n{[.]../StationQuality/St49BrandStickyLabelCheckL2.value}+\r\n{[.]../StationQuality/St49BrandStickyLabelCheckL3.value}+\r\n{[.]../StationQuality/St49BrandStickyLabelCheckL4.value}+\r\n{[.]../StationQuality/St49BrandStickyLabelCheckL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St49BrandStickyLabelCheck",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            }
+          ]
+        },
+        {
+          "name": "StationTotals",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St51BottomFoilPullRollersL1.value}+\r\n{[.]../BadPartsCounter/St51BottomFoilPullRollersL2.value}+\r\n{[.]../BadPartsCounter/St51BottomFoilPullRollersL3.value}+\r\n{[.]../BadPartsCounter/St51BottomFoilPullRollersL4.value}+\r\n{[.]../BadPartsCounter/St51BottomFoilPullRollersL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St51BottomFoilPullRollers",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St39TopFoilPullRollersL1.value}+\r\n{[.]../BadPartsCounter/St39TopFoilPullRollersL2.value}+\r\n{[.]../BadPartsCounter/St39TopFoilPullRollersL3.value}+\r\n{[.]../BadPartsCounter/St39TopFoilPullRollersL4.value}+\r\n{[.]../BadPartsCounter/St39TopFoilPullRollersL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St39TopFoilPullRollers",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St63PackPullRollersL1.value}+\r\n{[.]../BadPartsCounter/St63PackPullRollersL2.value}+\r\n{[.]../BadPartsCounter/St63PackPullRollersL3.value}+\r\n{[.]../BadPartsCounter/St63PackPullRollersL4.value}+\r\n{[.]../BadPartsCounter/St63PackPullRollersL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St63PackPullRollers",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St55BottomFoilPullRollersL1.value}+\r\n{[.]../BadPartsCounter/St55BottomFoilPullRollersL2.value}+\r\n{[.]../BadPartsCounter/St55BottomFoilPullRollersL3.value}+\r\n{[.]../BadPartsCounter/St55BottomFoilPullRollersL4.value}+\r\n{[.]../BadPartsCounter/St55BottomFoilPullRollersL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St55BottomFoilPullRollers",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St49BrandStickyLabelCheckL1.value}+\r\n{[.]../BadPartsCounter/St49BrandStickyLabelCheckL2.value}+\r\n{[.]../BadPartsCounter/St49BrandStickyLabelCheckL3.value}+\r\n{[.]../BadPartsCounter/St49BrandStickyLabelCheckL4.value}+\r\n{[.]../BadPartsCounter/St49BrandStickyLabelCheckL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St49BrandStickyLabelCheck",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St29TopFoilPullRollsL1.value}+\r\n{[.]../BadPartsCounter/St29TopFoilPullRollsL2.value}+\r\n{[.]../BadPartsCounter/St29TopFoilPullRollsL3.value}+\r\n{[.]../BadPartsCounter/St29TopFoilPullRollsL4.value}+\r\n{[.]../BadPartsCounter/St29TopFoilPullRollsL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St29TopFoilPullRolls",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St57RotarySealingL1.value}+\r\n{[.]../BadPartsCounter/St57RotarySealingL2.value}+\r\n{[.]../BadPartsCounter/St57RotarySealingL3.value}+\r\n{[.]../BadPartsCounter/St57RotarySealingL4.value}+\r\n{[.]../BadPartsCounter/St57RotarySealingL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St57RotarySealing",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St19DosingDirectL1.value}+\r\n{[.]../BadPartsCounter/St19DosingDirectL2.value}+\r\n{[.]../BadPartsCounter/St19DosingDirectL3.value}+\r\n{[.]../BadPartsCounter/St19DosingDirectL4.value}+\r\n{[.]../BadPartsCounter/St19DosingDirectL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St19DosingDirect",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St41VisionSystemPrintingL1.value}+\r\n{[.]../BadPartsCounter/St41VisionSystemPrintingL2.value}+\r\n{[.]../BadPartsCounter/St41VisionSystemPrintingL3.value}+\r\n{[.]../BadPartsCounter/St41VisionSystemPrintingL4.value}+\r\n{[.]../BadPartsCounter/St41VisionSystemPrintingL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St41VisionSystemPrinting",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St65PackAdvanceL1.value}+\r\n{[.]../BadPartsCounter/St65PackAdvanceL2.value}+\r\n{[.]../BadPartsCounter/St65PackAdvanceL3.value}+\r\n{[.]../BadPartsCounter/St65PackAdvanceL4.value}+\r\n{[.]../BadPartsCounter/St65PackAdvanceL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St65PackAdvance",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St62DetectionFilledPouchesL1.value}+\r\n{[.]../BadPartsCounter/St62DetectionFilledPouchesL2.value}+\r\n{[.]../BadPartsCounter/St62DetectionFilledPouchesL3.value}+\r\n{[.]../BadPartsCounter/St62DetectionFilledPouchesL4.value}+\r\n{[.]../BadPartsCounter/St62DetectionFilledPouchesL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St62DetectionFilledPouches",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St53ThumbHolePunchingL1.value}+\r\n{[.]../BadPartsCounter/St53ThumbHolePunchingL2.value}+\r\n{[.]../BadPartsCounter/St53ThumbHolePunchingL3.value}+\r\n{[.]../BadPartsCounter/St53ThumbHolePunchingL4.value}+\r\n{[.]../BadPartsCounter/St53ThumbHolePunchingL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St53ThumbHolePunching",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St60DetectionSealingAreaL1.value}+\r\n{[.]../BadPartsCounter/St60DetectionSealingAreaL2.value}+\r\n{[.]../BadPartsCounter/St60DetectionSealingAreaL3.value}+\r\n{[.]../BadPartsCounter/St60DetectionSealingAreaL4.value}+\r\n{[.]../BadPartsCounter/St60DetectionSealingAreaL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St60DetectionSealingArea",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St17CatheterIntroductionL1.value}+\r\n{[.]../BadPartsCounter/St17CatheterIntroductionL2.value}+\r\n{[.]../BadPartsCounter/St17CatheterIntroductionL3.value}+\r\n{[.]../BadPartsCounter/St17CatheterIntroductionL4.value}+\r\n{[.]../BadPartsCounter/St17CatheterIntroductionL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St17CatheterIntroduction",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St67PackContourCutL1.value}+\r\n{[.]../BadPartsCounter/St67PackContourCutL1.value}+\r\n{[.]../BadPartsCounter/St67PackContourCutL1.value}+\r\n{[.]../BadPartsCounter/St67PackContourCutL1.value}+\r\n{[.]../BadPartsCounter/St67PackContourCutL1.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St67PackContourCut",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St56SpliceDetectionBottomFoilL1.value}+\r\n{[.]../BadPartsCounter/St56SpliceDetectionBottomFoilL2.value}+\r\n{[.]../BadPartsCounter/St56SpliceDetectionBottomFoilL3.value}+\r\n{[.]../BadPartsCounter/St56SpliceDetectionBottomFoilL4.value}+\r\n{[.]../BadPartsCounter/St56SpliceDetectionBottomFoilL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St56SpliceDetectionBottomFoil",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 24,
+              "expression": "{[.]../BadPartsCounter/St26SpliceDetectionTopFoilL1.value}+\r\n{[.]../BadPartsCounter/St26SpliceDetectionTopFoilL2.value}+\r\n{[.]../BadPartsCounter/St26SpliceDetectionTopFoilL3.value}+\r\n{[.]../BadPartsCounter/St26SpliceDetectionTopFoilL4.value}+\r\n{[.]../BadPartsCounter/St26SpliceDetectionTopFoilL5.value}",
+              "historicalDeadband": 1.0,
+              "tagType": "AtomicTag",
+              "historyProvider": "hp_bacc_ps_ngp",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "St26SpliceDetectionTopFoil",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "sampleMode": "OnChange",
+              "historySampleRate": 1
+            }
+          ]
+        },
+        {
+          "name": "StationQuality",
+          "typeId": "BACC_PunchSleevingNGP/NGP/QualityData/StatisticStationCounter",
+          "parameters": {
+            "MachineName": {
+              "dataType": "String",
+              "value": "NGP1"
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "St41VisionSystemPrintingL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St29TopFoilPullRollsL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St19DosingDirectL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St57RotarySealingL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St53ThumbHolePunchingL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St65PackAdvanceL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St67PackContourCutL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St67PackContourCutL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St51BottomFoilPullRollersL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St67PackContourCutL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St41VisionSystemPrintingL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St26SpliceDetectionTopFoilL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St67PackContourCutL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St65PackAdvanceL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St55BottomFoilPullRollersL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St63PackPullRollersL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St39TopFoilPullRollersL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St26SpliceDetectionTopFoilL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St51BottomFoilPullRollersL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St53ThumbHolePunchingL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St55BottomFoilPullRollersL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St67PackContourCutL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St51BottomFoilPullRollersL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St56SpliceDetectionBottomFoilL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St65PackAdvanceL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St39TopFoilPullRollersL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St53ThumbHolePunchingL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St53ThumbHolePunchingL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St63PackPullRollersL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St55BottomFoilPullRollersL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St57RotarySealingL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St63PackPullRollersL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St49BrandStickyLabelCheckL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St62DetectionFilledPouchesL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St29TopFoilPullRollsL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St26SpliceDetectionTopFoilL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St49BrandStickyLabelCheckL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St55BottomFoilPullRollersL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St41VisionSystemPrintingL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St17CatheterIntroductionL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St29TopFoilPullRollsL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St62DetectionFilledPouchesL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "value": 0,
+              "name": "St56_FaultInstance",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St17CatheterIntroductionL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St55BottomFoilPullRollersL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St56SpliceDetectionBottomFoilL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St17CatheterIntroductionL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St19DosingDirectL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St57RotarySealingL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St41VisionSystemPrintingL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St39TopFoilPullRollersL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St62DetectionFilledPouchesL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St57RotarySealingL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St17CatheterIntroductionL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St17CatheterIntroductionL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St62DetectionFilledPouchesL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St56SpliceDetectionBottomFoilL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St56SpliceDetectionBottomFoilL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St49BrandStickyLabelCheckL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St56SpliceDetectionBottomFoilL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St65PackAdvanceL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St63PackPullRollersL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St60DetectionSealingAreaL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St26SpliceDetectionTopFoilL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St29TopFoilPullRollsL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "value": 0,
+              "name": "St26_FaultInstance",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St51BottomFoilPullRollersL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St65PackAdvanceL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St39TopFoilPullRollersL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St41VisionSystemPrintingL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St39TopFoilPullRollersL5",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St19DosingDirectL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St63PackPullRollersL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St57RotarySealingL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St53ThumbHolePunchingL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St19DosingDirectL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St60DetectionSealingAreaL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St60DetectionSealingAreaL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St49BrandStickyLabelCheckL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St62DetectionFilledPouchesL2",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St29TopFoilPullRollsL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St49BrandStickyLabelCheckL4",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St60DetectionSealingAreaL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St26SpliceDetectionTopFoilL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St60DetectionSealingAreaL1",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St19DosingDirectL3",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "St51BottomFoilPullRollersL4",
+              "tagType": "AtomicTag"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "General",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "derived",
+          "historyTimeDeadband": 30,
+          "historyMaxAge": 1,
+          "deriveExpressionGetter": "{[.]IdealRateMalePPM.value}*0.1",
+          "dataType": "Int4",
+          "historicalDeadband": 1.0,
+          "historyProvider": "hp_bacc_ps_ngp",
+          "name": "IdealWasteMaleRate",
+          "historyEnabled": true,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "derived",
+          "historyTimeDeadband": 30,
+          "historyMaxAge": 1,
+          "deriveExpressionGetter": "{[.]IdealRatePPM.value}*0.1",
+          "dataType": "Int4",
+          "historicalDeadband": 1.0,
+          "historyProvider": "hp_bacc_ps_ngp",
+          "name": "IdealWasteRate",
+          "historyEnabled": true,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "derived",
+          "expression": "{[.]../MainMetrics/QualityData/Recipe}",
+          "dataType": "String",
+          "sourceTagPath": "[.]../MainMetrics/QualityData/Recipe",
+          "name": "FamilyCheck",
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "derived",
+          "historyTimeDeadband": 30,
+          "historyMaxAge": 1,
+          "deriveExpressionGetter": "{[.]IdealRateFemalePPM.value}*0.1",
+          "dataType": "Int4",
+          "historicalDeadband": 1.0,
+          "historyProvider": "hp_bacc_ps_ngp",
+          "name": "IdealWasteFemaleRate",
+          "historyEnabled": true,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "memory",
+          "historyTimeDeadband": 30,
+          "historyMaxAge": 1,
+          "historicalDeadband": 1.0,
+          "historyProvider": "hp_bacc_ps_ngp",
+          "name": "IdealRatePPM",
+          "historyEnabled": true,
+          "value": 1500,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "memory",
+          "historyTimeDeadband": 30,
+          "historyMaxAge": 1,
+          "historicalDeadband": 1.0,
+          "historyProvider": "hp_bacc_ps_ngp",
+          "name": "IdealRateMalePPM",
+          "historyEnabled": true,
+          "value": 0,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "memory",
+          "historyTimeDeadband": 30,
+          "historyMaxAge": 1,
+          "historicalDeadband": 1.0,
+          "historyProvider": "hp_bacc_ps_ngp",
+          "name": "IdealRateFemalePPM",
+          "historyEnabled": true,
+          "value": 0,
+          "tagType": "AtomicTag"
+        }
+      ]
+    },
+    {
+      "name": "Station",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "Faults",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 10,
+              "historyMaxAge": 24,
+              "opcItemPath": "BACC_NGP1.Application.TmpHmi_Var.TmpHmiRO.g000_FirstFault",
+              "tagType": "AtomicTag",
+              "sourceDataType": "Int4",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\n\n\ttry : \n\t\tpath \u003d tagPath\n\t\n\t\tconfig \u003d system.tag.getConfiguration(path, False)\n\t\tname \u003d config[0][\u0027name\u0027]\n\t\n\t\tparams \u003d {\u0027tagName\u0027:name,\u0027tagValue\u0027:currentValue.value,\u0027PrevValue\u0027:previousValue.value,\u0027changeTime\u0027:currentValue.timestamp}\n\t\n\t\tsystem.db.runNamedQuery(\"BACC_PunchSleavingAndNGP\", \"TagUpdates/QueryWriteTagValue\", params)\n\texcept : \n\t\tpass\n\n\tif (currentValue \u003e\u003d 1431 and currentValue \u003c\u003d 1435) or currentValue \u003d\u003d 1260 and currentValue \u003d\u003d 1905 :\n\t\tdata \u003d system.tag.readBlocking(\"[default]BACC_PunchSleevingNGP/NGP1/Station/Faults/ConsecutiveFaults/Fault_{id}\".format(id \u003d currentValue))\n\t\tlastValue \u003d data[0].value\n\t\tnewValue \u003d lastValue + 1\n\t\tsystem.tag.writeBlocking(\"[default]BACC_PunchSleevingNGP/NGP1/Station/Faults/ConsecutiveFaults/Fault_{id}\".format(id \u003d currentValue), newValue)\n\n"
+                }
+              ],
+              "historyProvider": "hp_bacc_ps_ngp",
+              "name": "FirstFaultActive",
+              "historyEnabled": false,
+              "value": 99,
+              "opcServer": "CoDeSys"
+            },
+            {
+              "name": "CurrentFaultedStation",
+              "typeId": "BACC_PunchSleevingNGP/NGP/Station/Faults/StationInFault",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "StationInFault_9",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_19",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_25",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_71",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_31",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_15",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_48",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_28",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_56",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_64",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_53",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_29",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_26",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_6",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_12",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_78",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_73",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_67",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_1",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_18",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_65",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_79",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_57",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_13",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_37",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_42",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_43",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_80",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_61",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_77",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_33",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_60",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_36",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_27",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_5",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_17",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_41",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_24",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_30",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_75",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_69",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_68",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_21",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_10",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_62",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_38",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_66",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_39",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_70",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_58",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_11",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_52",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_0",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_35",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_47",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_7",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_54",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_59",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_32",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_50",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_23",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_40",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_22",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_63",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_76",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_2",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_3",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_16",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_14",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_34",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_45",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_55",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_46",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_4",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_8",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_74",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_20",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_72",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_44",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_51",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationInFault_49",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "FaultedStationCounts",
+              "typeId": "BACC_PunchSleevingNGP/NGP/Station/Faults/StationFaulted",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "StationFaulted_50",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_76",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_45",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_59",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_39",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_77",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_69",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_21",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_13",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_6",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_22",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_51",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "BACC_{Machine}.Application.TmpHmi_Var.TmpHmiRO.StationFault_Counter[33]"
+                  },
+                  "name": "StationFaulted_33",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_32",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_72",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_71",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_28",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_43",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_27",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_41",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_48",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_11",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_30",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_38",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_66",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_24",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_70",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_37",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_3",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_2",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_80",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_60",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_52",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_74",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_46",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_58",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_40",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_62",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_19",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_65",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_67",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_49",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_47",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_14",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_42",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_56",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_29",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_75",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_73",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_23",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_18",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_61",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_44",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_55",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_35",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_79",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_26",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_8",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_64",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_17",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_57",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_16",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_20",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_31",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_63",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_34",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_54",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_5",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_53",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_25",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_1",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_36",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_12",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_7",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_68",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_10",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_78",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_4",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_15",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "StationFaulted_9",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "ConsecutiveFaults",
+              "typeId": "BACC_PunchSleevingNGP/NGP/Station/Faults/ConsecutiveFaults",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "Fault_1432",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": 0,
+                  "name": "ConsecutiveFault",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Fault_1431",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Fault_1260",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Fault_1905",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Fault_1433",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Fault_1435",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Fault_1434",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

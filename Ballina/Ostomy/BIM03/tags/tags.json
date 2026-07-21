@@ -1,0 +1,230 @@
+{
+  "readOnly": false,
+  "dataType": "Int4",
+  "writePermissions": {
+    "type": "AllOf",
+    "securityLevels": []
+  },
+  "name": "BIM03",
+  "readPermissions": {
+    "type": "AllOf",
+    "securityLevels": []
+  },
+  "tagGroup": "Default",
+  "tagType": "Folder",
+  "enabled": true,
+  "tags": [
+    {
+      "valueSource": "opc",
+      "opcItemPath": "ns\u003d1;s\u003d[BAOS_BIM3_Molder]I:5/15",
+      "readOnly": true,
+      "dataType": "Boolean",
+      "writePermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "name": "Shuttle Left",
+      "readPermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "tagGroup": "Default",
+      "tagType": "AtomicTag",
+      "enabled": true,
+      "opcServer": "Ignition OPC-UA Server"
+    },
+    {
+      "valueSource": "opc",
+      "opcItemPath": "ns\u003d1;s\u003d[BAOS_BIM3_Molder]I:5/22",
+      "readOnly": true,
+      "dataType": "Boolean",
+      "writePermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "name": "Index Complete",
+      "readPermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "tagGroup": "Default",
+      "tagType": "AtomicTag",
+      "enabled": true,
+      "opcServer": "Ignition OPC-UA Server"
+    },
+    {
+      "valueSource": "opc",
+      "opcItemPath": "ns\u003d1;s\u003d[BAOS_BIM3_Molder]N11:5/2",
+      "readOnly": true,
+      "dataType": "Int4",
+      "writePermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "name": "Clamp_Close_Dwell_Timer_SP",
+      "readPermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "tagGroup": "Default",
+      "tagType": "AtomicTag",
+      "enabled": true,
+      "opcServer": "Ignition OPC-UA Server"
+    },
+    {
+      "rawHigh": 1000.0,
+      "valueSource": "opc",
+      "opcItemPath": "ns\u003d1;s\u003d[BAOS_BIM3_Molder]N7:105",
+      "historicalDeadband": 0.05,
+      "writePermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "formatString": "#,##0.000",
+      "tagGroup": "Default",
+      "tagType": "AtomicTag",
+      "engUnit": "\"",
+      "enabled": true,
+      "scaledHigh": 1.0,
+      "scaleMode": "Linear",
+      "readOnly": true,
+      "dataType": "Float4",
+      "historyProvider": "HollisterDefault",
+      "historyEnabled": false,
+      "name": "Suffer position",
+      "readPermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "opcServer": "Ignition OPC-UA Server"
+    },
+    {
+      "valueSource": "opc",
+      "opcItemPath": "ns\u003d1;s\u003d[BAOS_BIM3_Molder]N11:151",
+      "writePermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "formatString": "#,##0.0",
+      "tagGroup": "Default",
+      "tagType": "AtomicTag",
+      "enabled": true,
+      "engUnit": " °F",
+      "scaleMode": "Linear",
+      "readOnly": true,
+      "dataType": "Int4",
+      "name": "Barrel_Heat_Upper",
+      "readPermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "opcServer": "Ignition OPC-UA Server"
+    },
+    {
+      "valueSource": "opc",
+      "opcItemPath": "ns\u003d1;s\u003d[BAOS_BIM3_Molder]N11:152",
+      "writePermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "formatString": "###0.0",
+      "tagGroup": "Default",
+      "tagType": "AtomicTag",
+      "enabled": true,
+      "engUnit": " °F",
+      "scaleMode": "Linear",
+      "readOnly": true,
+      "dataType": "Int4",
+      "name": "Barrel_Heat_Lower",
+      "readPermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "opcServer": "Ignition OPC-UA Server"
+    },
+    {
+      "valueSource": "opc",
+      "opcItemPath": "ns\u003d1;s\u003d[BAOS_BIM3_Molder]I:5/15",
+      "readOnly": true,
+      "dataType": "Boolean",
+      "writePermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "name": "Shuttle Right",
+      "readPermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "tagGroup": "Default",
+      "tagType": "AtomicTag",
+      "enabled": true,
+      "opcServer": "Ignition OPC-UA Server"
+    },
+    {
+      "valueSource": "opc",
+      "opcItemPath": "ns\u003d1;s\u003d[BAOS_BIM3_Molder]O:16/00",
+      "writePermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "tagGroup": "Default",
+      "historyTagGroup": "",
+      "tagType": "AtomicTag",
+      "enabled": true,
+      "readOnly": true,
+      "historyProvider": "HollisterDefault",
+      "dataType": "Boolean",
+      "historyEnabled": false,
+      "name": "Mould cycle complete",
+      "alarmEvalEnabled": false,
+      "readPermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "opcServer": "Ignition OPC-UA Server"
+    },
+    {
+      "valueSource": "opc",
+      "opcItemPath": "ns\u003d1;s\u003d[BAOS_BIM3_Molder]O:16/02",
+      "readOnly": true,
+      "dataType": "Boolean",
+      "writePermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "name": "Cookie present",
+      "readPermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "tagGroup": "Default",
+      "tagType": "AtomicTag",
+      "enabled": true,
+      "opcServer": "Ignition OPC-UA Server"
+    },
+    {
+      "readOnly": false,
+      "dataType": "Int4",
+      "writePermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "name": "BIM3",
+      "typeId": "BIM_3_8Molder",
+      "readPermissions": {
+        "type": "AllOf",
+        "securityLevels": []
+      },
+      "parameters": {
+        "OpcDevice": {
+          "dataType": "String",
+          "value": "BAOS_BIM3_Molder"
+        }
+      },
+      "tagGroup": "Default",
+      "tagType": "UdtInstance",
+      "enabled": true
+    }
+  ]
+}

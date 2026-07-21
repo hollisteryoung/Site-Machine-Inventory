@@ -1,0 +1,3466 @@
+{
+  "name": "BACC_VCL6",
+  "tagType": "Folder",
+  "tags": [
+    {
+      "name": "Status",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]HMI_ScannedBatch",
+          "tagGroup": "10s",
+          "tagType": "AtomicTag",
+          "eventScripts": [
+            {
+              "eventid": "valueChanged",
+              "script": "\t\n\t# Source paths\n\tsource_No \u003d \"[default]BACC_VCL6/status/ActiveRecipe\"\n\tsource_Name \u003d \"[default]BACC_VCL6/status/ActiveRecipe_Name\"\n\tsource_SKU \u003d \"[default]BACC_VCL6/status/SKU\"\n\tsource_OEE \u003d \"[default]BACC_VCL6/Previous Shift Machine Stats/Machine_OEE\"\n\tsource_P \u003d \"[default]BACC_VCL6/Previous Shift Machine Stats/Machine_Performance\"\n\tsource_A \u003d \"[default]BACC_VCL6/Previous Shift Machine Stats/Machine_Availability\"\n\tsource_Q \u003d \"[default]BACC_VCL6/Previous Shift Machine Stats/Machine_Quality\"\n\t\n\t# SKU1 Paths\n\tSKU1_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/Info_Name\"\n\tSKU1_SKU \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/Info_SKU\"\n\tSKU1_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/sts_OEE\"\n\tSKU1_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/sts_Performance\"\n\tSKU1_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/sts_Availability\"\n\tSKU1_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/sts_Quality\"\n\t\n\t# SKU2 Paths\n\tSKU2_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/Info_Name\"\n\tSKU2_SKU \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/Info_SKU\"\n\tSKU2_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/sts_OEE\"\n\tSKU2_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/sts_Performance\"\n\tSKU2_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/sts_Availability\"\n\tSKU2_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/sts_Quality\"\n\t\n\t# SKU3 Paths\n\tSKU3_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/Info_Name\"\n\tSKU3_SKU \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/Info_SKU\"\n\tSKU3_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/sts_OEE\"\n\tSKU3_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/sts_Performance\"\n\tSKU3_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/sts_Availability\"\n\tSKU3_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/sts_Quality\"\n\t\n\t# SKU4 Paths\n\tSKU4_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/Info_Name\"\n\tSKU4_SKU \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/Info_SKU\"\n\tSKU4_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/sts_OEE\"\n\tSKU4_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/sts_Performance\"\n\tSKU4_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/sts_Availability\"\n\tSKU4_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/sts_Quality\"\n\t\n\t# SKU5 Paths\n\tSKU5_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/Info_Name\"\n\tSKU5_SKU \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/Info_SKU\"\n\tSKU5_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/sts_OEE\"\n\tSKU5_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/sts_Performance\"\n\tSKU5_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/sts_Availability\"\n\tSKU5_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/sts_Quality\"\n\t\n\t# Read values\n\tTagData \u003d system.tag.readBlocking([\n\t    source_No, source_Name, source_SKU, source_OEE, source_P, source_A, source_Q,\n\t    SKU1_OEE, SKU2_OEE, SKU3_OEE, SKU4_OEE, SKU5_OEE\n\t])\n\tActiveRecipe, Name, SKU, OEE, P, A, Q, SKU1, SKU2, SKU3, SKU4, SKU5 \u003d [data.value for data in TagData]\n\t\n\t# get boolean data (Tag Change script context)\n\tnewValue \u003d currentValue.value\n\toldValue \u003d previousValue.value\n\t\n\t# if tag value didn\u0027t change, do nothing\n\tif newValue \u003d\u003d oldValue:\n\t    return\n\t\n\t# if OEE has no value, do nothing\n\tif OEE in (0, None):\n\t    return\n\t\n\t# if active recipe is equal to 50 or 0, do nothing\n\tif newValue in (50, 0, None):\n\t    return\n\t\n\t# Check if SKU1 is Empty\n\tif SKU1 in (0, None):\n\t    system.tag.writeBlocking(\n\t        [SKU1_Name, SKU1_SKU, SKU1_OEE, SKU1_P, SKU1_A, SKU1_Q],\n\t        [Name,      SKU,      OEE,      P,      A,      Q]\n\t    )\n\t    return\n\t\n\t# Check if SKU2 is Empty\n\telif SKU2 in (0, None):\n\t    system.tag.writeBlocking(\n\t        [SKU2_Name, SKU2_SKU, SKU2_OEE, SKU2_P, SKU2_A, SKU2_Q],\n\t        [Name,      SKU,      OEE,      P,      A,      Q]\n\t    )\n\t    return\n\t\n\t# Check if SKU3 is Empty\n\telif SKU3 in (0, None):\n\t    system.tag.writeBlocking(\n\t        [SKU3_Name, SKU3_SKU, SKU3_OEE, SKU3_P, SKU3_A, SKU3_Q],\n\t        [Name,      SKU,      OEE,      P,      A,      Q]\n\t    )\n\t    return\n\t\n\t# Check if SKU4 is Empty\n\telif SKU4 in (0, None):\n\t    system.tag.writeBlocking(\n\t        [SKU4_Name, SKU4_SKU, SKU4_OEE, SKU4_P, SKU4_A, SKU4_Q],\n\t        [Name,      SKU,      OEE,      P,      A,      Q]\n\t    )\n\t    return\n\t\n\t# Check if SKU5 is Empty\n\telif SKU5 in (0, None):\n\t    system.tag.writeBlocking(\n\t        [SKU5_Name, SKU5_SKU, SKU5_OEE, SKU5_P, SKU5_A, SKU5_Q],\n\t        [Name,      SKU,      OEE,      P,      A,      Q]\n\t    )\n\t    return"
+            }
+          ],
+          "readOnly": false,
+          "dataType": "String",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "SKU",
+          "historyEnabled": true,
+          "value": "629700",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]RPIActComment",
+          "readOnly": true,
+          "dataType": "String",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historicalDeadbandStyle": "Auto",
+          "name": "ActiveRecipe_Name",
+          "historyEnabled": true,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM_Global[49].PackML.Sts_Execute",
+          "readOnly": true,
+          "dataType": "Boolean",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "MachineInExecution",
+          "historyEnabled": true,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "memory",
+          "eventScripts": [
+            {
+              "eventid": "valueChanged",
+              "script": "\t# Source paths\n    Path \u003d \"[default]BACC_VCL6/misc/protocol/TotalTime_ProtocolMem\"\n    StartTag \u003d \"[default]BACC_VCL6/MISC/protocol/Start_TimeStamp\"\n    EndTag \u003d \"[default]BACC_VCL6/MISC/protocol/End_TimeStamp\"\n   \n    \n\t# Read data\n    TagData \u003d system.tag.readBlocking([Path, StartTag])\n    Target, StartTime \u003d [data.value for data in TagData]\n    \n    # Get Tag Value for \"Monitor_unit2\"\n    newValue \u003d currentValue.value\n    oldValue \u003d previousValue.value\n    \n    # only write if OEE has a value and tag event occured\n    if  newValue \u003d\u003d 50 and oldValue !\u003d 50:\n        \n        Start_timestamp \u003d system.date.now()\n        system.tag.writeBlocking(StartTag, Start_timestamp)\n        \n    elif newValue !\u003d 50 and oldValue \u003d\u003d 50:\n        \n\t\tEnd_timestamp \u003d system.date.now()\t\t\n\t\tsystem.tag.writeBlocking(EndTag, End_timestamp)\t\n        \n\t\tNewTime \u003d system.date.secondsBetween(StartTime, End_timestamp)\t\t\n\t\tT \u003d NewTime + Target\n\t\t\n\t\tsystem.tag.writeBlocking(Path, T)      \n  ",
+              "enabled": false
+            }
+          ],
+          "name": "Test_protocol",
+          "value": 0,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 30,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.NightShift",
+          "historicalDeadbandStyle": "Discrete",
+          "tagType": "AtomicTag",
+          "readOnly": true,
+          "dataType": "Boolean",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "MIN",
+          "name": "NightShift",
+          "historyEnabled": true,
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:General.BatchProdSeq",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "Production_sequence",
+          "historyEnabled": true,
+          "tagGroup": "30s",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "eventScripts": [
+            {
+              "eventid": "valueChanged",
+              "script": "\t# Source paths\n    Path \u003d \"[default]BACC_VCL6/misc/protocol/TotalTime_ProtocolMem\"\n    StartTag \u003d \"[default]BACC_VCL6/MISC/protocol/Start_TimeStamp\"\n    EndTag \u003d \"[default]BACC_VCL6/MISC/protocol/End_TimeStamp\"\n   \n    \n\t# Read data\n    TagData \u003d system.tag.readBlocking([Path, StartTag])\n    Target, StartTime \u003d [data.value for data in TagData]\n    \n    # Get Tag Value for \"Monitor_unit2\"\n    newValue \u003d currentValue.value\n    oldValue \u003d previousValue.value\n    \n    # only write if OEE has a value and tag event occured\n    if  newValue \u003d\u003d 50 and oldValue !\u003d 50:\n        \n        Start_timestamp \u003d system.date.now()\n        system.tag.writeBlocking(StartTag, Start_timestamp)\n        \n    elif newValue !\u003d 50 and oldValue \u003d\u003d 50:\n        \n\t\tEnd_timestamp \u003d system.date.now()\t\t\n\t\tsystem.tag.writeBlocking(EndTag, End_timestamp)\t\n        \n\t\tNewTime \u003d system.date.secondsBetween(StartTime, End_timestamp)\t\t\n\t\tT \u003d NewTime + Target\n\t\t\n\t\tsystem.tag.writeBlocking(Path, T)      \n  "
+            }
+          ],
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Active_RPI_No",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "ActiveRecipe",
+          "historyEnabled": true,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 30,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.DayShift",
+          "historicalDeadbandStyle": "Discrete",
+          "tagType": "AtomicTag",
+          "readOnly": false,
+          "dataType": "Boolean",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "MIN",
+          "name": "DayShift",
+          "historyEnabled": true,
+          "opcServer": "Ignition OPC-UA Server"
+        }
+      ]
+    },
+    {
+      "name": "MISC",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "Unit2 Starved",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.Unit2_NotMoving",
+              "dataType": "Boolean",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Unit2_NotMoving",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "DateTime",
+              "name": "End_TimeStamp",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "value": 1783491297338,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "DateTime",
+              "name": "Start_TimeStamp",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "value": 1783490979513,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "historyMaxAge": 1,
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "dataType": "Float4",
+              "name": "TotalTime_Starved",
+              "historyEnabled": true,
+              "value": 639.0,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "opc",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\t\n\t# Tag Pathways\n\tTimeStarved \u003d \"[default]BACC_VCL6/MISC/Unit2 Starved/TotalTime_Starved\"\n\tStartTag \u003d \"[default]BACC_VCL6/MISC/Unit2 Starved/Start_TimeStamp\"\n\tEndTag \u003d \"[default]BACC_VCL6/MISC/Unit2 Starved/End_TimeStamp\"\n\t\n\t# Get Tag Values\n\tTagData \u003d system.tag.readBlocking([TimeStarved, StartTag])\n\tStarved \u003d TagData[0].value\n\tStartTime \u003d TagData[1].value\n\t\n\t# Get Tag Value for \"Monitor_unit2\"\n\tnewValue \u003d currentValue.value\n\toldValue \u003d previousValue.value\n\t\n\t# Trigger 0 - 1\n\tif oldValue \u003d\u003d 0 and newValue \u003d\u003d 1:\n\t\tStart_timestamp \u003d system.date.now()\n\t\tsystem.tag.writeBlocking(StartTag, Start_timestamp)\n\t\n\t# trigger 1 - 0\n\telif oldValue \u003d\u003d 1 and newValue \u003d\u003d 0:\n\t\tEnd_timestamp \u003d system.date.now()\n\t\t\n\t\tsystem.tag.writeBlocking(EndTag, End_timestamp)\n\t\t\n\t\tNewTime \u003d system.date.secondsBetween(StartTime, End_timestamp)\n\t\t\n\t\tTotalTime \u003d NewTime + Starved # convert to minutes \t\t\n\t\t\n\t\tsystem.tag.writeBlocking(TimeStarved, TotalTime)"
+                }
+              ],
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.Unit2_Starved",
+              "dataType": "Boolean",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "Unit2_Starved",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.Unit2_Frozen",
+              "dataType": "Boolean",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Unit2_Frozen",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 30,
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.EM15_PartsPerMinute",
+              "historicalDeadband": 2.0,
+              "historicalDeadbandStyle": "Discrete",
+              "tagType": "AtomicTag",
+              "readOnly": true,
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historyMaxAgeUnits": "HOUR",
+              "name": "EM15_PartPerMin",
+              "historyEnabled": true,
+              "opcServer": "Ignition OPC-UA Server"
+            }
+          ]
+        },
+        {
+          "name": "SKU OEE",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "SKU3",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "String",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Info_Name",
+                  "historyEnabled": true,
+                  "value": "0",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "sts_OEE",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Quality",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Availability",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Performance",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "String",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Info_SKU",
+                  "historyEnabled": true,
+                  "value": "0",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "SKU2",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "sts_OEE",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Quality",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Availability",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "String",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Info_SKU",
+                  "historyEnabled": true,
+                  "value": "0",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Performance",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "String",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Info_Name",
+                  "historyEnabled": true,
+                  "value": "0",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\t\n\t# Source paths\n\tsource_No \u003d \"[default]BACC_VCL6/status/ActiveRecipe\"\n\tsource_Name \u003d \"[default]BACC_VCL6/status/ActiveRecipe_Name\"\n\tsource_SKU \u003d \"[default]BACC_VCL6/status/SKU\"\n\tsource_OEE \u003d \"[default]BACC_VCL6/Previous Shift Machine Stats/Machine_OEE\"\n\tsource_P \u003d \"[default]BACC_VCL6/Previous Shift Machine Stats/Machine_Performance\"\n\tsource_A \u003d \"[default]BACC_VCL6/Previous Shift Machine Stats/Machine_Availability\"\n\tsource_Q \u003d \"[default]BACC_VCL6/Previous Shift Machine Stats/Machine_Quality\"\n\t\n\t# SKU1 Paths\n\tSKU1_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/Info_Name\"\n\tSKU1_SKU \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/Info_SKU\"\n\tSKU1_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/sts_OEE\"\n\tSKU1_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/sts_Performance\"\n\tSKU1_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/sts_Availability\"\n\tSKU1_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/sts_Quality\"\n\t\n\t# SKU2 Paths\n\tSKU2_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/Info_Name\"\n\tSKU2_SKU \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/Info_SKU\"\n\tSKU2_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/sts_OEE\"\n\tSKU2_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/sts_Performance\"\n\tSKU2_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/sts_Availability\"\n\tSKU2_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/sts_Quality\"\n\t\n\t# SKU3 Paths\n\tSKU3_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/Info_Name\"\n\tSKU3_SKU \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/Info_SKU\"\n\tSKU3_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/sts_OEE\"\n\tSKU3_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/sts_Performance\"\n\tSKU3_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/sts_Availability\"\n\tSKU3_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/sts_Quality\"\n\t\n\t# SKU4 Paths\n\tSKU4_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/Info_Name\"\n\tSKU4_SKU \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/Info_SKU\"\n\tSKU4_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/sts_OEE\"\n\tSKU4_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/sts_Performance\"\n\tSKU4_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/sts_Availability\"\n\tSKU4_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/sts_Quality\"\n\t\n\t# SKU5 Paths\n\tSKU5_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/Info_Name\"\n\tSKU5_SKU \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/Info_SKU\"\n\tSKU5_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/sts_OEE\"\n\tSKU5_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/sts_Performance\"\n\tSKU5_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/sts_Availability\"\n\tSKU5_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/sts_Quality\"\n\t\n\t# Read values\n\tTagData \u003d system.tag.readBlocking([\n\t    source_No, source_Name, source_SKU, source_OEE, source_P, source_A, source_Q,\n\t    SKU1_OEE, SKU2_OEE, SKU3_OEE, SKU4_OEE, SKU5_OEE\n\t])\n\tActiveRecipe, Name, SKU, OEE, P, A, Q, SKU1, SKU2, SKU3, SKU4, SKU5 \u003d [data.value for data in TagData]\n\t\n\t# get boolean data (Tag Change script context)\n\tnewValue \u003d currentValue.value\n\toldValue \u003d previousValue.value\n\t\n\t# if tag value didn\u0027t change, do nothing\n\tif newValue \u003d\u003d oldValue:\n\t    return\n\t\n\t# if OEE has no value, do nothing\n\tif OEE in (0, None):\n\t    return\n\t\n\t# if active recipe is equal to 50 or 0, do nothing\n\tif newValue in (50, 0, None):\n\t    return\n\t\n\t# Check if SKU1 is Empty\n\tif SKU1 in (0, None):\n\t    system.tag.writeBlocking(\n\t        [SKU1_Name, SKU1_SKU, SKU1_OEE, SKU1_P, SKU1_A, SKU1_Q],\n\t        [Name,      SKU,      OEE,      P,      A,      Q]\n\t    )\n\t    return\n\t\n\t# Check if SKU2 is Empty\n\telif SKU2 in (0, None):\n\t    system.tag.writeBlocking(\n\t        [SKU2_Name, SKU2_SKU, SKU2_OEE, SKU2_P, SKU2_A, SKU2_Q],\n\t        [Name,      SKU,      OEE,      P,      A,      Q]\n\t    )\n\t    return\n\t\n\t# Check if SKU3 is Empty\n\telif SKU3 in (0, None):\n\t    system.tag.writeBlocking(\n\t        [SKU3_Name, SKU3_SKU, SKU3_OEE, SKU3_P, SKU3_A, SKU3_Q],\n\t        [Name,      SKU,      OEE,      P,      A,      Q]\n\t    )\n\t    return\n\t\n\t# Check if SKU4 is Empty\n\telif SKU4 in (0, None):\n\t    system.tag.writeBlocking(\n\t        [SKU4_Name, SKU4_SKU, SKU4_OEE, SKU4_P, SKU4_A, SKU4_Q],\n\t        [Name,      SKU,      OEE,      P,      A,      Q]\n\t    )\n\t    return\n\t\n\t# Check if SKU5 is Empty\n\telif SKU5 in (0, None):\n\t    system.tag.writeBlocking(\n\t        [SKU5_Name, SKU5_SKU, SKU5_OEE, SKU5_P, SKU5_A, SKU5_Q],\n\t        [Name,      SKU,      OEE,      P,      A,      Q]\n\t    )\n\t    return",
+                  "enabled": false
+                }
+              ],
+              "dataType": "String",
+              "name": "TEST",
+              "value": "",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "SKU5",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Quality",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Performance",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "sts_OEE",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "String",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Info_Name",
+                  "historyEnabled": true,
+                  "value": "0",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "String",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Info_SKU",
+                  "historyEnabled": true,
+                  "value": "0",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Availability",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "SKU4",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "sts_OEE",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "String",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Info_Name",
+                  "historyEnabled": true,
+                  "value": "0",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Availability",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Performance",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Quality",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "String",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Info_SKU",
+                  "historyEnabled": true,
+                  "value": "0",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "SKU1",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "String",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Info_SKU",
+                  "historyEnabled": true,
+                  "value": "0",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "sts_OEE",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Availability",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "String",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Info_Name",
+                  "historyEnabled": true,
+                  "value": "0",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Quality",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "valueSource": "memory",
+                  "historyMaxAge": 1,
+                  "dataType": "Float4",
+                  "historyProvider": "hp_BACC_1_Year_Storage",
+                  "name": "Sts_Performance",
+                  "historyEnabled": true,
+                  "value": 0.0,
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Unit 2 Stopping Mode",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "historyMaxAge": 30,
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadband": 5.0,
+              "historyMaxAgeUnits": "MIN",
+              "name": "TotalTimeStopping_MemTag",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "deadband": 5.0,
+              "value": 36,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "opc",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\t# Clear Mem tag at shift change (Performance stats zeroed)\n\tTimeMemTag \u003d \"[default]BACC_VCL6/MISC/Unit 2 Stopping Mode/TotalTimeStopping_MemTag\"\n\tStationsCount \u003d \"[default]BACC_VCL6/MISC/Unit 2 Stopping Mode/StationStoppingTotal.value\"\n\t\n\tsystem.tag.writeBlocking(TimeMemTag, 0)\n\tsystem.tag.writeBlocking(StationsCount, 0)"
+                }
+              ],
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]iBatch.Sts_Production",
+              "readOnly": true,
+              "dataType": "Boolean",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "ProductionRunning",
+              "historyEnabled": false,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\t# Tag Paths\n\tStatusCurrentStations \u003d \"[default]BACC_VCL6/MISC/Unit 2 Stopping Mode/Current_StationsStopping\"\n\tTotalStationCount \u003d \"[default]BACC_VCL6/MISC/Unit 2 Stopping Mode/StationStoppingTotal\"\n\t\n\t\n\t# Read entire array Data\n\tRead_TotalStationData \u003d system.tag.readBlocking([TotalStationCount])[0].value\n\tRead_StatusCurrentStations \u003d system.tag.readBlocking([StatusCurrentStations])[0].value\n\t\n\t# Only add the last station still in stopping\n\tif Read_StatusCurrentStations[0] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM03\n\t\tRead_TotalStationData[0] \u003d Read_TotalStationData[0] + 1\n\t\n\tif Read_StatusCurrentStations[1] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM04\n\t\tRead_TotalStationData[1] \u003d Read_TotalStationData[1] + 1\n\t\n\tif Read_StatusCurrentStations[2] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM05\n\t\tRead_TotalStationData[2] \u003d Read_TotalStationData[2] + 1\n\t\n\tif Read_StatusCurrentStations[3] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM10\n\t\tRead_TotalStationData[3] \u003d Read_TotalStationData[3] + 1\n\t\n\tif Read_StatusCurrentStations[4] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM11\n\t\tRead_TotalStationData[4] \u003d Read_TotalStationData[4] + 1\n\t\n\tif Read_StatusCurrentStations[5] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM15\n\t\tRead_TotalStationData[5] \u003d Read_TotalStationData[5] + 1\n\t\n\tif Read_StatusCurrentStations[6] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM16\n\t\tRead_TotalStationData[6] \u003d Read_TotalStationData[6] + 1\n\t\n\tif Read_StatusCurrentStations[7] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM17\n\t\tRead_TotalStationData[7] \u003d Read_TotalStationData[7] + 1\n\t\n\tif Read_StatusCurrentStations[8] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM18\n\t\tRead_TotalStationData[8] \u003d Read_TotalStationData[8] + 1\n\t\n\tif Read_StatusCurrentStations[9] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM19\n\t\tRead_TotalStationData[9] \u003d Read_TotalStationData[9] + 1\n\t\n\tif Read_StatusCurrentStations[10] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM20\n\t\tRead_TotalStationData[10] \u003d Read_TotalStationData[10] + 1\n\t\n\tif Read_StatusCurrentStations[11] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM21\n\t\tRead_TotalStationData[11] \u003d Read_TotalStationData[11] + 1\n\t\n\tif Read_StatusCurrentStations[12] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM29\n\t\tRead_TotalStationData[12] \u003d Read_TotalStationData[12] + 1\n\t\n\tif Read_StatusCurrentStations[13] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM30\n\t\tRead_TotalStationData[13] \u003d Read_TotalStationData[13] + 1\n\t\n\tif Read_StatusCurrentStations[14] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM31\n\t\tRead_TotalStationData[14] \u003d Read_TotalStationData[14] + 1\n\t\n\tif Read_StatusCurrentStations[15] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM32\n\t\tRead_TotalStationData[15] \u003d Read_TotalStationData[15] + 1\n\t\n\tif Read_StatusCurrentStations[16] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM33\n\t\tRead_TotalStationData[16] \u003d Read_TotalStationData[16] + 1\n\t\n\tif Read_StatusCurrentStations[17] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM34\n\t\tRead_TotalStationData[17] \u003d Read_TotalStationData[17] + 1\n\t\n\tif Read_StatusCurrentStations[18] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM35\n\t\tRead_TotalStationData[18] \u003d Read_TotalStationData[18] + 1\n\t\n\tif Read_StatusCurrentStations[19] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM40\n\t\tRead_TotalStationData[19] \u003d Read_TotalStationData[19] + 1\n\t\n\tif Read_StatusCurrentStations[20] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM41\n\t\tRead_TotalStationData[20] \u003d Read_TotalStationData[20] + 1\n\t\n\tif Read_StatusCurrentStations[21] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM42\n\t\tRead_TotalStationData[21] \u003d Read_TotalStationData[21] + 1\n\t\n\tif Read_StatusCurrentStations[22] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM43\n\t\tRead_TotalStationData[22] \u003d Read_TotalStationData[22] + 1\n\t\n\tif Read_StatusCurrentStations[23] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM44\n\t\tRead_TotalStationData[23] \u003d Read_TotalStationData[23] + 1\n\t\n\tif Read_StatusCurrentStations[24] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM45\n\t\tRead_TotalStationData[24] \u003d Read_TotalStationData[24] + 1\n\t\n\tif Read_StatusCurrentStations[25] and sum(Read_StatusCurrentStations) \u003d\u003d1: # EM46\n\t\tRead_TotalStationData[25] \u003d Read_TotalStationData[25] + 1\n\t\n\t\n\t# Write entire array data\n\tsystem.tag.writeBlocking([TotalStationCount], [Read_TotalStationData])"
+                }
+              ],
+              "dataType": "BooleanArray",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Current_StationsStopping",
+              "historyEnabled": true,
+              "value": [
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false,
+                false
+              ],
+              "tagType": "AtomicTag",
+              "enabled": true
+            },
+            {
+              "valueSource": "memory",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "dataType": "Int4Array",
+              "name": "StationStoppingTotal",
+              "historyEnabled": true,
+              "value": [
+                0,
+                0,
+                0,
+                2,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "DateTime",
+              "name": "End_TimeStamp",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "value": 1783491325112,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "opc",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\n\t#tag Paths\n\tStationStoppingDint \u003d \"[default]BACC_VCL6/MISC/Unit 2 Stopping Mode/StationStoppingDint\"\n\tCurrentStations \u003d \"[default]BACC_VCL6/MISC/Unit 2 Stopping Mode/Current_StationsStopping\"\n\n\t# Read PLC data\n\tReadData \u003d system.tag.readBlocking([StationStoppingDint])\n\tDint \u003d ReadData[0].value\n\n\t# Translate PLC dint to an array of bools\n\tBits \u003d [(Dint \u003e\u003e i) \u0026 1 for i in range(32)]\n\tsystem.tag.writeBlocking([CurrentStations], [Bits])\n\n\t# Read Boolean values\n\t#DataIn \u003d system.tag.readBlocking([CurrentStations])\n\n\t#StationsStopping \u003d DataIn[0].value"
+                }
+              ],
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]StationStopping",
+              "readOnly": true,
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "StationStoppingDint",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "enabled": true,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\n# Tag Pathways\n\tProduction_Started \u003d \"[default]BACC_VCL6/Status/Production_sequence\"\t\n\tTimeMemTag \u003d \"[default]BACC_VCL6/MISC/Unit 2 Stopping Mode/TotalTimeStopping_MemTag\"\n\tStartTag \u003d \"[default]BACC_VCL6/MISC/Unit 2 Stopping Mode/Start_TimeStamp\"\n\tEndTag \u003d \"[default]BACC_VCL6/MISC/Unit 2 Stopping Mode/End_TimeStamp\"\n\t\n# Get Tag Values\n\tTagData \u003d system.tag.readBlocking([Production_Started, TimeMemTag, StartTag])\n\tMachineStart \u003d TagData[0].value\n\tPreviousTime \u003d TagData[1].value\n\tStartTime \u003d TagData[2].value\n\t\n# Get Tag Value for \"Monitor_unit2\"\n\tnewValue \u003d currentValue.value\n\toldValue \u003d previousValue.value\n\t\n# Trigger 0 - 1\n\tif oldValue \u003d\u003d 0 and newValue \u003d\u003d 1 and MachineStart \u003d\u003d 10:\n\t\tStart_timestamp \u003d system.date.now()\n\t\tsystem.tag.writeBlocking(StartTag, Start_timestamp)\n\t\n# trigger 1 - 0\n\telif oldValue \u003d\u003d 1 and newValue \u003d\u003d 0 and MachineStart \u003d\u003d 10:\n\t\tEnd_timestamp \u003d system.date.now()\n\t\tsystem.tag.writeBlocking(EndTag, End_timestamp)\n\t\t\n# Difference between Start and End. \n# Couldn\u0027t use Start_Timestamp becuase it must clear when Monitor_Unit2 changes state\n\t\tNewTime \u003d system.date.secondsBetween(StartTime, End_timestamp)\n\t\tTotalTime \u003d NewTime + PreviousTime \t\t \n\t\tsystem.tag.writeBlocking(TimeMemTag, TotalTime)\n\n\t#  system.tag.writeBlocking([\"[default]TagEvents/HighTimestamp\"], [timestamp])\n\t#  system.util.getLogger(\"TagEvent\").info(\"Tag went HIGH at: \" + str(timestamp))\n\n\n# Determine the station that takes the longest to stop\n\n\t#if oldValue \u003d\u003d 0 and newValue \u003d\u003d 1 and EM03:\n"
+                }
+              ],
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.Monitor_Unit2Stopping",
+              "readOnly": true,
+              "dataType": "Boolean",
+              "name": "Monitor_Unit2",
+              "tagType": "AtomicTag",
+              "enabled": true,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "DateTime",
+              "name": "Start_TimeStamp",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "value": 1783491298086,
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "Cleaning",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\t# Tag Pathways\n\tPath \u003d \"[default]BACC_VCL6/MISC/Cleaning/TotalTime_ChangeOverMem\"\n\tStartTag \u003d \"[default]BACC_VCL6/MISC/Cleaning/Start_TimeStamp\"\n\tEndTag \u003d \"[default]BACC_VCL6/MISC/Cleaning/End_TimeStamp\"\n\t\n\t# Get Tag Values\n\tTagData \u003d system.tag.readBlocking([Path, StartTag])\n\tCleaning_Time \u003d TagData[0].value\n\tStartTime \u003d TagData[1].value\n\t\n\t# Get Tag Value for \"Monitor_unit2\"\n\tnewValue \u003d currentValue.value\n\toldValue \u003d previousValue.value\n\t\n\t# Trigger 0 - 1\n\tif oldValue \u003d\u003d 0 and newValue \u003d\u003d 1:\n\t\tStart_timestamp \u003d system.date.now()\n\t\tsystem.tag.writeBlocking(StartTag, Start_timestamp)\n\t\n\t# trigger 1 - 0\n\tif oldValue \u003d\u003d 1 and newValue \u003d\u003d 0:\n\t\tEnd_timestamp \u003d system.date.now()\n\t\t\n\t\tsystem.tag.writeBlocking(EndTag, End_timestamp)\n\t\t\n\t\tNewTime \u003d system.date.secondsBetween(StartTime, End_timestamp)\n\t\t\n\t\tTotalTime \u003d NewTime + Cleaning_Time # convert to minutes \t\t\n\t\t\n\t\tsystem.tag.writeBlocking(Path, TotalTime)",
+                  "enabled": false
+                }
+              ],
+              "dataType": "Boolean",
+              "name": "TEST",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "DateTime",
+              "name": "Start_TimeStamp",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "value": 1783437488017,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "historyMaxAge": 1,
+              "dataType": "Int4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "TotalTime_CleaningMem",
+              "historyEnabled": true,
+              "value": 0,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "DateTime",
+              "name": "End_TimeStamp",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "value": 1783439440351,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "opc",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\t# Tag Pathways\n\tPath \u003d \"[default]BACC_VCL6/MISC/Cleaning/TotalTime_ChangeOverMem\"\n\tStartTag \u003d \"[default]BACC_VCL6/MISC/Cleaning/Start_TimeStamp\"\n\tEndTag \u003d \"[default]BACC_VCL6/MISC/Cleaning/End_TimeStamp\"\n\t\n\t# Get Tag Values\n\tTagData \u003d system.tag.readBlocking([Path, StartTag])\n\tCleaning_Time \u003d TagData[0].value\n\tStartTime \u003d TagData[1].value\n\t\n\t# Get Tag Value for \"Monitor_unit2\"\n\tnewValue \u003d currentValue.value\n\toldValue \u003d previousValue.value\n\t\n\t# Trigger 0 - 1\n\tif oldValue \u003d\u003d 0 and newValue \u003d\u003d 1:\n\t\tStart_timestamp \u003d system.date.now()\n\t\tsystem.tag.writeBlocking(StartTag, Start_timestamp)\n\t\n\t# trigger 1 - 0\n\tif oldValue \u003d\u003d 1 and newValue \u003d\u003d 0:\n\t\tEnd_timestamp \u003d system.date.now()\n\t\t\n\t\tsystem.tag.writeBlocking(EndTag, End_timestamp)\n\t\t\n\t\tNewTime \u003d system.date.secondsBetween(StartTime, End_timestamp)\n\t\t\n\t\tTotalTime \u003d NewTime + Cleaning_Time\n\t\t\n\t\tsystem.tag.writeBlocking(Path, TotalTime)"
+                }
+              ],
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]CleaningDryCycle",
+              "readOnly": false,
+              "dataType": "Boolean",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "CleaningActive",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            }
+          ]
+        },
+        {
+          "name": "Shift Change",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 10,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.DayShift",
+              "tagType": "AtomicTag",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\t# SKU change - Clear Memory tag allocated to counting sum of Time in a Stopping state\n\tTimeMemTag \u003d \"[default]BACC_VCL6/MISC/Unit 2 Stopping Mode/TotalTimeStopping_MemTag\"\n\tUnit1 \u003d \"[default]BACC_VCL6/current shift machine stats/OEE_Stops_Number_UN1_current\"\n\tUnit2 \u003d \"[default]BACC_VCL6/current shift machine stats/OEE_Stops_Number_UN2_current\"\n\tTimeStarved \u003d \"[default]BACC_VCL6/MISC/Unit2 Starved/TotalTime_Starved\"\n\tChangeOver \u003d \"[default]BACC_VCL6/MISC/ChangeOver/TotalTime_ChangeOverMem\"\n\n\t# clear SKU 1 folder\n\tSKU1_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/Info_Name\"\n\tSKU1_No \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/Info_SKU\"\n\tSKU1_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/sts_OEE\"\n\tSKU1_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/sts_Availability\"\n\tSKU1_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/sts_Performance\"\n\tSKU1_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU1/sts_Quality\"\n\n\t# clear SKU 2 folder\n\tSKU2_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/Info_Name\"\n\tSKU2_No \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/Info_SKU\"\n\tSKU2_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/sts_OEE\"\n\tSKU2_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/sts_Availability\"\n\tSKU2_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/sts_Performance\"\n\tSKU2_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU2/sts_Quality\"\n\n\t# clear SKU 3 folder\n\tSKU3_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/Info_Name\"\n\tSKU3_No \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/Info_SKU\"\n\tSKU3_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/sts_OEE\"\n\tSKU3_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/sts_Availability\"\n\tSKU3_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/sts_Performance\"\n\tSKU3_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU3/sts_Quality\"\n\n\t# clear SKU 4 folder\n\tSKU4_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/Info_Name\"\n\tSKU4_No \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/Info_SKU\"\n\tSKU4_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/sts_OEE\"\n\tSKU4_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/sts_Availability\"\n\tSKU4_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/sts_Performance\"\n\tSKU4_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU4/sts_Quality\"\n\n\t# clear SKU 5 folder\n\tSKU5_Name \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/Info_Name\"\n\tSKU5_No \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/Info_SKU\"\n\tSKU5_OEE \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/sts_OEE\"\n\tSKU5_A \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/sts_Availability\"\n\tSKU5_P \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/sts_Performance\"\n\tSKU5_Q \u003d \"[default]BACC_VCL6/MISC/SKU OEE/SKU5/sts_Quality\"\n\t\n\t# Get Tag Value for \"Day shift detected\"\t\n\tnewValue \u003d currentValue.value\n\toldValue \u003d previousValue.value\n\n\tif oldValue \u003d\u003d 0 and newValue \u003d\u003d 1:\n\t\t\n\t\t\tsystem.tag.writeBlocking ([TimeMemTag,Unit1,Unit2,TimeStarved,ChangeOver,\n\t\t\tSKU1_Name,SKU1_No,SKU1_OEE,SKU1_A,SKU1_P,SKU1_Q,\n\t\t\tSKU2_Name,SKU2_No,SKU2_OEE,SKU2_A,SKU2_P,SKU2_Q,\n\t\t\tSKU3_Name,SKU3_No,SKU3_OEE,SKU3_A,SKU3_P,SKU3_Q, \n\t\t\tSKU4_Name,SKU4_No,SKU4_OEE,SKU4_A,SKU4_P,SKU4_Q,\n\t\t\tSKU5_Name,SKU5_No,SKU5_OEE,SKU5_A,SKU5_P,SKU5_Q], \n\t\t\t[0] * 35)"
+                }
+              ],
+              "readOnly": false,
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "dataType": "Boolean",
+              "name": "MemData_Clear",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "Float4",
+              "name": "Test_ShiftChange",
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 1,
+              "historyMaxAge": 2,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.Mem_ShiftChange",
+              "historicalDeadbandStyle": "Discrete",
+              "tagType": "AtomicTag",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "TotalTime_ShiftChange",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "SEC",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.FirstProductDetected",
+              "readOnly": false,
+              "dataType": "Boolean",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "FirstPartProduced",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "enabled": true,
+              "opcServer": "Ignition OPC-UA Server"
+            }
+          ]
+        },
+        {
+          "name": "Protocol",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "historyMaxAge": 1,
+              "dataType": "Int4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "TotalTime_ProtocolMem",
+              "historyEnabled": true,
+              "value": 247419,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "DateTime",
+              "name": "End_TimeStamp",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "value": 1782823400099,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "historyTimeDeadband": 2,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]CleaningDryCycle",
+              "dataType": "Boolean",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Cleaning_Active",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "DateTime",
+              "name": "Start_TimeStamp",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "value": 1782811451264,
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "ChangeOver",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "dataType": "DateTime",
+              "name": "End_TimeStamp",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "value": 1783463079261,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "opc",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\t# Tag Pathways\n\tPath \u003d \"[default]BACC_VCL6/MISC/ChangeOver/TotalTime_ChangeOverMem\"\n\tStartTag \u003d \"[default]BACC_VCL6/MISC/ChangeOver/Start_TimeStamp\"\n\tEndTag \u003d \"[default]BACC_VCL6/MISC/ChangeOver/End_TimeStamp\"\n\t\n\t# Get Tag Values\n\tTagData \u003d system.tag.readBlocking([Path, StartTag])\n\tCO_Time \u003d TagData[0].value\n\tStartTime \u003d TagData[1].value\n\t\n\t# Get Tag Value for \"Monitor_unit2\"\n\tnewValue \u003d currentValue.value\n\toldValue \u003d previousValue.value\n\t\n\t# Trigger 0 - 1\n\tif oldValue \u003d\u003d 0 and newValue \u003d\u003d 1:\n\t\tStart_timestamp \u003d system.date.now()\n\t\tsystem.tag.writeBlocking(StartTag, Start_timestamp)\n\t\n\t# trigger 1 - 0\n\tif oldValue \u003d\u003d 1 and newValue \u003d\u003d 0:\n\t\tEnd_timestamp \u003d system.date.now()\n\t\t\n\t\tsystem.tag.writeBlocking(EndTag, End_timestamp)\n\t\t\n\t\tNewTime \u003d system.date.secondsBetween(StartTime, End_timestamp)\n\t\t\n\t\tTotalTime \u003d NewTime + CO_Time # convert to minutes \t\t\n\t\t\n\t\tsystem.tag.writeBlocking(Path, TotalTime)"
+                }
+              ],
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.ChangeOver_InProgress",
+              "readOnly": false,
+              "dataType": "Boolean",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "ChangeOverActive",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "\t# Tag Pathways\n\tPath \u003d \"[default]BACC_VCL6/MISC/ChangeOver/TotalTime_ChangeOverMem\"\n\tStartTag \u003d \"[default]BACC_VCL6/MISC/ChangeOver/Start_TimeStamp\"\n\tEndTag \u003d \"[default]BACC_VCL6/MISC/ChangeOver/End_TimeStamp\"\n\t\n\t# Get Tag Values\n\tTagData \u003d system.tag.readBlocking([Path, StartTag])\n\tCO_Time \u003d TagData[0].value\n\tStartTime \u003d TagData[1].value\n\t\n\t# Get Tag Value for \"Monitor_unit2\"\n\tnewValue \u003d currentValue.value\n\toldValue \u003d previousValue.value\n\t\n\t# Trigger 0 - 1\n\tif oldValue \u003d\u003d 0 and newValue \u003d\u003d 1:\n\t\tStart_timestamp \u003d system.date.now()\n\t\tsystem.tag.writeBlocking(StartTag, Start_timestamp)\n\t\n\t# trigger 1 - 0\n\tif oldValue \u003d\u003d 1 and newValue \u003d\u003d 0:\n\t\tEnd_timestamp \u003d system.date.now()\n\t\t\n\t\tsystem.tag.writeBlocking(EndTag, End_timestamp)\n\t\t\n\t\tNewTime \u003d system.date.secondsBetween(StartTime, End_timestamp)\n\t\t\n\t\tTotalTime \u003d NewTime + CO_Time # convert to minutes \t\t\n\t\t\n\t\tsystem.tag.writeBlocking(Path, TotalTime)",
+                  "enabled": false
+                }
+              ],
+              "dataType": "Boolean",
+              "name": "TEST",
+              "value": false,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "dataType": "DateTime",
+              "name": "Start_TimeStamp",
+              "formatString": "yyyy-MM-dd h:mm:ss aa",
+              "value": 1783461651944,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "historyMaxAge": 1,
+              "dataType": "Int4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "TotalTime_ChangeOverMem",
+              "historyEnabled": true,
+              "value": 0,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]PreLoad_Mandrel_Type",
+              "readOnly": true,
+              "historicalDeadband": 0.5,
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "ChangeOver PreLoad",
+              "historyEnabled": true,
+              "deadband": 0.5,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Alarms",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "Limits",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "Humidity",
+              "typeId": "BACC_VCL6/Limits",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "value": 1.0,
+                  "name": "HighOffset",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": 50.0,
+                  "name": "HighLimit",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": 1.0,
+                  "name": "LowOffset",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": 29.0,
+                  "name": "LowLimit",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Treatment Time Alarm",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 30,
+              "historyMaxAge": 24,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM21_UVATreatTime",
+              "historicalDeadband": 1.0,
+              "alarms": [
+                {
+                  "setpointA": 1.0,
+                  "ackPipeline": "BACC_VCL6/BACC_VCL6_Subs_and_Coating",
+                  "activePipeline": "BACC_VCL6/BACC_VCL6_Subs_and_Coating",
+                  "name": "EM21A Treatment Time High",
+                  "CustomEmailSubject": "EM21A Treatment Time Exceeded Limit",
+                  "priority": "Critical"
+                }
+              ],
+              "tagType": "AtomicTag",
+              "dataType": "Boolean",
+              "historyProvider": "HollisterDefault",
+              "name": "EM21A Treatment Time High",
+              "historyEnabled": true,
+              "deadband": 1.0,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 30,
+              "historyMaxAge": 24,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM21_UVBTreatTime",
+              "historicalDeadband": 1.0,
+              "alarms": [
+                {
+                  "setpointA": 1.0,
+                  "ackPipeline": "BACC_VCL6/BACC_VCL6_Subs_and_Coating",
+                  "activePipeline": "BACC_VCL6/BACC_VCL6_Subs_and_Coating",
+                  "name": "EM21B Treatment Time  High",
+                  "CustomEmailSubject": "EM21B Treatment Time Exceeded Limit",
+                  "priority": "Critical"
+                }
+              ],
+              "tagType": "AtomicTag",
+              "dataType": "Boolean",
+              "historyProvider": "HollisterDefault",
+              "name": "EM21B Treatment Time High",
+              "historyEnabled": true,
+              "deadband": 1.0,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 30,
+              "historyMaxAge": 24,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM20_UVBTreatTime",
+              "historicalDeadband": 1.0,
+              "alarms": [
+                {
+                  "setpointA": 1.0,
+                  "": "",
+                  "ackPipeline": "BACC_VCL6/BACC_VCL6_Subs_and_Coating",
+                  "activePipeline": "BACC_VCL6/BACC_VCL6_Subs_and_Coating",
+                  "name": "EM20B Treatment Time High",
+                  "CustomEmailSubject": "EM20B Treatment Time Exceeded Limit",
+                  "priority": "Critical",
+                  "CustomEmailMessage": {
+                    "bindType": "Expression",
+                    "value": ""
+                  }
+                }
+              ],
+              "tagType": "AtomicTag",
+              "dataType": "Boolean",
+              "historyProvider": "HollisterDefault",
+              "name": "EM20B Treatment Time High",
+              "historyEnabled": true,
+              "deadband": 1.0,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 30,
+              "historyMaxAge": 24,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM20_UVATreatTime",
+              "historicalDeadband": 1.0,
+              "alarms": [
+                {
+                  "setpointA": 1.0,
+                  "ackPipeline": "BACC_VCL6/BACC_VCL6_Subs_and_Coating",
+                  "activePipeline": "BACC_VCL6/BACC_VCL6_Subs_and_Coating",
+                  "name": "EM20A Treatment Time High ",
+                  "CustomEmailSubject": "EM20A Treatment Time Exceeded Upper Limit"
+                }
+              ],
+              "tagType": "AtomicTag",
+              "dataType": "Boolean",
+              "historyProvider": "HollisterDefault",
+              "name": "EM20A Treatment Time High",
+              "historyEnabled": true,
+              "deadband": 1.0,
+              "opcServer": "Ignition OPC-UA Server"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Waste",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "opc",
+          "historyTimeDeadband": 30,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]HMI_stsRejectedAtEM18",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "EM18_DipToCure",
+          "historyEnabled": true,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyTimeDeadband": 30,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]HMI_stsRejectedAtEM21",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "EM21_MaxOven",
+          "historyEnabled": true,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyTimeDeadband": 30,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]HMI_stsRejectedAtEM20",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "EM20_MaxOven",
+          "historyEnabled": true,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyTimeDeadband": 30,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]HMI_stsRejectedEStop",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "EStop",
+          "historyEnabled": true,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 1,
+          "historyTimeDeadband": 30,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]HMI_stsRejectedAtEM16",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "EM16_PlasmaToDip",
+          "historyEnabled": true,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        }
+      ]
+    },
+    {
+      "name": "Current Shift Machine Stats",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 30,
+          "historyTimeDeadband": 5,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.OEE_CountTotalParts",
+          "historicalDeadband": 288.0,
+          "historicalDeadbandStyle": "Discrete",
+          "tagGroup": "30s",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "HollisterDefault",
+          "historyMaxAgeUnits": "MIN",
+          "name": "OEE_CountTotalParts",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "deadband": 100.0,
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 10,
+          "historyTimeDeadband": 5,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Carrier_In_Machine",
+          "tagGroup": "30s",
+          "tagType": "AtomicTag",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "MIN",
+          "name": "Carriers in machine",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 2,
+          "historyTimeDeadband": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN01.OEE_Availability",
+          "historicalDeadband": 0.1,
+          "historicalDeadbandStyle": "Discrete",
+          "tagGroup": "30s",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "HollisterDefault",
+          "name": "OEE_Availability_UN1",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "memory",
+          "historyMaxAge": 1,
+          "historicalDeadband": 1.0,
+          "historicalDeadbandStyle": "Discrete",
+          "historySampleRateUnits": "HOUR",
+          "tagType": "AtomicTag",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "HOUR",
+          "name": "OEE_Running_PPM_Target",
+          "historyEnabled": true,
+          "value": 150,
+          "sampleMode": "Periodic",
+          "historySampleRate": 1
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 2,
+          "historyTimeDeadband": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]OEE_Availability_Percent",
+          "historicalDeadband": 0.1,
+          "historicalDeadbandStyle": "Discrete",
+          "tagGroup": "30s",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "HollisterDefault",
+          "name": "OEE_Availability_UN2",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "memory",
+          "historyMaxAge": 1,
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "HOUR",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "Carriers_in_machine_Max",
+          "historyEnabled": true,
+          "value": 79,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 2,
+          "historyTimeDeadband": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.OEE_Stops",
+          "historicalDeadband": 0.1,
+          "historicalDeadbandStyle": "Discrete",
+          "tagGroup": "30s",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "OEE_Stops_Number_UN2_current",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 30,
+          "historyTimeDeadband": 5,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.OEE_CountGoodParts",
+          "historicalDeadband": 288.0,
+          "historicalDeadbandStyle": "Discrete",
+          "tagGroup": "30s",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "HollisterDefault",
+          "historyMaxAgeUnits": "MIN",
+          "name": "OEE_CountGoodParts",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "deadband": 100.0,
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 30,
+          "historyTimeDeadband": 1,
+          "expression": "({[.]OEE_Availability_UN2}*{[.]OEE_Performance_UN2}*{[.]OEE_Quality_UN2})*100\r\n",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.HMI_stsOEE",
+          "historicalDeadband": 0.1,
+          "historicalDeadbandStyle": "Discrete",
+          "tagGroup": "Default",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "HollisterDefault",
+          "historyMaxAgeUnits": "MIN",
+          "name": "OEE",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "deadband": 0.2,
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 1,
+          "historyTimeDeadband": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.STSec",
+          "historicalDeadband": 1.0,
+          "historicalDeadbandStyle": "Discrete",
+          "tagType": "AtomicTag",
+          "dataType": "Float8",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "HOUR",
+          "name": "Machine_DownTime",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "deadband": 30.0,
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 2,
+          "historyTimeDeadband": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.OEE_Quality_Percent",
+          "historicalDeadband": 0.1,
+          "historicalDeadbandStyle": "Discrete",
+          "tagGroup": "30s",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "HollisterDefault",
+          "name": "OEE_Quality_UN2",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyTimeDeadband": 1,
+          "historyMaxAge": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.PPTSec",
+          "historicalDeadband": 1.0,
+          "tagType": "AtomicTag",
+          "readOnly": false,
+          "dataType": "Float8",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "HOUR",
+          "name": "Machine ScheduledUpTime",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "deadband": 30.0,
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 2,
+          "historyTimeDeadband": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN01.OEE_Stops",
+          "historicalDeadband": 0.1,
+          "historicalDeadbandStyle": "Discrete",
+          "tagGroup": "30s",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "OEE_Stops_Number_UN1_current",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 2,
+          "historyTimeDeadband": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.OEE_Performance_Percent",
+          "historicalDeadband": 0.1,
+          "historicalDeadbandStyle": "Discrete",
+          "tagGroup": "30s",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "HollisterDefault",
+          "name": "OEE_Performance",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 2,
+          "historyTimeDeadband": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.PPM_while_running_avg",
+          "historicalDeadbandStyle": "Discrete",
+          "tagType": "AtomicTag",
+          "readOnly": true,
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "PPM_Average",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "memory",
+          "historyMaxAge": 1,
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "HOUR",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "Carriers_in_machine_Min",
+          "historyEnabled": true,
+          "value": 68,
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 30,
+          "historyTimeDeadband": 5,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.OEE_CountRejectedParts",
+          "historicalDeadband": 288.0,
+          "historicalDeadbandStyle": "Discrete",
+          "tagGroup": "30s",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "HollisterDefault",
+          "historyMaxAgeUnits": "MIN",
+          "name": "OEE_CountRejectedParts",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MIN",
+          "deadband": 100.0,
+          "opcServer": "Ignition OPC-UA Server"
+        }
+      ]
+    },
+    {
+      "name": "Previous Shift Machine Stats",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "opc",
+          "historyTimeDeadband": 1,
+          "historyMaxAge": 2,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.Mem_STSec",
+          "historicalDeadbandStyle": "Discrete",
+          "tagType": "AtomicTag",
+          "dataType": "Float8",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "DownTime",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "SEC",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.OEE_CountGoodParts_Old",
+          "readOnly": true,
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "Machine_GoodParts",
+          "historyEnabled": true,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "memory",
+          "dataType": "Float4",
+          "name": "UnscheduledTime",
+          "tagType": "AtomicTag"
+        },
+        {
+          "valueSource": "opc",
+          "historyTimeDeadband": 1,
+          "historyMaxAge": 2,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.Mem_OEE",
+          "historicalDeadbandStyle": "Discrete",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "Machine_OEE",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "SEC",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyTimeDeadband": 1,
+          "historyMaxAge": 2,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.Mem_Performance",
+          "historicalDeadbandStyle": "Discrete",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "Machine_Performance",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "SEC",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.OEE_CountTotalParts_Old",
+          "readOnly": true,
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "Machine_TotalParts",
+          "historyEnabled": true,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyTimeDeadband": 1,
+          "historyMaxAge": 2,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.Mem_Availability",
+          "historicalDeadbandStyle": "Discrete",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "Machine_Availability",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "SEC",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 2,
+          "historyTimeDeadband": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.Mem_Quality",
+          "historicalDeadbandStyle": "Discrete",
+          "tagType": "AtomicTag",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "Machine_Quality",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "SEC",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyMaxAge": 1,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.OEE_CountRejectedParts_Old",
+          "readOnly": true,
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "Machine_BadParts",
+          "historyEnabled": true,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "historyTimeDeadband": 1,
+          "historyMaxAge": 2,
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:UN02.Mem_PPTSec",
+          "historicalDeadbandStyle": "Discrete",
+          "tagType": "AtomicTag",
+          "dataType": "Float8",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "UpTime",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "SEC",
+          "opcServer": "Ignition OPC-UA Server"
+        }
+      ]
+    },
+    {
+      "name": "Faults",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]HMI_stsMTTR",
+          "dataType": "Float4",
+          "name": "AvgStopTime",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Unit2_First_Fault_No",
+          "dataType": "Float8",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "name": "CurrentFault",
+          "historyEnabled": true,
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        }
+      ]
+    },
+    {
+      "name": "Stations",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "EM16",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.HMI_StsOilFlowB21",
+              "dataType": "Float4",
+              "historyProvider": "HollisterDefault",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "Oil Flow B21",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.HMI_StsElectrodeActCurrentT21",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Analog_Compressed",
+              "name": "Generator 2: Actual Current 2",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 0,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]PlasmaVacTime",
+              "historicalDeadbandStyle": "Discrete",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "dataType": "String",
+              "historyMaxAgeUnits": "SEC",
+              "name": "Plasma Vacuum Time ",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MS",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.Temp_Electro4",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "K20LastCurrent_Failure_0",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.HMI_StsOilFlowB11",
+              "dataType": "Float4",
+              "historyProvider": "HollisterDefault",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "Oil Flow B11",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.Temp_Electro1",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "K10LastCurrent_Failure_0",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]MDA.EM16.Plasma_CurrentMin",
+              "dataType": "Float4",
+              "historicalDeadband": 1.0,
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historyMaxAgeUnits": "WEEK",
+              "name": "CurrentLimitMin",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.NOTF_EM16A_Generator2_NotOk",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Generator 2",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.PlasmaVacuumTmr.PRE",
+              "dataType": "Int4",
+              "name": "PlasmaVacuumPressure",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "name": "K10",
+              "typeId": "BACC_VCL6/K10",
+              "parameters": {
+                "K_ID": {
+                  "dataType": "Integer",
+                  "value": 1
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "Electrode 2",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "actual_current",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "LastMin_current",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "LastMax_current",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "Electrode 3",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "LastMax_current",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "actual_current",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "LastMin_current",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "power",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "voltage",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Electrode 1",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "actual_current",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "LastMin_current",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "LastMax_current",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "frequency",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.Temp_Electro6",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "K20LastCurrent_Failure_2",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 5,
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.PressureRaw",
+              "historicalDeadbandStyle": "Analog_Compressed",
+              "tagGroup": "Default",
+              "tagType": "AtomicTag",
+              "dataType": "Float4",
+              "historyProvider": "HollisterDefault",
+              "historyMaxAgeUnits": "SEC",
+              "name": "ChamberActualPressure",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MS",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "name": "K20",
+              "typeId": "BACC_VCL6/K10",
+              "parameters": {
+                "K_ID": {
+                  "dataType": "Integer",
+                  "value": 2
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "power",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Electrode 1",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "actual_current",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "LastMax_current",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "LastMin_current",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "frequency",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "voltage",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Electrode 3",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "LastMin_current",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "actual_current",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "LastMax_current",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "Electrode 2",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "actual_current",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "LastMax_current",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "LastMin_current",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.HMI_StsElectrodeActCurrentT10",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Analog_Compressed",
+              "name": "Generator 1: Actual Current 1",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]MDA.EM16.Plasma_CurrentMax",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadband": 1.0,
+              "historyMaxAgeUnits": "WEEK",
+              "name": "CurrentLimitMax",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.HMI_StsElectrodeActCurrentT11",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Analog_Compressed",
+              "name": "Generator 1: Actual Current 2",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.HMI_StsElectrodeActCurrentT20",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Analog_Compressed",
+              "name": "Generator 2: Actual Current 1",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.Temp_Electro3",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "K10LastCurrent_Failure_2",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.Temp_Electro5",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "K20LastCurrent_Failure_1",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.Temp_Electro2",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "K10LastCurrent_Failure_1",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.HMI_StsElectrodeActCurrentT12",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Generator 1: Actual Current 3",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.NOTF_EM16A_Generator1_NotOK",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "dataType": "Boolean",
+              "name": "Generator 1",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.HMI_StsElectrodeActCurrentT22",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Generator 2: Actual Current 3",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            }
+          ]
+        },
+        {
+          "name": "EM04",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 30,
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM03_MainTransport.HMI_Cmd_EM04",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "dataType": "Boolean",
+              "name": "EM04_Selected",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            }
+          ]
+        },
+        {
+          "name": "EM20",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "memory",
+              "historyMaxAge": 1,
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "Treatment Time Max",
+              "historyEnabled": true,
+              "value": 190,
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "Alarms ",
+              "tagType": "Folder",
+              "tags": [
+                {
+                  "valueSource": "opc",
+                  "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM20_UVATreatTimeHigh",
+                  "name": "EM20A_TreatTime_High",
+                  "historyEnabled": true,
+                  "tagType": "AtomicTag",
+                  "opcServer": "Ignition OPC-UA Server"
+                }
+              ]
+            },
+            {
+              "name": "EM20A",
+              "typeId": "BACC_VCL6/CuringFeedback",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "UVPower",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletTemp",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletTemp",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletRelativeHum",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "RemainingVentTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletCoolingAirFlow",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletFlow",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "RemainingPreHeat",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletFlow",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "EM20B",
+              "typeId": "BACC_VCL6/CuringFeedback",
+              "parameters": {
+                "Position": {
+                  "dataType": "String",
+                  "value": "B"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "UVPower",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletTemp",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletTemp",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletRelativeHum",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletCoolingAirFlow",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "RemainingVentTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "RemainingPreHeat",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletFlow",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletFlow",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM20_UV1.HMI_StsUVALastTime",
+              "historyProvider": "HollisterDefault",
+              "historyMaxAgeUnits": "SEC",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "EM20A Treatment Time",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "name": "EM20Parameters",
+              "typeId": "BACC_VCL6/CuringParameters",
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "InletHumiHL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletTempHL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletFlowLL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "HeatFlowDiff",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletFlowLL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletFlowHL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletTempLL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletTempHL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "HeatFlowDiffLow",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ChamberTimeSP",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletTempSP",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletFlowSP",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ChamberTimeHL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletFlowHL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletTempLL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletHumiLL",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM20_UV1.HMI_StsUVBLastTime",
+              "historyProvider": "HollisterDefault",
+              "historyMaxAgeUnits": "SEC",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "EM20B Treatment Time ",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "historyMaxAge": 1,
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "Treatment Time Min",
+              "historyEnabled": true,
+              "value": 70,
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "name": "Em05",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 30,
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM03_MainTransport.HMI_Cmd_EM05",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "dataType": "Boolean",
+              "name": "EM05_Selected",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            }
+          ]
+        },
+        {
+          "name": "EM11",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM11_MountProducts.EM11_Camera2Fails.ACC",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "EM11_Camera2Fails",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM11_MountProducts.EM11_RejectCounter.ACC",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "EM11_RejectCounter",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "SEC",
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM11_MountProducts.EM11_Camera1Fails.ACC",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "EM11_Camera1Fails",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM11_MountProducts.NOTF_EM11_CamerasDisabled",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "EM11 Camera\u0027s Disabled",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM11_MountProducts.EM11_Reject1104.ACC",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "EM11_1104Reject",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM11_MountProducts.EM11_Reject1103.ACC",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "EM11_1103Reject",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            }
+          ]
+        },
+        {
+          "name": "EM30",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM30A_RFID_B1.HMI_StsAlarm",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Auto",
+              "name": "EM30 RFID Alarm",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM30A_Part.Carrier_Present",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Carrier Present ",
+              "historyEnabled": false,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "historyTimeDeadband": 30,
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "EM30_CarrierFault",
+              "historyEnabled": true,
+              "value": 0,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 10,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM30A_RFID_B1.HMI_StsCarrier_No",
+              "readOnly": true,
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Carrier_RFID",
+              "historyEnabled": false,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "eventScripts": [
+                {
+                  "eventid": "valueChanged",
+                  "script": "    if currentValue.value \u003d\u003d 1 and previousValue.value !\u003d 1:\n\n        carrierValue \u003d system.tag.readBlocking(\n            [\"[default]BACC_VCL6/Stations/EM30/Carrier_RFID\"]\n        )[0].value\n\n        system.tag.writeBlocking(\n            [\"[default]BACC_VCL6/Stations/EM30/EM30_CarrierFault\"],\n            [carrierValue]\n        )"
+                }
+              ],
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM30_RobotCarrier_Outlet.EM30_Faulted",
+              "dataType": "Boolean",
+              "name": "EM30_Faulted",
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM30_RobotCarrier_Outlet.EM30_FaultCounter.ACC",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "EM30_Robot_FaultNumber",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            }
+          ]
+        },
+        {
+          "name": "EM44",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM44A_Part.Carrier_Present",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "Carrier Present ",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM44A_RFID_B1.HMI_StsAlarm",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "EM44 RFID Alarm ",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            }
+          ]
+        },
+        {
+          "name": "EM21",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "EM21B",
+              "typeId": "BACC_VCL6/CuringFeedback",
+              "parameters": {
+                "Unit": {
+                  "dataType": "String",
+                  "value": "UV2"
+                },
+                "Module": {
+                  "dataType": "String",
+                  "value": "EM21"
+                },
+                "Position": {
+                  "dataType": "String",
+                  "value": "B"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "OutletFlow",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletCoolingAirFlow",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "UVPower",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletTemp",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "RemainingVentTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletFlow",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletTemp",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletRelativeHum",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "RemainingPreHeat",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM21_UV2.HMI_StsUVALastTime",
+              "historyProvider": "HollisterDefault",
+              "historyMaxAgeUnits": "SEC",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "EM21A Treatment Time ",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM21_UV2.HMI_StsUVBLastTime",
+              "historyProvider": "HollisterDefault",
+              "historyMaxAgeUnits": "SEC",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "EM21B Treatment Time ",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "name": "EM21Parameters",
+              "typeId": "BACC_VCL6/CuringParameters",
+              "parameters": {
+                "Module": {
+                  "dataType": "String",
+                  "value": "EM21"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "OutletFlowSP",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletFlowLL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletFlowHL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletTempHL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletTempLL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "HeatFlowDiff",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletHumiHL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletFlowHL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletTempLL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ChamberTimeHL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletHumiLL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletFlowLL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "HeatFlowDiffLow",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletTempHL",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ChamberTimeSP",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletTempSP",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "EM21A",
+              "typeId": "BACC_VCL6/CuringFeedback",
+              "parameters": {
+                "Unit": {
+                  "dataType": "String",
+                  "value": "UV2"
+                },
+                "Module": {
+                  "dataType": "String",
+                  "value": "EM21"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "InletCoolingAirFlow",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletRelativeHum",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletFlow",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletTemp",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "UVPower",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OutletFlow",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "InletTemp",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "RemainingPreHeat",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "RemainingVentTime",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "EM10",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM10A_RFID_B1.HMI_StsAlarm",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "EM10 RFID Alarm ",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM10A_Part.Carrier_Present",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "EM10 Carrier Present",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            }
+          ]
+        },
+        {
+          "name": "EM18",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsLevel_B4",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "name": "Mixing_tank_level_B4",
+              "historyEnabled": true,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsLevel_B3",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "name": "Mixing_tank_level_B3",
+              "historyEnabled": true,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Current_Temp",
+              "historicalDeadband": 0.05,
+              "documentation": "Enter notes for info if you like....",
+              "historicalDeadbandStyle": "Discrete",
+              "formatString": "#,##0.#",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "engUnit": "Deg",
+              "dataType": "Float4",
+              "historyProvider": "HollisterDefault",
+              "historyMaxAgeUnits": "SEC",
+              "name": "Temperature",
+              "historyEnabled": true,
+              "deadband": 0.1,
+              "historyTimeDeadbandUnits": "MS",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 2,
+              "opcItemPath": "ns\u003d1;s\u003d[FMS]Global.HMI.DInteger.DInteger[20]",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "name": "FMS2 LCC Tank B",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsBottomTrayM8B1",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historyMaxAgeUnits": "SEC",
+              "name": "Bottom Tray Flow Park Area",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MS",
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Checmical Temperature UL",
+              "historyEnabled": true,
+              "value": 23,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "expression": "if({[.]LC Top Coat Consumed Current}\u003e\u003d{[.]LC Top Coat Consumed Last},{[.]LC Top Coat Consumed Current}-{[.]LC Top Coat Consumed Last},{[.]LC Top Coat Consumed Current})",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsLCTopCoatCons",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "name": "LC Top Coat Consumed",
+              "historyEnabled": true,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Chemical Temperature LL ",
+              "historyEnabled": true,
+              "value": 20,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]AOI_Module20_21Temp.Sensor",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "EM18 Environment Temp",
+              "historyEnabled": true,
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsEthanolCons",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "name": "Ethanol Consumed Current",
+              "historyEnabled": false,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "historyMaxAge": 1,
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historyMaxAgeUnits": "HOUR",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "H_Max",
+              "historyEnabled": true,
+              "value": 50,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "expression": "if({[.]Ethanol Consumed Current}\u003e\u003d{[.]Ethanol Consumed Last},{[.]Ethanol Consumed Current}-{[.]Ethanol Consumed Last},{[.]Ethanol Consumed Current})",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsEthanolCons",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "name": "Ethanol Consumed",
+              "historyEnabled": true,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "Bottom Tray Park Low Limit",
+              "historyEnabled": true,
+              "value": 580,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsLCTopCoatCons",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "name": "LC Top Coat Consumed Current",
+              "historyEnabled": false,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsParkingStationFlow",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historyMaxAgeUnits": "SEC",
+              "name": "Parking Station Flow",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MS",
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsBottomTrayM7B1",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historyMaxAgeUnits": "SEC",
+              "name": "Bottom Tray Flow Dip Area",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MS",
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Current_Viscosity",
+              "historicalDeadband": 0.5,
+              "documentation": "Enter notes for info if you like....",
+              "historicalDeadbandStyle": "Discrete",
+              "formatString": "#,##0.#",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "engUnit": "cP",
+              "dataType": "Float4",
+              "historyProvider": "HollisterDefault",
+              "name": "Viscosity",
+              "historyEnabled": true,
+              "deadband": 0.1,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 30,
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsCirculationFlowPV",
+              "historicalDeadband": 0.1,
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Circulation Flow",
+              "historyEnabled": true,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "Dap Station Low Limit",
+              "historyEnabled": true,
+              "value": 100,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "Dipping Frame Low Limit",
+              "historyEnabled": true,
+              "value": 180,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]EM02D_B2_Hygro_CM.HMI_StsPV",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "alarms": [
+                {
+                  "mode": "AboveValue",
+                  "activePipeline": "BACC_VCL6/BACC_VCL6_Facilities",
+                  "name": "Humidity High Limit  ",
+                  "label": "Humidity High Limit  ",
+                  "priority": "Critical",
+                  "displayPath": "BACC_VCL6",
+                  "setpointA": {
+                    "bindType": "Expression",
+                    "value": "{[.]../Alarms/Limits/Humidity/HighLimit}"
+                  },
+                  "CustomSmsMessage": {
+                    "bindType": "Expression",
+                    "value": "\"\u003chtml\u003e\" +\"\u003cp\u003e Hi  \u003c/p\u003e \" +\"\u003cp\u003e\u003cb\u003e VCL6 : \" + {name} +\"\u003c/html\u003e\""
+                  },
+                  "CustomEmailMessage": {
+                    "bindType": "Expression",
+                    "value": "\"Hi,\\nThere has been an alarm triggered!\\n Details: \\n\" +\r\n\"Alarm Name: \" + {label} + \"\\n\" +\r\n\"Alarm Value: \" + toString({[.]Humidity.Value}) + \"\\n\" +\r\n\"Alarm Setpoint: \" + toString({[.]../Alarms/Limits/Humidity/HighLimit}) + \"\\n\" +\r\n\"Time Activated: \" + dateFormat(now(), \"yyyy-MM-dd HH:mm:ss\") + \"\\n\" +\r\n\"\\nPlease address immediately.\"\r\n"
+                  },
+                  "CustomEmailSubject": {
+                    "bindType": "Expression",
+                    "value": "\"VCL6 \"+{itemName}+\": \" + {label}"
+                  }
+                },
+                {
+                  "mode": "AboveValue",
+                  "activePipeline": "BACC_VCL6/BACC_VCL6_Facilities",
+                  "name": "Humidity Approaching High Limit",
+                  "label": "Humidity Approaching High Limit",
+                  "priority": "High",
+                  "displayPath": "BACC_VCL6",
+                  "setpointA": {
+                    "bindType": "Expression",
+                    "value": "{[.]../Alarms/Limits/Humidity/HighLimit} - {[.]../Alarms/Limits/Humidity/HighOffset}"
+                  },
+                  "CustomSmsMessage": {
+                    "bindType": "Expression",
+                    "value": "\"\u003chtml\u003e\" +\"\u003cp\u003e Hi  \u003c/p\u003e \" +\"\u003cp\u003e\u003cb\u003e VCL6 : \" + {name} +\"\u003c/html\u003e\""
+                  },
+                  "CustomEmailMessage": {
+                    "bindType": "Expression",
+                    "value": "\"Hi,\\nThere has been an alarm triggered!\\n Details: \\n\" +\r\n\"Alarm Name: \" + {label} + \"\\n\" +\r\n\"Alarm Value: \" + toString({[.]Humidity.Value}) + \"\\n\" +\r\n\"Alarm Setpoint: \" + toString({[.]../Alarms/Limits/Humidity/HighLimit}) + \"\\n\" +\r\n\"Time Activated: \" + dateFormat(now(), \"yyyy-MM-dd HH:mm:ss\") + \"\\n\" +\r\n\"\\nPlease address immediately.\""
+                  },
+                  "CustomEmailSubject": {
+                    "bindType": "Expression",
+                    "value": "\"VCL6 \"+{itemName}+\": \" + {label}"
+                  }
+                },
+                {
+                  "mode": "BelowValue",
+                  "activePipeline": "BACC_VCL6/BACC_VCL6_Facilities",
+                  "name": "Humidity Approaching Lower Limit",
+                  "label": "Humidity Approaching Lower Limit",
+                  "priority": "High",
+                  "displayPath": "BACC_VCL6",
+                  "setpointA": {
+                    "bindType": "Expression",
+                    "value": "{[.]../Alarms/Limits/Humidity/LowLimit} + {[.]../Alarms/Limits/Humidity/LowOffset}"
+                  },
+                  "CustomSmsMessage": {
+                    "bindType": "Expression",
+                    "value": "\"\u003chtml\u003e\" +\"\u003cp\u003e Hi  \u003c/p\u003e \" +\"\u003cp\u003e\u003cb\u003e VCL6 : \" + {name} +\"\u003c/html\u003e\""
+                  },
+                  "CustomEmailMessage": {
+                    "bindType": "Expression",
+                    "value": "\"Hi,\\nThere has been an alarm triggered!\\n Details: \\n\" +\r\n\"Alarm Name: \" + {label} + \"\\n\" +\r\n\"Alarm Value: \" + toString({[.]Humidity.Value}) + \"\\n\" +\r\n\"Alarm Setpoint: \" + toString({[.]../Alarms/Limits/Humidity/LowLimit}) + \"\\n\" +\r\n\"Time Activated: \" + dateFormat(now(), \"yyyy-MM-dd HH:mm:ss\") + \"\\n\" +\r\n\"\\nPlease address immediately.\""
+                  },
+                  "CustomEmailSubject": {
+                    "bindType": "Expression",
+                    "value": "\"VCL6 \"+{itemName}+\": \" + {label}"
+                  }
+                },
+                {
+                  "mode": "BelowValue",
+                  "activePipeline": "BACC_VCL6/BACC_VCL6_Facilities",
+                  "name": "Humidity Lower Limit ",
+                  "label": "Humidity Lower Limit ",
+                  "priority": "Critical",
+                  "displayPath": "BACC_VCL6",
+                  "setpointA": {
+                    "bindType": "Expression",
+                    "value": "{[.]../Alarms/Limits/Humidity/LowLimit}"
+                  },
+                  "CustomSmsMessage": {
+                    "bindType": "Expression",
+                    "value": "\"\u003chtml\u003e\" +\"\u003cp\u003e Hi  \u003c/p\u003e \" +\"\u003cp\u003e\u003cb\u003e VCL6 : \" + {name} +\"\u003c/html\u003e\""
+                  },
+                  "CustomEmailMessage": {
+                    "bindType": "Expression",
+                    "value": "\"Hi,\\nThere has been an alarm triggered!\\n Details: \\n\" +\r\n\"Alarm Name: \" + {label} + \"\\n\" +\r\n\"Alarm Value: \" + toString({[.]Humidity.Value}) + \"\\n\" +\r\n\"Alarm Setpoint: \" + toString({[.]../Alarms/Limits/Humidity/LowLimit}) + \"\\n\" +\r\n\"Time Activated: \" + dateFormat(now(), \"yyyy-MM-dd HH:mm:ss\") + \"\\n\" +\r\n\"\\nPlease address immediately.\"\r\n"
+                  },
+                  "CustomEmailSubject": {
+                    "bindType": "Expression",
+                    "value": "\"VCL6 \"+{itemName}+\": \" + {label}"
+                  }
+                }
+              ],
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "dataType": "Float4",
+              "name": "Humidity",
+              "historyEnabled": true,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsEthanolCons",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "name": "Ethanol Consumed Last",
+              "historyEnabled": false,
+              "value": 5,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsWasteCons",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "name": "Waste Consumed Last",
+              "historyEnabled": false,
+              "value": 0,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsLCTopCoatCons",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "name": "LC Top Coat Consumed Last",
+              "historyEnabled": false,
+              "value": 40,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyTimeDeadband": 30,
+              "historyMaxAge": 1,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_CmdAuto",
+              "dataType": "Boolean",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Auto",
+              "historyEnabled": true,
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsDappingStationFlow",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historyMaxAgeUnits": "SEC",
+              "name": "Dap Station Flow",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MS",
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "expr",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "expression": "if({[.]Waste Consumed Current}\u003e\u003d{[.]Waste Consumed Last},{[.]Waste Consumed Current}-{[.]Waste Consumed Last},{[.]Waste Consumed Current})",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsWasteCons",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "name": "Waste Consumed",
+              "historyEnabled": true,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 2,
+              "opcItemPath": "ns\u003d1;s\u003d[FMS]Global.HMI.DInteger.DInteger[19]",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "name": "FMS2 LCC Tank A",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MIN",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "historyMaxAge": 2,
+              "historyTimeDeadband": 3,
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsWasteCons",
+              "historicalDeadband": 0.5,
+              "historicalDeadbandStyle": "Discrete",
+              "tagGroup": "30s",
+              "tagType": "AtomicTag",
+              "historyProvider": "HollisterDefault",
+              "name": "Waste Consumed Current",
+              "historyEnabled": false,
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "opc",
+              "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM18_CoatingAndDapping.HMI_StsDippingFrameFlow",
+              "dataType": "Float4",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historyMaxAgeUnits": "SEC",
+              "name": "Dipping Frame Flow",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "MS",
+              "tagType": "AtomicTag",
+              "opcServer": "Ignition OPC-UA Server"
+            },
+            {
+              "valueSource": "memory",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "name": "Parking Station Low Limit",
+              "historyEnabled": true,
+              "value": 180,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "historyMaxAge": 1,
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historyMaxAgeUnits": "HOUR",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "H_Min",
+              "historyEnabled": true,
+              "historyTimeDeadbandUnits": "SEC",
+              "value": 29,
+              "tagType": "AtomicTag"
+            },
+            {
+              "valueSource": "memory",
+              "historyProvider": "hp_BACC_1_Year_Storage",
+              "historicalDeadbandStyle": "Discrete",
+              "name": "Bottom Tray Dip Low Limit",
+              "historyEnabled": true,
+              "value": 580,
+              "tagType": "AtomicTag"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cycle Times",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM21_UV2.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "name": "EM21 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM04_ManuallyInfeed1.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "historicalDeadbandStyle": "Analog_Compressed",
+          "name": "EM04 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM19_RobotUV.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "EM19 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM11_MountProducts.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "EM11 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM20_UV1.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "EM20 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM35_BoxHandling.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "name": "EM35 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM15_PPuPlasma.EM.SVM.CycleTime",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "dataType": "Float4",
+          "historyMaxAgeUnits": "SEC",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "EM15 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM43_BufferAndCheckConveyor.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "name": "EM43 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM11_MountProducts.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "EM10 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM31_FinalReject.EM.SVM.CycleTime",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "dataType": "Float4",
+          "historyMaxAgeUnits": "SEC",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "EM31 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM41_Buffer_Conveyor.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "name": "EM41 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM05_ManuallyInfeed2.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyMaxAgeUnits": "SEC",
+          "name": "EM05 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM30_RobotCarrier_Outlet.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "EM30 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM03_MainTransport.EM.SVM.CycleTime",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "dataType": "Float4",
+          "historyMaxAgeUnits": "SEC",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "EM03 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM34_BoxConveyor.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "name": "EM34 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM17_PPuCoating.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "EM17 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM40_CarrierTransport.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "name": "EM40 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM42_Carrier.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "name": "EM42 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM29_BufferConveyor.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "EM29 Cycle Time ",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]Program:EM16_Plasma.EM.SVM.CycleTime",
+          "dataType": "Float4",
+          "historyProvider": "hp_BACC_1_Year_Storage",
+          "historyMaxAgeUnits": "SEC",
+          "historicalDeadbandStyle": "Discrete",
+          "name": "EM16 Cycle Time",
+          "historyEnabled": true,
+          "historyTimeDeadbandUnits": "MS",
+          "tagType": "AtomicTag",
+          "opcServer": "Ignition OPC-UA Server"
+        }
+      ]
+    },
+    {
+      "valueSource": "opc",
+      "opcItemPath": "ns\u003d1;s\u003d[BACC_VCL6]FTTM_Ignition_Reset",
+      "name": "Daily Reset",
+      "tagGroup": "30s",
+      "tagType": "AtomicTag",
+      "opcServer": "Ignition OPC-UA Server"
+    }
+  ]
+}

@@ -1,0 +1,4428 @@
+{
+  "name": "PS7",
+  "tagType": "Folder",
+  "tags": [
+    {
+      "name": "Parameters",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "Parameters",
+          "typeId": "BACC_PunchSleevingNGP/Parameters/Parameters",
+          "parameters": {
+            "TagRef": {
+              "dataType": "String",
+              "value": ""
+            },
+            "TagOffset": {
+              "dataType": "Integer",
+              "value": 5
+            },
+            "Machine": {
+              "dataType": "String",
+              "value": "PS7_Puncher"
+            },
+            "TagPath": {
+              "dataType": "String",
+              "value": "Application.TmpHmi_Var."
+            }
+          },
+          "tagType": "UdtInstance",
+          "tags": [
+            {
+              "name": "EyeWidth_RL",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "EyeWidth_RR",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "EyeWidth_FR",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "EyeLenght_FL",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "EyeLenght_RL",
+              "tagType": "AtomicTag"
+            },
+            {
+              "opcItemPath": {
+                "bindType": "parameter",
+                "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{Machine}.{TagPath}TmpHmiC5.St019_EyePositionSetPointLeft"
+              },
+              "name": "TipToEye_FL",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "EyeLenght_FR",
+              "tagType": "AtomicTag"
+            },
+            {
+              "opcItemPath": {
+                "bindType": "parameter",
+                "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{Machine}.{TagPath}TmpHmiC5.St019_EyePositionSetPointRight"
+              },
+              "name": "TipToEye_FR",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "EyeLenght_RR",
+              "tagType": "AtomicTag"
+            },
+            {
+              "name": "EyeWidth_FL",
+              "tagType": "AtomicTag"
+            }
+          ]
+        },
+        {
+          "valueSource": "opc",
+          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS8_Puncher.Application.TmpHmi_Var.TmpHmiC5.St017_EyeHeightLeftMax",
+          "dataType": "Float4",
+          "name": "EyeLengthMax_FL",
+          "tagType": "AtomicTag",
+          "opcServer": "BA Kepware"
+        }
+      ]
+    },
+    {
+      "name": "Puncher",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "MainMetrics",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "QualityData",
+              "typeId": "BACC_PunchSleevingNGP/Punchers/MainMetrics/MainMetrics5-8",
+              "parameters": {
+                "TagPath2": {
+                  "dataType": "String",
+                  "value": "TmpHmiC6"
+                },
+                "TagPath3": {
+                  "dataType": "String",
+                  "value": "Application.TmpHmi_Var.TmpHmi"
+                },
+                "TagPath": {
+                  "dataType": "String",
+                  "value": "Application.TmpHmi_Var.TmpHmiRO"
+                },
+                "MachineName": {
+                  "dataType": "String",
+                  "value": "PS7_Puncher"
+                },
+                "ShortName": {
+                  "dataType": "String",
+                  "value": "PS7"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "value": 18445,
+                  "name": "CountForDay",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ShiftAvailibility",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "GuardsOpen",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ShiftQuality",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OEE",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TotalBad",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Performance",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "RunningMinites",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "RunningHours",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Recipe",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "RunningMinitesTotal",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ShiftPerformance",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TotalPartHistory",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "value": 1438,
+                      "name": "History_3h",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 9509,
+                      "name": "History_12h",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 0,
+                      "name": "History_1h",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 18445,
+                      "name": "History_24h",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "RunningScaled",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Availibility",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Stn19RearLeadLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ActiveStations",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "FirstFault",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "AvailibleHours",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Fault",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "AvailibleMinites",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "CounterReset",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Stn19RearLeadRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TotalGood",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "WasteCountStatus",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "AvailibleMinitesTotal",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Stn17FrontTrailRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TotalBadHistory",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "value": 1,
+                      "name": "History_1h",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 253,
+                      "name": "History_24h",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 138,
+                      "name": "History_12h",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 19,
+                      "name": "History_3h",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "MachineState",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ExpectedPPM",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "PreselectionGoodParts",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "CycleCountStatus",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": 253,
+                  "name": "WasteForDay",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TotalParts",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Stn17FrontTrailLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ShiftOEE",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ErrorQuite",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ExpectedOutput",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "AverageSpeed",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Running",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Quality",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "hour",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "CycleTime",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "CycleTime",
+              "typeId": "BACC_PunchSleevingNGP/Punchers/CycleTime/CycleTime5-8",
+              "parameters": {
+                "MachineName": {
+                  "dataType": "String",
+                  "value": "PS7_Puncher"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "Stn9CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Stn21CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Stn17CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Stn19CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Stn15CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Stn1CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TotalCycleTime",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Alarms",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "StationFaults",
+              "typeId": "BACC_PunchSleevingNGP/Punchers/Alarms/FaultedStation",
+              "parameters": {
+                "Machine": {
+                  "dataType": "String",
+                  "value": "PS7"
+                },
+                "TagDisc": {
+                  "dataType": "String",
+                  "value": "Application.TmpHmi_Var."
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "FaultedStn09",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "FaultedStn23",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "FaultedStn24",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "FaultedStn15",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "FaultedStn21",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "FaultedStn13",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "FaultedStn19",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "parameters": {
+                    "Machine": {
+                      "dataType": "String",
+                      "value": "PS7"
+                    },
+                    "TagDisc": {
+                      "dataType": "String",
+                      "value": "Application.TmpHmi_Var."
+                    }
+                  },
+                  "name": "Mandrels",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "Stn09_Mandrel_LHS",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Stn09_Mandrel_RHS",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Stn15_Mandrel_RHS",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Stn14_Mandrel_RHS",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Stn13_Mandrel_RHS",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Stn19_Mandrel_RHS",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Stn17_Mandrel_LHS",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Stn21_Mandrel_RHS",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Stn13_Mandrel_LHS",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Stn14_Mandrel_LHS",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Stn17_Mandrel_RHS",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Stn21_Mandrel_LHS",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Stn15_Mandrel_LHS",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "name": "Stn19_Mandrel_LHS",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "FaultedStn07",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "FaultedStn22",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "MachineStopped",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "FaultedStn17",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "FaultedStn05",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": 0,
+                  "name": "FaultedStationNo",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "FaultedStn03",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "FaultedStn14",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Punching",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "Station15_Setup",
+              "typeId": "BACC_PunchSleevingNGP/Punchers/Station/Station15_Setup_5-8",
+              "parameters": {
+                "Machine": {
+                  "dataType": "String",
+                  "value": "PS7"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "LinMotAxis_VelocityPhase1-2",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_LinMot_Position[x].St015_LinMot_Position[0]",
+                  "name": "LinMotAxis_BasicPosition",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_LinMot_Acceleration[x].St015_LinMot_Acceleration[3]",
+                  "name": "AccelerationToBasicPosition",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "VelocityToBasicPosition",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_Setpoint_Gripper_Force_1",
+                  "name": "Gripper_SP_ClampingForce_left",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "LinMotAxis_AccelerationPhase1-2",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Gripper_closed_right",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_Setpoint_Gripper_Force_2",
+                  "name": "Gripper_SP_ClampingForce_right",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_Gripper_OpenedPosition",
+                  "name": "Gripper_opened_right",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_LinMot_Acceleration[x].St015_LinMot_Acceleration[2]",
+                  "name": "LinMotAxis_AccBeforeTouchCatheter",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "LinMotAxis_MoveMaxPosition",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Left",
+                  "tagType": "Folder",
+                  "tags": [
+                    {
+                      "name": "Front",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "GeneratorAmplitudePhase1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_LinMot_Force_Front_Left[x].St015_LinMot_Force_Front_Left[3]",
+                          "name": "ForcePhase1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.St015_Feedback_GeneratorOnPosPH2_FrontLeft",
+                          "name": "SwitchOverPosToPhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Max Theoritical Time",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "DelayTimeGeneratorOff",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "WeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_LinMot_Position_Front_Left[x].St015_LinMot_Position_Front_Left[1]",
+                          "name": "PosBeforeTouchCatheter",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "GeneratorAmplitudePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "HoldingTimeAfterPunching",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_Generator_Force_On[x].St015_Generator_Force_On[1]",
+                          "name": "ForceSwitchGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_LinMot_Force_Front_Left[x].St015_LinMot_Force_Front_Left[5]",
+                          "name": "ForcePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "MaxTimeForceControlled",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "MaxWeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.St015_Feedback_Generator_On[x].St015_Feedback_Generator_On[1]",
+                          "name": "PosSwitchOnGenerator",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.St015_Feedback_Generator_On[x].St015_Feedback_Generator_On[1]",
+                          "name": "FeedbackPosGeneratorOn",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Rear",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "GeneratorAmplitudePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_Generator_off_delay_time_after_Punching_Rear_Left",
+                          "opcServer": "BA Kepware",
+                          "name": "DelayTimeGeneratorOff",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_LinMot_Force_Rear_Left[x].St015_LinMot_Force_Rear_Left[3]",
+                          "name": "ForcePhase1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "WeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "GeneratorAmplitudePhase1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosBeforeTouchCatheter",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "MaxTimeForceControlled",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.St015_Feedback_Generator_On[x].St015_Feedback_Generator_On[3]",
+                          "name": "FeedbackPosGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "MaxWeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_LinMot_Force_Rear_Left[x].St015_LinMot_Force_Rear_Left[5]",
+                          "name": "ForcePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_Generator_Force_On[x].St015_Generator_Force_On[3]",
+                          "name": "ForceSwitchGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosSwitchOnGenerator",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Max Theoritical Time",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "HoldingTimeAfterPunching",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.St015_Feedback_GeneratorOnPosPH2_RearLeft",
+                          "name": "SwitchOverPosToPhase2",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_LinMot_Velocity[x].St015_LinMot_Velocity[2]",
+                  "name": "LinMotAxis_VelocityBeforeTouchCatheter",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "CycleMeasureTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Right",
+                  "tagType": "Folder",
+                  "tags": [
+                    {
+                      "name": "Front",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_UltrasonicFrontRightMaxWeldingTime",
+                          "name": "MaxTimeForceControlled",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.St015_Feedback_Generator_On[x].St015_Feedback_Generator_On[2]",
+                          "name": "FeedbackPosGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_MaxProcessTimeRight",
+                          "name": "MaxWeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_LinMot_Force_Rear_Left[x].St015_LinMot_Force_Rear_Left[5]",
+                          "name": "ForcePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_Holding_time_after_punching_Front_Right",
+                          "name": "HoldingTimeAfterPunching",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_Generator_off_delay_time_after_Punching_Front_Right",
+                          "name": "DelayTimeGeneratorOff",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_Generator_Force_On[x].St015_Generator_Force_On[2]",
+                          "name": "ForceSwitchGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_LinMot_Force_Front_Right[x].St015_LinMot_Force_Front_Right[3]",
+                          "name": "ForcePhase1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_UltrasonicSetPointFrontRight_Ph3",
+                          "name": "GeneratorAmplitudePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "WeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosBeforeTouchCatheter",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "SwitchOverPosToPhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Max Theoritical Time",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosSwitchOnGenerator",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_UltrasonicSetPointFrontRight_Ph1",
+                          "name": "GeneratorAmplitudePhase1",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Rear",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "DelayTimeGeneratorOff",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Max Theoritical Time",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.St015_Feedback_GeneratorOnPosPH2_RearRight",
+                          "name": "SwitchOverPosToPhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosSwitchOnGenerator",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "MaxWeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "GeneratorAmplitudePhase1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_Generator_Force_On[x].St015_Generator_Force_On[4]",
+                          "name": "ForceSwitchGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "HoldingTimeAfterPunching",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "MaxTimeForceControlled",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.St015_Feedback_Generator_On[x].St015_Feedback_Generator_On[4]",
+                          "name": "FeedbackPosGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosBeforeTouchCatheter",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.St015_UltrasonicRearRightWeldingTime",
+                          "name": "WeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "GeneratorAmplitudePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_LinMot_Force_Rear_Right[x].St015_LinMot_Force_Rear_Right[5]",
+                          "name": "ForcePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC5.St015_LinMot_Force_Rear_Right[x].St015_LinMot_Force_Rear_Right[3]",
+                          "name": "ForcePhase1",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "Gripper_opened_left",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Gripper_closed_left",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Station",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "Quality",
+              "typeId": "BACC_PunchSleevingNGP/Punchers/Station/Station5-8",
+              "parameters": {
+                "TagPath2": {
+                  "dataType": "String",
+                  "value": "1"
+                },
+                "TagPath3": {
+                  "dataType": "String",
+                  "value": "1"
+                },
+                "TagPath": {
+                  "dataType": "String",
+                  "value": "1"
+                },
+                "MachineName": {
+                  "dataType": "String",
+                  "value": "PS7_Sleever"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[15]"
+                  },
+                  "name": "St17FrontTrailEyePosNotInTolerenceLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[25]"
+                  },
+                  "name": "St17FrontTrailEyeWidthNotInTolerenceRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[24]"
+                  },
+                  "name": "St17FrontTrailEyePosNotInTolerenceRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[45]"
+                  },
+                  "name": "St19RearLeadEyePosNotInTolerenceRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[27]"
+                  },
+                  "name": "St17FrontTrailGripperNotClosedRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[0]"
+                  },
+                  "name": "St9NoCatheterLoadedLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[21]"
+                  },
+                  "name": "St17FrontTrailProcessInterruptRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[47]"
+                  },
+                  "name": "St19RearLeadEyeHeightNotInTolerenceRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[36]"
+                  },
+                  "name": "St19RearLeadEyeWidthNotInTolerenceLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[19]"
+                  },
+                  "name": "St17FrontTrailRefPinNotOkLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[37]"
+                  },
+                  "name": "St19RearLeadEyeHeightNotInTolerenceLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[49]"
+                  },
+                  "name": "St19RearLeadRefPinNotOkRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[8]"
+                  },
+                  "name": "St15BadPartsLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[17]"
+                  },
+                  "name": "St17FrontTrailEyeHeightNotInTolerenceLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[26]"
+                  },
+                  "name": "St17FrontTrailEyeHeightNotInTolerenceRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[3]"
+                  },
+                  "name": "St9LengthOutOfLimitRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[5]"
+                  },
+                  "name": "St1BadPartsRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[1]"
+                  },
+                  "name": "St9NoCatheterLoadedRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[9]"
+                  },
+                  "name": "St15BadPartsRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[16]"
+                  },
+                  "name": "St17FrontTrailEyeWidthNotInTolerenceLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[29]"
+                  },
+                  "name": "St17FrontTrailBrightnessNotOkRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[20]"
+                  },
+                  "name": "St17FrontTrailBrightnessNotOkLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[48]"
+                  },
+                  "name": "St19RearLeadGripperNotClosedRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[41]"
+                  },
+                  "name": "St19RearLeadBrightnessNotOkRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[35]"
+                  },
+                  "name": "St19RearLeadEyePosNotInTolerenceLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[13]"
+                  },
+                  "name": "St17FrontTrailSlugNotRemovedLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[12]"
+                  },
+                  "name": "St17FrontTrailProcessInterruptLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[42]"
+                  },
+                  "name": "St19RearLeadProcessInterruptRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[28]"
+                  },
+                  "name": "St17FrontTrailRefPinNotOkRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[44]"
+                  },
+                  "name": "St19NotCoatedRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[34]"
+                  },
+                  "name": "St19NotCoatedLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[38]"
+                  },
+                  "name": "St19RearLeadGripperNotClosedLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[23]"
+                  },
+                  "name": "St17NotCoatedRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[14]"
+                  },
+                  "name": "St17NotCoatedLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[46]"
+                  },
+                  "name": "St19RearLeadEyeWidthNotInTolerenceRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[33]"
+                  },
+                  "name": "St19RearLeadSlugNotRemovedLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[2]"
+                  },
+                  "name": "St9LengthOutOfLimitLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[39]"
+                  },
+                  "name": "St19RearLeadRefPinNotOkLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[22]"
+                  },
+                  "name": "St17FrontTrailSlugNotRemovedRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[43]"
+                  },
+                  "name": "St19RearLeadSlugNotRemovedRHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[32]"
+                  },
+                  "name": "St19RearLeadProcessInterruptLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[18]"
+                  },
+                  "name": "St17FrontTrailGripperNotClosedLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[40]"
+                  },
+                  "name": "St19RearLeadBrightnessNotOkLHS",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": {
+                    "bindType": "parameter",
+                    "binding": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.{MachineName}.Application.SLC_OEE_COUNTER_MAPPING.g_SLC_Puncher_OEE_Counters[x].g_SLC_Puncher_OEE_Counters[4]"
+                  },
+                  "name": "St1BadPartsLHS",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "Station15_Setup",
+              "typeId": "BACC_PunchSleevingNGP/Punchers/Station/Station15_Setup_5-8",
+              "parameters": {
+                "Machine": {
+                  "dataType": "String",
+                  "value": "PS7"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "Gripper_opened_left",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "AccelerationToBasicPosition",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Left",
+                  "tagType": "Folder",
+                  "tags": [
+                    {
+                      "name": "Front",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "MaxWeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Max Theoritical Time",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "SwitchOverPosToPhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "FeedbackPosGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "GeneratorAmplitudePhase1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosSwitchOnGenerator",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "WeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "GeneratorAmplitudePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosBeforeTouchCatheter",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "MaxTimeForceControlled",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "ForceSwitchGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "HoldingTimeAfterPunching",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "ForcePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "DelayTimeGeneratorOff",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "ForcePhase1",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Rear",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "ForcePhase1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "SwitchOverPosToPhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Max Theoritical Time",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "DelayTimeGeneratorOff",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "GeneratorAmplitudePhase1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "MaxWeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosSwitchOnGenerator",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "FeedbackPosGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "ForceSwitchGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "HoldingTimeAfterPunching",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "MaxTimeForceControlled",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "WeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosBeforeTouchCatheter",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "ForcePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "GeneratorAmplitudePhase2",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "LinMotAxis_BasicPosition",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "LinMotAxis_AccelerationPhase1-2",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Gripper_closed_right",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Gripper_opened_right",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "LinMotAxis_AccBeforeTouchCatheter",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "VelocityToBasicPosition",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Gripper_closed_left",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Gripper_SP_ClampingForce_right",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Gripper_SP_ClampingForce_left",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "LinMotAxis_VelocityBeforeTouchCatheter",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "LinMotAxis_MoveMaxPosition",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "CycleMeasureTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Right",
+                  "tagType": "Folder",
+                  "tags": [
+                    {
+                      "name": "Front",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "ForceSwitchGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "MaxTimeForceControlled",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "FeedbackPosGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "HoldingTimeAfterPunching",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "ForcePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosBeforeTouchCatheter",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "WeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "GeneratorAmplitudePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "DelayTimeGeneratorOff",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "ForcePhase1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "GeneratorAmplitudePhase1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "MaxWeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosSwitchOnGenerator",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Max Theoritical Time",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "SwitchOverPosToPhase2",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "Rear",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "ForcePhase1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "DelayTimeGeneratorOff",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "MaxWeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "GeneratorAmplitudePhase1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "MaxTimeForceControlled",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "SwitchOverPosToPhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "Max Theoritical Time",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "HoldingTimeAfterPunching",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "ForcePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosSwitchOnGenerator",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "FeedbackPosGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "ForceSwitchGeneratorOn",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "GeneratorAmplitudePhase2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "WeldingTime",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "PosBeforeTouchCatheter",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": "LinMotAxis_VelocityPhase1-2",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Mandrels",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "typeColor": -10719104,
+              "name": "Mandrels",
+              "typeId": "BACC_PunchSleevingNGP/Punchers/Mandrels/Mandrels5-8",
+              "parameters": {
+                "TagPath2": {
+                  "dataType": "String",
+                  "value": "1"
+                },
+                "TagPath3": {
+                  "dataType": "String",
+                  "value": "1"
+                },
+                "TagPath": {
+                  "dataType": "String",
+                  "value": "1"
+                },
+                "MachineName": {
+                  "dataType": "String",
+                  "value": "PS7_Puncher"
+                },
+                "ShortName": {
+                  "dataType": "String",
+                  "value": "PS7"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[5][4]",
+                  "name": "Turret5RearRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[8][2]",
+                  "name": "Turret8RearLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[8][3]",
+                  "name": "Turret8FrontRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "turret6",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "RearLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "value": 4,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 4,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RearRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "value": 1,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FrontLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "value": 5,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 5,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 6,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FrontRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[4][3]",
+                  "name": "Turret4FrontRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[7][2]",
+                  "name": "Turret7RearLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[3][2]",
+                  "name": "Turret3RearLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[7][1]",
+                  "name": "Turret7FrontLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "turret4",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "RearLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 3,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RearRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FrontLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "value": 93,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 35,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 58,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 35,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FrontRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 3,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 5,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[3][1]",
+                  "name": "Turret3FrontLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[5][1]",
+                  "name": "Turret5FrontLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[2][3]",
+                  "name": "Turret2FrontRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[1][2]",
+                  "name": "Turret1RearLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[1][1]",
+                  "name": "Turret1FrontLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[8][1]",
+                  "name": "Turret8FrontLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "turret3",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "FrontLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FrontRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 3,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 3,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RearLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RearRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[3][4]",
+                  "name": "Turret3RearRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "turret5",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "FrontRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "value": 0,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RearRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 50,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 139,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 190,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 50,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RearLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 5,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 5,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FrontLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 11,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 8,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 8,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 19,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[6][1]",
+                  "name": "Turret6FrontLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[6][4]",
+                  "name": "Turret6RearRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "turret1",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "RearLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RearRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FrontLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "value": 1,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FrontRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "value": 6,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 6,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[2][2]",
+                  "name": "Turret2RearLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[4][2]",
+                  "name": "Turret4RearLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[2][1]",
+                  "name": "Turret2FrontLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[1][4]",
+                  "name": "Turret1RearRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "turret8",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "FrontLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 11,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 6,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 17,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 6,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RearRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RearLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FrontRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[8][4]",
+                  "name": "Turret8RearRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "turret2",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "RearRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FrontLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RearLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FrontRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[6][2]",
+                  "name": "Turret6RearLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[5][3]",
+                  "name": "Turret5FrontRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[4][4]",
+                  "name": "Turret4RearRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[1][3]",
+                  "name": "Turret1FrontRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[4][1]",
+                  "name": "Turret4FrontLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[6][3]",
+                  "name": "Turret6FrontRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[2][4]",
+                  "name": "Turret2RearRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "turret7",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "name": "FrontLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "value": 2,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 2,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RearRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 1,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "RearLeft",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 0,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 6,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 6,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 6,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    },
+                    {
+                      "name": "FrontRight",
+                      "tagType": "UdtInstance",
+                      "tags": [
+                        {
+                          "name": "t3_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t2_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 7,
+                          "name": "History_t4",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 7,
+                          "name": "History_t2",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentTotal",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 7,
+                          "name": "History_t3",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t3_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "value": 7,
+                          "name": "History_t1",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t1_PercentPosition",
+                          "tagType": "AtomicTag"
+                        },
+                        {
+                          "name": "t4_PercentTotal",
+                          "tagType": "AtomicTag"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[7][3]",
+                  "name": "Turret7FrontRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[5][2]",
+                  "name": "Turret5RearLeft",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[7][4]",
+                  "name": "Turret7RearRight",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Puncher.Application.TmpHmi_Var.TmpHmiC6.ResultCarrierCounter[x].ResultCarrierCounter[3][3]",
+                  "name": "Turret3FrontRight",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sleever",
+      "tagType": "Folder",
+      "tags": [
+        {
+          "name": "Sealing",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "Station13",
+              "typeId": "BACC_PunchSleevingNGP/Sleevers/Sealing/Station",
+              "parameters": {
+                "Machine": {
+                  "dataType": "String",
+                  "value": "PS7"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "FrontSideBottom",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC6.St013_StoredCurrent2[x].St013_StoredCurrent2[1]",
+                      "name": "StoredCurrent",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC5.St013_ToleranceMinus[x].St013_ToleranceMinus[2]",
+                      "name": "ToleranceMin",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC5.St013_TolerancePlus[x].St013_TolerancePlus[2]",
+                      "name": "TolerancePlus",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC5.St013_SetpointCurrent[x].St013_SetpointCurrent[2]",
+                      "name": "SetPoint",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "BackSideBottom",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC5.St013_TolerancePlus[x].St013_TolerancePlus[4]",
+                      "name": "TolerancePlus",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC5.St013_SetpointCurrent[x].St013_SetpointCurrent[4]",
+                      "name": "SetPoint",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC6.St013_StoredCurrent4[x].St013_StoredCurrent4[1]",
+                      "name": "StoredCurrent",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC5.St013_ToleranceMinus[x].St013_ToleranceMinus[4]",
+                      "name": "ToleranceMin",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "BackSideTop",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC5.St013_ToleranceMinus[x].St013_ToleranceMinus[3]",
+                      "name": "ToleranceMin",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC5.St013_TolerancePlus[x].St013_TolerancePlus[3]",
+                      "name": "TolerancePlus",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC6.St013_StoredCurrent3[x].St013_StoredCurrent3[1]",
+                      "name": "StoredCurrent",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC5.St013_SetpointCurrent[x].St013_SetpointCurrent[3]",
+                      "name": "SetPoint",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "FrontSideTop",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC5.St013_SetpointCurrent[x].St013_SetpointCurrent[1]",
+                      "name": "SetPoint",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC6.St013_StoredCurrent1[x].St013_StoredCurrent1[1]",
+                      "name": "StoredCurrent",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC5.St013_ToleranceMinus[x].St013_ToleranceMinus[1]",
+                      "name": "ToleranceMin",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC5.St013_TolerancePlus[x].St013_TolerancePlus[1]",
+                      "name": "TolerancePlus",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Stn11_SealingTime",
+              "typeId": "BACC_PunchSleevingNGP/Sleevers/Sealing/SealTime",
+              "parameters": {
+                "Machine": {
+                  "dataType": "String",
+                  "value": "PS7"
+                },
+                "TagPath": {
+                  "dataType": "String",
+                  "value": "Application.TmpHmi_Var."
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "Time",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "Stn11_PressureGaugeTop",
+              "typeId": "BACC_PunchSleevingNGP/Sleevers/Sealing/LongSealPressure",
+              "parameters": {
+                "Instance": {
+                  "dataType": "String",
+                  "value": "_2"
+                },
+                "Machine": {
+                  "dataType": "String",
+                  "value": "PS7"
+                },
+                "TagPath": {
+                  "dataType": "String",
+                  "value": ".Application.TmpHmi_Var"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "ActualValue",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "SetPoint",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TolerancePlus",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Offset",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ToleranceMin",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "Stn13Cooling",
+              "typeId": "BACC_PunchSleevingNGP/Sleevers/Sealing/CoolingLimits",
+              "parameters": {
+                "Machine": {
+                  "dataType": "String",
+                  "value": "PS7"
+                },
+                "TagPath": {
+                  "dataType": "String",
+                  "value": ".Application.TmpHmi_Var"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "SetPoint",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ActualValue",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ToleranceMin",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TolerancePlus",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Offset",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "Stn11LongSeal",
+              "typeId": "BACC_PunchSleevingNGP/Sleevers/Sealing/LongSealLimits",
+              "parameters": {
+                "Machine": {
+                  "dataType": "String",
+                  "value": "PS7"
+                },
+                "TagPath": {
+                  "dataType": "String",
+                  "value": ".Application.TmpHmi_Var"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "SetPoint",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ActualValue",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Advance Position",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TolerancePlus",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ToleranceMin",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Offset",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            },
+            {
+              "name": "Stn11_PressureGaugeBottom",
+              "typeId": "BACC_PunchSleevingNGP/Sleevers/Sealing/LongSealPressure",
+              "parameters": {
+                "Machine": {
+                  "dataType": "String",
+                  "value": "PS7"
+                },
+                "TagPath": {
+                  "dataType": "String",
+                  "value": ".Application.TmpHmi_Var"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "ActualValue",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ToleranceMin",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TolerancePlus",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "SetPoint",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Offset",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "CycleTime",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "CycleTime",
+              "typeId": "BACC_PunchSleevingNGP/Sleevers/CycleTime/CycleTime5-8",
+              "parameters": {
+                "MachineName": {
+                  "dataType": "String",
+                  "value": "PS7_Sleever"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC4.CycleTimeStation[x].CycleTimeStation[2]",
+                  "name": "TotalCycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC4.CycleTimeStation[x].CycleTimeStation[29]",
+                  "name": "Stn29CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC4.CycleTimeStation[x].CycleTimeStation[43]",
+                  "name": "Stn43CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC4.CycleTimeStation[x].CycleTimeStation[15]",
+                  "name": "Stn15CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC4.CycleTimeStation[x].CycleTimeStation[12]",
+                  "name": "Stn12CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC4.CycleTimeStation[x].CycleTimeStation[49]",
+                  "name": "Stn49CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC4.CycleTimeStation[x].CycleTimeStation[1]",
+                  "name": "Stn1CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC4.CycleTimeStation[x].CycleTimeStation[11]",
+                  "name": "Stn11CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC4.CycleTimeStation[x].CycleTimeStation[45]",
+                  "name": "Stn45CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC4.CycleTimeStation[x].CycleTimeStation[5]",
+                  "name": "Stn5CycleTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS7_Sleever.Application.TmpHmi_Var.TmpHmiC4.CycleTimeStation[x].CycleTimeStation[13]",
+                  "name": "Stn13CycleTime",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Station",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "Quality",
+              "typeId": "BACC_PunchSleevingNGP/Sleevers/Station/Station5-8",
+              "parameters": {
+                "TagPath1": {
+                  "dataType": "String",
+                  "value": "1"
+                },
+                "TagPath2": {
+                  "dataType": "String",
+                  "value": "1"
+                },
+                "TagPath3": {
+                  "dataType": "String",
+                  "value": "1"
+                },
+                "MachineName": {
+                  "dataType": "String",
+                  "value": "PS7_Sleever"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "St21SpliceDetectionFront",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "St13FunnelTipSealing",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "St31CHVerification",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "St29PunchedCatheterTransfer",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "St12FoilSeperation",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "St53PositionVerificationRear",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "St3InsertCathetersInTips",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "St11LongSeal",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "St1OvalTurret",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "St5TackSealingFunnel",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "St51PositionVerificationFront",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "St23SpliceDetectionRear",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "MainMetrics",
+          "tagType": "Folder",
+          "tags": [
+            {
+              "name": "QualityData",
+              "typeId": "BACC_PunchSleevingNGP/Sleevers/MainMetrics/MainMetrics",
+              "parameters": {
+                "TagPath1": {
+                  "dataType": "String",
+                  "value": "Application.TmpHmi_Var.TmpHmi"
+                },
+                "TagPath2": {
+                  "dataType": "String",
+                  "value": "Application.TmpHmi_Var.TmpHmiRO"
+                },
+                "TagPath3": {
+                  "dataType": "String",
+                  "value": "Application.TmpHmi_Var.TmpHmiC4"
+                },
+                "TagPath4": {
+                  "dataType": "String",
+                  "value": "Application.TmpHmi_Var.TmpHmi.LastRecipe"
+                },
+                "MachineName": {
+                  "dataType": "String",
+                  "value": "PS7_Sleever"
+                },
+                "ShortName": {
+                  "dataType": "String",
+                  "value": "PS7"
+                }
+              },
+              "tagType": "UdtInstance",
+              "tags": [
+                {
+                  "name": "Availibility",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Quality",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TotalPartHistory",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "value": 0,
+                      "name": "History_1h",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 9344,
+                      "name": "History_12h",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 1466,
+                      "name": "History_3h",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 18103,
+                      "name": "History_24h",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "Performance",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TotalGoodPartsPercent",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": 24,
+                  "name": "ExpectedPPM",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TotalBadHistory",
+                  "tagType": "UdtInstance",
+                  "tags": [
+                    {
+                      "value": 7,
+                      "name": "History_12h",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 4,
+                      "name": "History_3h",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 2,
+                      "name": "History_1h",
+                      "tagType": "AtomicTag"
+                    },
+                    {
+                      "value": 19,
+                      "name": "History_24h",
+                      "tagType": "AtomicTag"
+                    }
+                  ]
+                },
+                {
+                  "name": "GuardsOpen",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "RunningScaled",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "executionMode": "EventDriven",
+                  "name": "AvailableMinutes",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "RunningTotalTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TotalGoodParts",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Recipe ",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "PreselectionCounter",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": 1783430650414,
+                  "name": "TimeOfRunningStart",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "ErrorQuite",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Current_RunningTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "value": 0,
+                  "name": "Previous_RunningTotalTime",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "Running",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "MachineState",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "opcItemPath": "nsu\u003dKEPServerEX;s\u003dBACC_CODESYS.PS6_Sleever.Application.SLC_OEE_COUNTER_MAPPING.g_Sleever_Primary_ReasonCode",
+                  "opcServer": "BA Kepware",
+                  "name": "FirstFault",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "notRunning",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "executionMode": "EventDriven",
+                  "name": "ExpectedOutput",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TotalBad",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "OEE",
+                  "tagType": "AtomicTag"
+                },
+                {
+                  "name": "TotalParts",
+                  "tagType": "AtomicTag"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

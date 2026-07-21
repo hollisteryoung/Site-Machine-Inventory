@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(python -m py_compile \"c:\\\\Site Machine Inventory\\\\Schema.py\" 2>&1)",
+      "PowerShell(cd \"C:\\\\Site Machine Inventory\"; \\(Get-Content \"Ballina\\\\Ostomy\\\\tags.json\" | Measure-Object -Line\\).Lines; Write-Output \"---\"; Get-Content \"Ballina\\\\Ostomy\\\\tags.json\" -TotalCount 30)"
+    ]
+  }
+}
