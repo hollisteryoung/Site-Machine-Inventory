@@ -54,8 +54,127 @@ if wincc_path.exists():
                           names=_wincc_cols, quotechar='"', engine='python', on_bad_lines='skip')
    wincc_df = wincc_df[wincc_df['tag_name'].notna()]
 
+# Load an OPTIONAL code-legend document for this line, if present. Some PLC/HMI tag
+# exports name a whole family of tags purely by an internal module/axis code (e.g.
+# 'AG03', 'ASBL', 'GE1', 'SIKO') with no descriptive English word anywhere in the tag
+# name or comment - those tags are invisible to keyword matching against the manual's
+# plain-English station names no matter how the matching itself is tuned, because the
+# text needed to match on simply isn't present in the tag. This file supplies it
+# externally: a two-column CSV, header 'code,description' (e.g. 'AG03,Barrier/gasket
+# vision-adjust axis group'). It has to come from an engineer or a wiring/PLC I/O
+# reference - nothing in the OT documentation itself can be used to reconstruct it.
+# See get_tags_for_station_wincc's "legend_code" strategy for how it's used.
+code_legend_path = Path(PATH) / "Tag_Code_Legend.csv"
+code_legend = {}
+if code_legend_path.exists():
+   _legend_df = pd.read_csv(code_legend_path)
+   _legend_df.columns = [c.strip().lower() for c in _legend_df.columns]
+   code_legend = {
+      str(row["code"]).strip().upper(): str(row["description"]).strip()
+      for _, row in _legend_df.iterrows()
+      if pd.notna(row.get("code")) and pd.notna(row.get("description"))
+   }
 
-_STOPWORDS = {"the", "and", "for", "with", "assembly", "station", "module", "system", "unit"}
+
+_STOPWORDS = {"the", "and", "for", "with", "assembly", "station", "stations", "module",
+              "system", "unit", "machine", "option"}
+
+
+def _stem(word: str) -> str:
+   return word[:5] if len(word) > 5 else word
+
+
+def _corpus_word_stats(wincc_df):
+   words = set()
+   haystacks = wincc_df["tag_name"].fillna("").astype(str) + " " + wincc_df["comment"].fillna("").astype(str)
+   for hay in haystacks:
+      words.update(re.findall(r"[a-z]+", hay.lower()))
+   return words, {_stem(w) for w in words}
+
+
+def _line_generic_words(stations):
+   """
+   Words that show up in more than one station's own descriptive name on this line
+   (e.g. 'welding' across half the stations on a line built mostly of welders) can't
+   discriminate between those stations - matching on them alone just means "this tag
+   is part of the welding-heavy machine", not "this tag belongs to station X". Exclude
+   them from keyword_stem's per-station vocabulary so they can't single-handedly
+   qualify a match; only words that are actually distinctive to one station can.
+
+   Compared by STEM, not literal string: 'punch' (one station's word) and 'punching'
+   (a different station's word) look distinct as strings but collapse to the same stem,
+   and the matching step itself compares by stem - so two different-but-same-stemmed
+   words across two stations are just as non-discriminating as a literal repeat, and a
+   literal-only check misses them (found on a line where FHP's 'hole/punch' and PPS's
+   'punching' both matched via the same stem, each flooding into the other's candidates).
+   """
+   station_word_sets = []
+   stem_to_stations = {}
+   for s in stations:
+      words = {w.lower() for w in re.findall(r"[A-Za-z]{4,}", s.StationName) if w.lower() not in _STOPWORDS}
+      station_word_sets.append(words)
+      for stem in {_stem(w) for w in words}:
+         stem_to_stations.setdefault(stem, set()).add(s.StationID)
+
+   generic_stems = {stem for stem, owners in stem_to_stations.items() if len(owners) > 1}
+   return {w for words in station_word_sets for w in words if _stem(w) in generic_stems}
+
+
+_TAG_GENERIC_WORD_FREQ_THRESHOLD = 0.01
+
+
+def _tag_tree_generic_words(tags_root: dict) -> set:
+   """
+   Ignition/Kepware tag trees are usually rooted under one shared program/folder
+   name (e.g. 'Application') that appears in every single tag's own opcItemPath -
+   if a station's descriptive name happens to share a word with that structural
+   scaffolding, get_tags_for_station's keyword strategy floods that station with
+   almost the entire tree instead of a real candidate set (found on NGP2: 'Brand
+   Label Application' and 'Sticky Tab Application' each matched ~76,000 of the
+   line's ~76,300 tags via the word 'Application', which is just the PLC program's
+   root folder name, not a station signal). Any word appearing in more than
+   _TAG_GENERIC_WORD_FREQ_THRESHOLD of all tags in the tree is structural, not
+   station-specific - this is the JSON-tree equivalent of _line_generic_words,
+   which guards the same failure mode for the WinCC/CSV path.
+   """
+   freq = {}
+   total = 0
+
+   def walk(nodes):
+      nonlocal total
+      for tag in nodes:
+         opc_path = _normalize_opc_path(tag.get("opcItemPath"))
+         tag_name = tag.get("name") or ""
+         haystack = f"{opc_path} {tag_name}".lower()
+         total += 1
+         for w in set(re.findall(r"[a-z]+", haystack)):
+            freq[w] = freq.get(w, 0) + 1
+         if "tags" in tag:
+            walk(tag["tags"])
+
+   walk((tags_root or {}).get("tags", []))
+   if not total:
+      return set()
+   return {w for w, n in freq.items() if n / total > _TAG_GENERIC_WORD_FREQ_THRESHOLD}
+
+
+def _count_atomic_tags(tags_root: dict) -> int:
+   """Total leaf (AtomicTag) count in a tags.json tree - the denominator for the match
+   report's coverage stat, so it reflects actual tag count rather than total node count
+   (which would also include Folder/UdtInstance grouping nodes)."""
+   count = 0
+
+   def walk(nodes):
+      nonlocal count
+      for tag in nodes:
+         if tag.get("tagType") == "AtomicTag":
+            count += 1
+         if "tags" in tag:
+            walk(tag["tags"])
+
+   walk((tags_root or {}).get("tags", []))
+   return count
+
 
 def ocr_page(page):
    pix = page.get_pixmap(dpi=300)
@@ -77,17 +196,30 @@ def _normalize_opc_path(raw_path) -> str:
    return raw_path.get("binding", "") if isinstance(raw_path, dict) else (raw_path or "")
 
 
+def _contains_word(haystack: str, word: str) -> bool:
+   """
+   Whole-word containment, not substring - a plain `word in haystack` check lets
+   short station-name words falsely match inside unrelated longer identifiers
+   (e.g. "pack" matching inside "PackagingRunMode", or "reject" matching inside
+   "RejectStatistic"), flooding keyword-based matching with tags that have
+   nothing to do with the station. Found on NGP2, where this alone produced
+   ~4,600 false candidates for a single station. Boundaries are any non-alnum
+   character or start/end of string, since tag names are usually
+   underscore/case-delimited rather than space-delimited.
+   """
+   return re.search(rf"(?<![a-z0-9]){re.escape(word.lower())}(?![a-z0-9])", haystack.lower()) is not None
+
+
 def _text_matches(candidate: str, id_key: str, name_words: list) -> bool:
    if not candidate:
       return False
    candidate_alnum = re.sub(r"[^a-z0-9]", "", candidate.lower())
    if id_key and id_key in candidate_alnum:
       return True
-   candidate_lower = candidate.lower()
-   return any(word.lower() in candidate_lower for word in name_words)
+   return any(_contains_word(candidate, word) for word in name_words)
 
 
-def get_tags_for_station(station_id: str, station_name: str, tags_root: dict) -> list:
+def get_tags_for_station(station_id: str, station_name: str, tags_root: dict, tag_generic_words: set = None) -> list:
    """
    Recursively walk the tags.json tree and collect candidate tags for a station.
 
@@ -98,6 +230,10 @@ def get_tags_for_station(station_id: str, station_name: str, tags_root: dict) ->
    strategies and tags each candidate with which one found it, so the Claude
    matching step can weigh confidence accordingly:
       1. numeric      - station's digits match a "St0*<digits>" token in the path.
+                         Also accepts a truncated suffix match (station "2057" ~
+                         tag "St057") - some historian exports drop the station
+                         number's leading digit rather than encoding it in full
+                         (found on NGP2).
       2. direct_id    - the raw station_id (alnum only) appears in the path/name.
       3. keyword      - a significant word from the station name appears in the path/name.
       4. folder_match - ONLY applied when the station has no numeric code at all. A
@@ -111,13 +247,19 @@ def get_tags_for_station(station_id: str, station_name: str, tags_root: dict) ->
       station_id: The extracted StationID (e.g., "St019", "1015", "Module A")
       station_name: The extracted StationName (e.g., "Eye Punching")
       tags_root: The parsed tags.json document
+      tag_generic_words: optional set from _tag_tree_generic_words - words that show
+                 up too often across this line's whole tag tree (usually structural
+                 folder scaffolding, not a station signal) to be trusted for keyword
+                 matching. Pass None to skip this filtering.
 
    Returns:
       List of dicts with name/opcItemPath/tagType/match_reason. Empty if none found.
    """
    target_num = _extract_station_number(station_id)
    id_key = re.sub(r"[^a-z0-9]", "", station_id.lower())
-   name_words = [w for w in re.findall(r"[A-Za-z]{4,}", station_name) if w.lower() not in _STOPWORDS]
+   tag_generic_words = tag_generic_words or set()
+   name_words = [w for w in re.findall(r"[A-Za-z]{4,}", station_name)
+                 if w.lower() not in _STOPWORDS and w.lower() not in tag_generic_words]
 
    found = {}
 
@@ -158,14 +300,36 @@ def get_tags_for_station(station_id: str, station_name: str, tags_root: dict) ->
          haystack_alnum = re.sub(r"[^a-z0-9]", "", haystack)
 
          if target_num:
-            tag_match = re.search(r"st0*(\d+)", opc_path.lower())
-            if tag_match and int(tag_match.group(1)) == int(target_num):
-               consider(tag, opc_path, "numeric")
+            # Deliberately NOT "st0*(\d+)" - eating leading zeros here would
+            # collapse a true "St057" into a 2-digit capture ("57"), which loses
+            # the digit width needed to tell a genuine truncated suffix match
+            # from a coincidental one (e.g. captured "57" would wrongly suffix-
+            # match station 1157 as well as the real match, station 2057). The
+            # exact-match comparison below is unaffected either way since int()
+            # already ignores leading zeros.
+            tag_match = re.search(r"st(\d+)", opc_path.lower())
+            if tag_match:
+               tag_num_str = tag_match.group(1)
+               # Right-aligned suffix match: some historian exports truncate the
+               # station number's leading digit(s) instead of encoding it in full
+               # (station "2057" -> tag "St057", discovered on NGP2). Only trust
+               # a full 3-digit truncated suffix - a 2-digit suffix isn't enough
+               # to discriminate (e.g. "St035" collided between station 1135 and
+               # the real match, station 2035, before this was tightened).
+               is_suffix_match = (
+                  len(tag_num_str) == 3
+                  and len(tag_num_str) < len(target_num)
+                  and target_num.endswith(tag_num_str)
+               )
+               if int(tag_num_str) == int(target_num):
+                  consider(tag, opc_path, "numeric")
+               elif is_suffix_match:
+                  consider(tag, opc_path, "numeric_suffix")
 
          if id_key and id_key in haystack_alnum:
             consider(tag, opc_path, "direct_id")
 
-         if any(word.lower() in haystack for word in name_words):
+         if any(_contains_word(haystack, word) for word in name_words):
             consider(tag, opc_path, "keyword")
 
          if "tags" in tag:
@@ -181,52 +345,105 @@ def get_tags_for_station(station_id: str, station_name: str, tags_root: dict) ->
    return list(found.values())
 
 
-def get_tags_for_station_wincc(module_codes, wincc_df):
+def get_tags_for_station_wincc(station, wincc_df, code_legend=None, line_generic_words=None):
    """
-   Find WinCC tags for a station by matching the station's PDF module code(s)
-   as a segment within each tag name (e.g. 'FWC' in 'LO1S_FWC_DB_CFF2_PSI...').
+   Find WinCC tags for a station using three complementary strategies, unioned together:
 
-   module_codes: list of code strings for this station, e.g. ['ASB','ASC'].
+   1. module_segment - the station's own StationID is (or resembles) a short PLC/module
+      code that appears as a whole segment inside tag names (e.g. 'ASB' in
+      'L01_ASB_DB...'). Strongest signal, and the original design of this function -
+      works when the manual documents real per-station codes.
+   2. keyword_stem - the station's descriptive StationName words (stemmed, majority-
+      must-match rather than strict AND, since compound names often split their
+      vocabulary across different tags) are looked for directly in each tag's own
+      name/comment. Needed for machines whose stations are documented by plain English
+      name only, with no PLC code at all (module_segment finds nothing there).
+   3. legend_code - some tags carry ONLY an opaque internal code (e.g. 'AG03', 'ASBL',
+      'GE1', 'SIKO') with no descriptive English word anywhere in the tag itself, so
+      strategy 2 can never find them no matter how matching is tuned - the descriptive
+      text needed to match on simply isn't present in the tag. If an optional
+      Tag_Code_Legend.csv document (see top of file) supplies a plain-English
+      description for that code, this reuses strategy 2's keyword matching against the
+      legend's description text instead of the tag's own (blank) vocabulary.
+
+   station:      A DiscoveredStation (StationID/StationName/Station_Type).
    wincc_df:     parsed WinCC export (tag_name, address, data_type, comment).
+   code_legend:  optional {CODE: "plain English description"} dict. Pass {}/None if
+                 no Tag_Code_Legend.csv exists for this line - strategies 1 and 2
+                 still run on their own.
+   line_generic_words: optional set of lowercase words to exclude from strategy 2's
+                 vocabulary because they're shared across multiple stations on this
+                 line (see _line_generic_words) and so can't discriminate between
+                 them. Pass None to skip this filtering.
    Returns: candidate dicts, same shape as get_tags_for_station.
    """
-   # Expand each base code to the variants that actually appear in THIS file's tag
-   # names (e.g. 'ASB' -> 'ASB','ASBL','ASBR'). Data-driven on purpose: it adapts to
-   # whatever machine's export it's given rather than relying on a hardcoded, machine-
-   # specific variant table. A variant is a token that starts with the base code and
-   # adds only a short (<=2 char) suffix, so 'ASB'->'ASBL' but 'INS' won't grab 'INSPECT'.
+   code_legend = code_legend or {}
+   line_generic_words = line_generic_words or set()
+   found = {}
+
+   def consider(tag_name, comment, data_type, reason):
+      if tag_name not in found:
+         found[tag_name] = {
+            "name": comment if comment else tag_name,
+            "opcItemPath": tag_name,                       # the real tag string / Historian_Tag
+            "tagType": data_type,                          # Bool / Word / Real -> helps Claude infer Data_Type
+            "match_reason": reason,
+         }
+
+   # --- Strategy 1: module-code segment match ---
+   # Expand the station's own StationID to the variants that actually appear in THIS
+   # file's tag names (e.g. 'ASB' -> 'ASB','ASBL','ASBR'). Data-driven on purpose: it
+   # adapts to whatever machine's export it's given rather than relying on a hardcoded,
+   # machine-specific variant table. A variant is a token that starts with the base
+   # code and adds only a short (<=2 char) suffix, so 'ASB'->'ASBL' but 'INS' won't
+   # grab 'INSPECT'.
    tokens = set()
    for t in wincc_df["tag_name"].astype(str):
       tokens.update(re.findall(r"[A-Za-z0-9]+", t))
-   codes = set()
-   for base in module_codes:
-      codes.add(base)
-      for tok in tokens:
-         if tok != base and tok.startswith(base) and len(tok) - len(base) <= 2:
-            codes.add(tok)
+   codes = {station.StationID}
+   for tok in tokens:
+      if tok != station.StationID and tok.startswith(station.StationID) and len(tok) - len(station.StationID) <= 2:
+         codes.add(tok)
 
    # One boundary-anchored pattern per code: segment match, not substring,
    # so 'AF' matches 'L01_AF_DB' but not 'SHAFT'.
    patterns = [(c, re.compile(rf"(?<![A-Za-z]){re.escape(c)}(?![A-Za-z])")) for c in codes]
 
-   found = []
    for _, row in wincc_df.iterrows():
       tag = str(row.get("tag_name", ""))
       matched_code = next((c for c, pat in patterns if pat.search(tag)), None)
-      if not matched_code:
-         continue
+      if matched_code:
+         comment = row.get("comment")
+         consider(tag, str(comment) if pd.notna(comment) else "", str(row.get("data_type", "")),
+                   f"module_segment:{matched_code}")
 
-      comment = row.get("comment")
-      description = str(comment) if pd.notna(comment) else tag
+   # --- Strategies 2 & 3: keyword/stem match against the tag's own text, OR (if the
+   # tag's leading code is in the legend) against the legend's description instead. ---
+   name_words = [w.lower() for w in re.findall(r"[A-Za-z]{4,}", station.StationName)
+                 if w.lower() not in _STOPWORDS and w.lower() not in line_generic_words]
+   if name_words:
+      corpus_words, corpus_stems = _corpus_word_stats(wincc_df)
+      expanded = [w for w in name_words if w in corpus_words or _stem(w) in corpus_stems
+                  or any(w in d.lower() for d in code_legend.values())]
 
-      found.append({
-         "name": description,
-         "opcItemPath": tag,                          # the real tag string / Historian_Tag
-         "tagType": str(row.get("data_type", "")),    # Bool / Word / Real -> helps Claude infer Data_Type
-         "match_reason": f"module_segment:{matched_code}",
-      })
+      if expanded:
+         threshold = max(1, -(-len(expanded) // 2))  # ceil(n / 2)
+         for _, row in wincc_df.iterrows():
+            tag = str(row.get("tag_name", ""))
+            comment = str(row.get("comment", "") or "")
+            leading_code = re.match(r"[A-Za-z0-9]+", tag)
+            legend_desc = code_legend.get(leading_code.group(0).upper(), "") if leading_code else ""
+            haystack = f"{tag} {comment} {legend_desc}".lower()
+            haystack_words = set(re.findall(r"[a-z]+", haystack))
+            haystack_stems = {_stem(w) for w in haystack_words}
+            matched = [w for w in expanded if w in haystack_words or _stem(w) in haystack_stems]
+            if len(set(matched)) >= threshold:
+               reason = f"keyword_stem:{','.join(sorted(set(matched)))}"
+               if legend_desc:
+                  reason = f"legend_code:{leading_code.group(0)}|{reason}"
+               consider(tag, comment, str(row.get("data_type", "")), reason)
 
-   return found
+   return list(found.values())
 
 
 def match_station_to_parameters(station, available_tags: list) -> list:
@@ -279,6 +496,16 @@ def match_station_to_parameters(station, available_tags: list) -> list:
    -> mm, "Torque" -> Nm, boolean flags -> Boolean). Leave blank if not inferable. Exclude tags
    that don't genuinely belong to this station despite matching a filter heuristic.
 
+   Unit_Verified: set this True ONLY if the unit is explicitly stated somewhere in the tag data
+   itself (a literal unit string in a comment/description) - set it False if you're inferring the
+   unit from the parameter name's naming convention or general plausibility, which is the common
+   case since most historian exports never state units explicitly. Default to False when unsure.
+   If the same physical measurement appears under more than one tag (e.g. a raw/internal "_REAL"
+   representation and a separate "_DISPLAY" representation of the same signal), give them the SAME
+   Unit_of_Measure - do not invent a different guessed unit for each one just because their names
+   differ; a control loop's internal value and its HMI display for the same signal are essentially
+   always the same physical unit unless the documentation explicitly shows a conversion between them.
+
    Return ONLY valid JSON matching this exact structure:
    {{
       "matches": [
@@ -286,6 +513,7 @@ def match_station_to_parameters(station, available_tags: list) -> list:
             "ParameterName": "string",
             "Historian_Tag": "string",
             "Unit_of_Measure": "string",
+            "Unit_Verified": false,
             "Data_Type": "string",
             "Confidence": 0.0
          }}
@@ -304,6 +532,130 @@ def match_station_to_parameters(station, available_tags: list) -> list:
 
    payload = Schema.ParameterMatchPayload.model_validate_json(response.content[0].text)
    return payload.matches
+
+
+_MATCH_REASON_EXPLANATIONS = {
+   "module_segment": "the tag name contains this station's own PLC/module code as a literal segment - the strongest signal available",
+   "keyword_stem": "no PLC code matched; kept because words from this station's descriptive name appeared in the tag's own name/comment - a weaker signal, more prone to false positives",
+   "legend_code": "the tag's own code is opaque with no descriptive text of its own, but a Tag_Code_Legend.csv entry supplied a description that matched this station's descriptive name",
+   "numeric": "the station's numeric code matched a St0*<digits> token in the tag's OPC path - a strong signal",
+   "numeric_suffix": "the station's numeric code's last 2-3 digits matched a truncated St0*<digits> token in the tag's OPC path (the historian export drops the station number's leading digit) - a strong signal, slightly less certain than an exact full-number match",
+   "direct_id": "the station's raw ID string appeared literally in the tag's path/name - a strong signal",
+   "keyword": "only a descriptive word from the station's name matched the tag's path/name - a weaker signal",
+   "folder_match": "the tag lives inside a folder/UDT instance whose own name matched this station, so its whole subtree was pulled in even though this specific tag doesn't mention the station",
+}
+
+
+def write_match_report(line_id, station_reports, output_path=None, total_tags=None):
+   """
+   Write a short, plain-English report explaining which historian tags were matched to
+   which stations and why. Meant to be handed to an SME or controls engineer to sanity-
+   check the pipeline's output without reading raw JSON or match_reason codes - the
+   confidence-weighted breakdown by match strategy is exactly the information they'd
+   need to judge whether a given parameter is trustworthy or worth a second look.
+
+   station_reports: list of dicts, one per station actually processed for this line:
+      {"machine_name": str, "global_station_id": str, "station_name": str,
+       "candidate_tags": list, "matched_params": list[Schema.MatchedParameter]}
+   output_path: where to write the .md file. Defaults to "{PATH}/Match_Report_{line_id}.md".
+   total_tags: total tag count in this line's raw historian source (the WinCC CSV row
+      count, or the JSON tag tree's atomic-tag count) - the denominator for a coverage
+      stat ("X of the line's Y total historian tags ended up mapped to a parameter"),
+      distinct from the candidate-tag conversion rate reported per station, which only
+      measures how many of the PRE-FILTERED candidates were kept. Pass None to omit the
+      coverage line (e.g. when the source tag count isn't available).
+   """
+   output_path = Path(output_path) if output_path else Path(PATH) / f"Match_Report_{line_id}.md"
+   out = [
+      f"# Tag Matching Report - Line {line_id}",
+      "",
+      "This summarizes, for every station found on this line, which historian tags were "
+      "kept as genuine process parameters and why. Parameters marked with a low match "
+      "strategy (keyword/keyword_stem/legend_code/folder_match) or below 0.5 confidence "
+      "are the ones most worth a second look from someone who knows the physical machine.",
+      "",
+   ]
+
+   all_matched = [m for entry in station_reports for m in entry["matched_params"]]
+   all_candidates = [c for entry in station_reports for c in entry["candidate_tags"]]
+   zero_match_stations = [
+      f"{entry['station_name']} ({entry['global_station_id']})"
+      for entry in station_reports if not entry["matched_params"]
+   ]
+   n_low_conf = sum(1 for m in all_matched if m.Confidence < 0.5)
+
+   out.append("## Summary")
+   out.append("")
+   out.append(f"- {len(station_reports)} station(s) processed.")
+   out.append(
+      f"- {len(all_candidates)} candidate tag(s) considered across all stations -> "
+      f"{len(all_matched)} kept as genuine parameters "
+      f"({(len(all_matched) / len(all_candidates) * 100) if all_candidates else 0:.0f}% of candidates)."
+   )
+   if total_tags:
+      out.append(
+         f"- {len(all_matched)} of this line's {total_tags} total historian tags "
+         f"({len(all_matched) / total_tags * 100:.1f}%) ended up mapped to a genuine parameter - "
+         "this is the actual coverage of the raw tag export, as opposed to the conversion rate "
+         "above, which only measures the pre-filtered candidate pool."
+      )
+   if n_low_conf:
+      out.append(f"- {n_low_conf} kept parameter(s) below 0.5 confidence overall - worth a second look.")
+   if zero_match_stations:
+      out.append(
+         f"- {len(zero_match_stations)} station(s) with no genuine parameters found at all: "
+         + ", ".join(zero_match_stations) + "."
+      )
+   out.append("")
+
+   by_machine = {}
+   for entry in station_reports:
+      by_machine.setdefault(entry["machine_name"], []).append(entry)
+
+   for machine_name, entries in by_machine.items():
+      out.append(f"## Machine: {machine_name}")
+      out.append("")
+      for entry in entries:
+         candidates = entry["candidate_tags"]
+         matched = entry["matched_params"]
+         reason_by_tag = {c["opcItemPath"]: c["match_reason"].split(":")[0] for c in candidates}
+
+         kept_by_reason = {}
+         for m in matched:
+            cat = reason_by_tag.get(m.Historian_Tag, "unknown")
+            kept_by_reason[cat] = kept_by_reason.get(cat, 0) + 1
+
+         pct = (len(matched) / len(candidates) * 100) if candidates else 0
+         out.append(f"### {entry['station_name']} ({entry['global_station_id']})")
+         out.append("")
+         out.append(
+            f"- {len(candidates)} candidate tag(s) considered -> {len(matched)} kept as genuine parameters ({pct:.0f}%)."
+         )
+         if kept_by_reason:
+            breakdown = ", ".join(
+               f"{n} via *{cat}* ({_MATCH_REASON_EXPLANATIONS.get(cat, 'unrecognized match type')})"
+               for cat, n in sorted(kept_by_reason.items(), key=lambda kv: -kv[1])
+            )
+            out.append(f"- Kept tags found by: {breakdown}.")
+         low_conf = [m for m in matched if m.Confidence < 0.5]
+         if low_conf:
+            out.append(f"- {len(low_conf)} kept parameter(s) below 0.5 confidence - flagged with ⚠ below.")
+         out.append("")
+
+         if matched:
+            out.append("| Parameter | Historian Tag | Unit | Confidence | Found via |")
+            out.append("|---|---|---|---|---|")
+            for m in sorted(matched, key=lambda m: m.Confidence):
+               cat = reason_by_tag.get(m.Historian_Tag, "unknown")
+               flag = " ⚠" if m.Confidence < 0.5 else ""
+               out.append(f"| {m.ParameterName}{flag} | `{m.Historian_Tag}` | {m.Unit_of_Measure or '-'} | {m.Confidence:.2f} | {cat} |")
+         else:
+            out.append("_No genuine parameters found among this station's candidates._")
+         out.append("")
+
+   output_path.write_text("\n".join(out), encoding="utf-8")
+   print(f"Wrote match report to {output_path}")
+   return output_path
 
 
 def get_next_parameter_id(current_id):
@@ -438,16 +790,8 @@ def station_prompt(text_document : str, machine_name: str):
    Extract all functional stations, modular assemblies, and operational zones INSIDE the '{machine_name}' machine.
 
    STATION DEFINITIONS:
-   - StationID: The technical identifier as it appears in PLC code, electrical schematics, control logic, or operation manuals (e.g., 'St1015', '1001', 'Turret1', 'St51PositionVerification').
+   - StationID: The technical identifier as it appears in PLC code, electrical schematics, control logic, or operation manuals (e.g., 'St1015', '1001', 'Turret1', 'St51PositionVerification'). Many machines have NO numeric or PLC-style code documented at all - in that case use the station's descriptive/module name itself (e.g., 'MainDial', 'BarrierPunchStation') rather than inventing one. This only needs to be unique within THIS machine's own stations, not across other machines or lines - the pipeline namespaces it downstream.
    - StationName: The official name/description of the functional assembly (e.g., 'Eye Punching', 'Rotary Turret', 'Vision Inspection', 'Long Seal', 'Position Verification').
-   - Station_Type: The operational function or classification. Use ONLY these specific types based on actual role:
-     * Turret (rotary positioning/indexing mechanisms)
-     * Vision Inspection (quality detection, splice detection, position verification)
-     * Sealing (thermal or pressure sealing operations)
-     * Transfer (material movement, conveyors, discharge)
-     * Funnel (feeding, infeed, component insertion)
-     * Cooling (thermal regulation)
-     * Pressure Gauge (measurement systems)
      * DO NOT use generic 'Process'—infer the specific functional type.
    - ISA95_Level: Automation hierarchy level. Default to 'L2' (Equipment Control) unless documentation clearly indicates otherwise (L1, L3, etc.).
    - Status: Operational state. Use 'Active' unless documentation indicates 'Maintenance', 'Decommissioned', or other status.
@@ -547,6 +891,9 @@ if __name__ == '__main__':
       print(final_line_data)
       enrich_line = False
 
+   station_reports = []
+   tag_generic_words = _tag_tree_generic_words(tags_data) if tags_data else set()
+
    for machine in found_machines.machines:
 
       next_id = get_next_machine_id(next_id)
@@ -567,11 +914,18 @@ if __name__ == '__main__':
       end_page = machine.end_page if machine.end_page is not None else (len(pages_index) - 1)
       machine_text = "".join(pages_index[start_page:end_page + 1])
       found_stations = station_prompt(machine_text, machine.MachineName)
+      line_generic_words = _line_generic_words(found_stations.stations)
 
       for station in found_stations.stations:
+         # Raw station.StationID is only unique within this machine's own documentation
+         # (see Schema.DiscoveredStation.StationID) - clone/replicated machine models across
+         # different lines commonly reuse the same internal station numbering or naming, so
+         # the stored/global key is namespaced with the MachineID to stay unique site-wide.
+         global_station_id = f"{next_id}-{station.StationID}"
+
          # Create station row
          station_row = Schema.StationRow(
-            StationID=station.StationID,
+            StationID=global_station_id,
             StationName=station.StationName,
             MachineID=next_id,
             Station_Type=station.Station_Type,
@@ -584,29 +938,53 @@ if __name__ == '__main__':
          # let Claude decide which candidates are genuine parameters. Which source
          # depends on what this line has: WinCC HMI export (module-code segment match)
          # or the nested Ignition tags.json tree (numeric/keyword/folder match).
+         # NOTE: tag matching uses the raw, machine-local station.StationID - the historian
+         # tags themselves are scoped to this machine's own controller, so there's no
+         # cross-machine collision risk here the way there is for the stored StationID.
          if wincc_df is not None:
-            candidate_tags = get_tags_for_station_wincc([station.StationID], wincc_df)
+            candidate_tags = get_tags_for_station_wincc(station, wincc_df, code_legend, line_generic_words)
          else:
-            candidate_tags = get_tags_for_station(station.StationID, station.StationName, tags_data)
+            # Union both generic-word sources: tag_generic_words excludes words that are
+            # structural scaffolding across the WHOLE tag tree (e.g. "Application"), while
+            # line_generic_words excludes words shared across multiple STATION NAMES on this
+            # machine (e.g. "Front"/"Rear" repeated across several catheter-handling stations,
+            # which would otherwise let one station's keyword match flood into its siblings').
+            candidate_tags = get_tags_for_station(station.StationID, station.StationName, tags_data, tag_generic_words | line_generic_words)
          matched_params = match_station_to_parameters(station, candidate_tags)
 
+         station_reports.append({
+            "machine_name": machine.MachineName,
+            "global_station_id": global_station_id,
+            "station_name": station.StationName,
+            "candidate_tags": candidate_tags,
+            "matched_params": matched_params,
+         })
+
          if matched_params:
-            print(f"  Found {len(matched_params)} parameters for {station.StationID}:")
+            print(f"  Found {len(matched_params)} parameters for {global_station_id}:")
             for match in matched_params:
                next_param_id = get_next_parameter_id(next_param_id)
+               # Fold the verification flag into the stored text itself rather than adding a
+               # column - most Unit_of_Measure values are a naming-convention guess, not
+               # something actually read from the source documentation, and that distinction
+               # needs to travel with the value wherever this sheet gets used.
+               unit_text = match.Unit_of_Measure
+               if unit_text and not match.Unit_Verified:
+                  unit_text = f"{unit_text} (unverified)"
                param_row = Schema.ParameterRow(
                   ParameterID=next_param_id,
                   ParameterName=match.ParameterName,
-                  StationID=station.StationID,
-                  Unit_of_Measure=match.Unit_of_Measure,
+                  StationID=global_station_id,
+                  Unit_of_Measure=unit_text,
                   Data_Type=match.Data_Type,
                   Historian_Tag=match.Historian_Tag
                )
                print(f"    - {param_row.ParameterName} ({param_row.ParameterID}): {param_row.Historian_Tag} [confidence={match.Confidence}]")
          else:
-            print(f"  No parameters found for {station.StationID}")
+            print(f"  No parameters found for {global_station_id}")
 
       print(final_machine_row)
-   
-   
+
+   total_tags = len(wincc_df) if wincc_df is not None else (_count_atomic_tags(tags_data) if tags_data else None)
+   write_match_report(line, station_reports, total_tags=total_tags)
 
