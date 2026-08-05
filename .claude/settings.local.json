@@ -2,7 +2,9 @@
   "permissions": {
     "allow": [
       "PowerShell(python -m py_compile \"c:\\\\Site Machine Inventory\\\\Schema.py\" 2>&1)",
-      "PowerShell(cd \"C:\\\\Site Machine Inventory\"; \\(Get-Content \"Ballina\\\\Ostomy\\\\tags.json\" | Measure-Object -Line\\).Lines; Write-Output \"---\"; Get-Content \"Ballina\\\\Ostomy\\\\tags.json\" -TotalCount 30)"
+      "PowerShell(cd \"C:\\\\Site Machine Inventory\"; \\(Get-Content \"Ballina\\\\Ostomy\\\\tags.json\" | Measure-Object -Line\\).Lines; Write-Output \"---\"; Get-Content \"Ballina\\\\Ostomy\\\\tags.json\" -TotalCount 30)",
+      "Bash(mkdir -p /tmp/claude-0/-home-user-Site-Machine-Inventory/ac3bc8e7-9a6f-50b3-9767-5f1f537c72b2/scratchpad/review3)",
+      "Bash(cp \"/root/.claude/uploads/ac3bc8e7-9a6f-50b3-9767-5f1f537c72b2/8a4a215f-Site_Data_Model_Briefing_4.pptx\" /tmp/claude-0/-home-user-Site-Machine-Inventory/ac3bc8e7-9a6f-50b3-9767-5f1f537c72b2/scratchpad/review3/current.pptx)"
     ]
   }
 }
