@@ -1,0 +1,16 @@
+# Python build artifacts
+__pycache__/
+*.py[cod]
+
+# Timestamped safety copies taken before writing to the OT model workbook.
+# Kept locally on purpose - they are recovery points, not repo history.
+*.backup_*.xlsx
+
+# Excel lock files, present while a workbook is open
+~$*.xlsx
+
+# Intermediate pipeline scratch output (candidate dumps, pickled run state).
+# The reviewable artefacts are Match_Report_<Line>.md and Tag_Source_Profile.json.
+*.pkl
+_*.json
+_*.txt
