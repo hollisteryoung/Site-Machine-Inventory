@@ -1,0 +1,47 @@
+{
+  "station_identity_fields": [
+    "description",
+    "tag_path"
+  ],
+  "station_code_style": "mixed",
+  "numeric_tag_pattern": null,
+  "numeric_truncated_digits": 0,
+  "segment_delimiters": [
+    "_",
+    ":",
+    "."
+  ],
+  "structural_tokens": [
+    "hmi",
+    "animation",
+    "push",
+    "button",
+    "screen",
+    "part",
+    "data",
+    "stream",
+    "cell",
+    "machine",
+    "piece",
+    "array",
+    "display",
+    "msg",
+    "comms",
+    "ethernet"
+  ],
+  "description_populated": true,
+  "inline_code_legend": {
+    "DRV01": "MAIN DIAL SERVO",
+    "DRV02": "BARRIER INFEED MAGAZINE SERVO",
+    "DRV03": "BARRIER INFEED ELEVATOR SERVO",
+    "DRV04": "BARRIER PRESS-N-CURE STATION SERVO",
+    "DRV05": "BARRIER PICK-N-PLACE/CORONA TREAT SERVO",
+    "DRV06": "BARRIER PICK-N-PLACE/CORONA TREAT STEPPER",
+    "DRV08": "BAG GRIPPER STEPPER",
+    "R1": "BAG LOAD ROBOT",
+    "R2": "BARRIER LOAD/BAG OFFLOAD ROBOT",
+    "VISION": "VISION INSPECTION STATION"
+  },
+  "hmi_exposure_marker": null,
+  "coverage_note": "This is the controller export for the 1-PIECE BAG configuration only (file: Rigid_Film_Conv_1PC_PN3_AC3_R18). The machine's insert/drumhead product configuration is documented in the manual but has NO presence in this export: 'INK'/'JET'/'LABEL'/'APPLICAT' return zero hits across all 1430 tags, and 'INSERT'/'DRUM' return only incidental ones. So Ink Jet Station, Label Applicator Conveyor, Insert & Drumhead Infeed System, Insert/Drumhead Load Robot, Insert Assembly Station, Insert Corona/Glue Station, Insert Press Station, Drumhead Pre-placement Station and Drumhead Assembly Station are expected to yield nothing here - that is a genuine scope limit of this file, not a matching failure, and no tuning will fill them in. A separate controller export would be needed. Second caveat: the phrase 'MAIN DIAL PART DATA STREAM' is a shared data-structure wrapper appearing in ~30% of tags across many different stations, so tags mentioning Main Dial are frequently owned by another station and must be judged on which station the description actually attributes them to. Three shared I/O modules (MAN01, MAN02, MAN03) were deliberately excluded from the code legend because each one's description names several stations at once and would otherwise pull a whole tag family into all of them."
+}
