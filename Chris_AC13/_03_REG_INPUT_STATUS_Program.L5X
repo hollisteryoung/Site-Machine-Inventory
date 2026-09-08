@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="34.01" TargetName="_03_REG_INPUT_STATUS" TargetType="Program" ContainsContext="true" Owner="Windows User" ExportDate="Thu Aug 27 15:43:05 2026" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans LogicalHierarchy">
+<Controller Use="Context" Name="RFCBM_1PC_BAL_AC13">
+<DataTypes Use="Context">
+</DataTypes>
+<Modules Use="Context">
+<Module Use="Reference" Name="HSC_INPUT">
+</Module>
+<Module Use="Reference" Name="Local">
+</Module>
+<Module Use="Reference" Name="OUT">
+</Module>
+</Modules>
+<Tags Use="Context">
+</Tags>
+<Programs Use="Context">
+<Program Use="Target" Name="_03_REG_INPUT_STATUS" TestEdits="false" MainRoutineName="REG_INPUT" Disabled="false" UseAsFolder="false">
+<Tags>
+<Tag Name="TIMER_OPER" TagType="Base" DataType="TIMER" Dimensions="1" Constant="false" ExternalAccess="Read/Write">
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[BARRIER DETECT SENSOR
+DEBOUNCE TIMER
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[[-1607632067,20,20]]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="TIMER" Dimensions="1">
+<Element Index="[0]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="20"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="20"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="1"/>
+</Structure>
+</Element>
+</Array>
+</Data>
+</Tag>
+</Tags>
+<Routines>
+<Routine Name="REG_INPUT" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[**************DETECTION SENSOR DEBOUNCE ROUTINE**********
+
+CONTROLS BARRIER DETECTION SENSOR SIGNAL THROUGH I/O IN PLC TO BARRIER INFEED ELEVATOR DRIVE REGISTRATION INPUT]]>
+</Comment>
+<Text>
+<![CDATA[XIO(Local:1:I.Pt00.Data)[TON(TIMER_OPER[0],?,?) ,XIC(TIMER_OPER[0].DN) OTE(Local:2:O.Pt01.Data) ];]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[IOT(Local:2:O);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</Program>
+</Programs>
+</Controller>
+</RSLogix5000Content>

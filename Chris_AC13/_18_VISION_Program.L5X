@@ -1,0 +1,4081 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--VISION INSPECTION STATION-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="34.01" TargetName="_18_VISION" TargetType="Program" ContainsContext="true" Owner="Windows User" ExportDate="Thu Aug 27 15:44:36 2026" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans LogicalHierarchy">
+<Controller Use="Context" Name="RFCBM_1PC_BAL_AC13">
+<DataTypes Use="Context">
+<DataType Name="DIAL_DATA" Family="NoFamily" Class="User">
+<Description>
+<![CDATA[REJECTED PART NOT OFFLOADED]]>
+</Description>
+<Members>
+<Member Name="ZZZZZZZZZZDIAL_DATA0" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="BARRIER_LOADED" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA0" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BARRIER LOADED BY ROBOT]]>
+</Description>
+</Member>
+<Member Name="BAG_LOADED" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA0" BitNumber="1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BAG LOADED BY ROBOT]]>
+</Description>
+</Member>
+<Member Name="PREHEAT1_STARTED" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA0" BitNumber="2" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PREHEAT1 CYCLE STARTED]]>
+</Description>
+</Member>
+<Member Name="PREHEAT1_UP_TEMP_OK" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA0" BitNumber="3" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PREHEAT1 UPPER TOOL TEMPERATURE WITHIN TOLERANCE]]>
+</Description>
+</Member>
+<Member Name="PREHEAT1_LOW_TEMP_OK" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA0" BitNumber="4" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PREHEAT1 LOWER TOOL TEMPERATURE WITHIN TOLERANCE]]>
+</Description>
+</Member>
+<Member Name="PREHEAT1_COMPLETE" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA0" BitNumber="5" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PREHEAT1 CYCLE COMPLETED]]>
+</Description>
+</Member>
+<Member Name="PREHEAT2_STARTED" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA0" BitNumber="6" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PREHEAT2 CYCLE STARTED]]>
+</Description>
+</Member>
+<Member Name="PREHEAT2_UP_TEMP_OK" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA0" BitNumber="7" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PREHEAT2 UPPER TOOL TEMPERATURE WITHIN TOLERANCE]]>
+</Description>
+</Member>
+<Member Name="ZZZZZZZZZZDIAL_DATA9" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="PREHEAT2_LOW_TEMP_OK" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA9" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PREHEAT2 LOWER TOOL TEMPERATURE WITHIN TOLERANCE]]>
+</Description>
+</Member>
+<Member Name="PREHEAT2_COMPLETE" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA9" BitNumber="1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PREHEAT2 CYCLE COMPLETED]]>
+</Description>
+</Member>
+<Member Name="FORMING_STARTED" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA9" BitNumber="2" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FORMING CYCLE STARTED]]>
+</Description>
+</Member>
+<Member Name="FORMING_PRESSURE_OK" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA9" BitNumber="3" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FORMING PRESSURE OK]]>
+</Description>
+</Member>
+<Member Name="FORMING_COMPLETE" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA9" BitNumber="4" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FORMING CYCLE COMPLETE]]>
+</Description>
+</Member>
+<Member Name="PUNCH_STARTED" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA9" BitNumber="5" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PUNCH CYCLE STARTED]]>
+</Description>
+</Member>
+<Member Name="PUNCH_COMPLETE" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA9" BitNumber="6" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PUNCH CYCLE COMPLETED]]>
+</Description>
+</Member>
+<Member Name="INKJET_STARTED" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA9" BitNumber="7" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[INKJET PRINTING STARTED]]>
+</Description>
+</Member>
+<Member Name="ZZZZZZZZZZDIAL_DATA18" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="INKJET_COMPLETE" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA18" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[INKJET PRINTING COMPLETED]]>
+</Description>
+</Member>
+<Member Name="PRINT_REQUIRED" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA18" BitNumber="1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PRINT CYCLE REQUIRED]]>
+</Description>
+</Member>
+<Member Name="PRINT_STARTED" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA18" BitNumber="2" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PRINT CYCLE STARTED]]>
+</Description>
+</Member>
+<Member Name="PRINT_COMPLETE" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA18" BitNumber="3" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PRINT CYCLE COMPLETED]]>
+</Description>
+</Member>
+<Member Name="BAG_GLUE_STARTED" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA18" BitNumber="4" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BAG GLUE APPLICATION STARTED]]>
+</Description>
+</Member>
+<Member Name="BAG_GLUE_PRESSURE_OK" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA18" BitNumber="5" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BAG GLUE PRESSURE OK]]>
+</Description>
+</Member>
+<Member Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA18" BitNumber="6" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BAG GLUE OPEN TIME EXCEEDED BAG IS REJECTED]]>
+</Description>
+</Member>
+<Member Name="BAG_GLUE_COMPLETE" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA18" BitNumber="7" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BAG GLUE APPLICATION COMPLETE]]>
+</Description>
+</Member>
+<Member Name="ZZZZZZZZZZDIAL_DATA27" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="BAG_CURE_STARTED" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA27" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BAG CURE STARTED]]>
+</Description>
+</Member>
+<Member Name="BAG_CURE_PRESSURE_OK" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA27" BitNumber="1" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BAG CURE PRESSURE OK]]>
+</Description>
+</Member>
+<Member Name="BAG_CURE_COMPLETE" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA27" BitNumber="2" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BAG CURE COMPLETE]]>
+</Description>
+</Member>
+<Member Name="VISION_PASS" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA27" BitNumber="3" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[VISION PASSED]]>
+</Description>
+</Member>
+<Member Name="VISION_COMPLETE" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA27" BitNumber="4" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[VISION CYCLE COMPLETE]]>
+</Description>
+</Member>
+<Member Name="BARRIER_REJECT" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA27" BitNumber="5" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BARRIER IS REJECTED]]>
+</Description>
+</Member>
+<Member Name="STATION_POS_REJECT_BARRIER" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[LOCATION ON MAIN DIAL WHERE BARRIER WAS REJECTED]]>
+</Description>
+</Member>
+<Member Name="ZZZZZZZZZZDIAL_DATA35" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="BAG_REJECT" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA35" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BAG IS REJECTED]]>
+</Description>
+</Member>
+<Member Name="STATION_POS_REJECT_BAG" DataType="INT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[LOCATION ON MAIN DIAL WHERE BAG WAS REJECTED]]>
+</Description>
+</Member>
+<Member Name="ZZZZZZZZZZDIAL_DATA38" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="CELL_EMPTY_LAST_BAG" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZDIAL_DATA38" BitNumber="0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[LAST BAG LOADED FOR CELL EMPTY]]>
+</Description>
+</Member>
+</Members>
+</DataType>
+<DataType Name="VS_CommandRequest" Family="NoFamily" Class="User">
+<Members>
+<Member Name="CommandNumber" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="CommandParameter00" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="CommandParameter01" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="CommandParameter02" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="CommandParameter03" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="CommandParameter04" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="CommandParameter05" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="VS_Control" Family="NoFamily" Class="User">
+<Members>
+<Member Name="ZZZZZZZZZZVS_Control0" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="Trigger" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control0" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="_reserved00" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control0" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="_reserved01" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control0" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="_reserved02" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control0" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="_reserved03" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control0" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="_reserved04" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control0" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="_reserved05" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control0" BitNumber="6" ExternalAccess="Read/Write"/>
+<Member Name="_reserved06" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control0" BitNumber="7" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVS_Control9" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="TriggerDisable" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control9" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="OutputDisable" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control9" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="Reset" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control9" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="_reserved07" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control9" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="_reserved08" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control9" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="_reserved09" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control9" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="_reserved10" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control9" BitNumber="6" ExternalAccess="Read/Write"/>
+<Member Name="_reserved11" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control9" BitNumber="7" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVS_Control18" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="_reserved12" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control18" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="_reserved13" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control18" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="ResultHandshakeEnable" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control18" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="ResultAck" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control18" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="GoToRun" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control18" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="GoToSetting" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control18" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="Error0Clear" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control18" BitNumber="6" ExternalAccess="Read/Write"/>
+<Member Name="Error1Clear" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control18" BitNumber="7" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVS_Control27" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="CommandRequest" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control27" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="_reserved14" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control27" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="_reserved15" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control27" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="_reserved16" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control27" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="ProgramLoadExecute" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control27" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="ProgramLoadExecuteFromSDCard" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control27" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="_reserved17" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control27" BitNumber="6" ExternalAccess="Read/Write"/>
+<Member Name="_reserved18" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control27" BitNumber="7" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVS_Control36" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData00" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control36" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData01" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control36" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData02" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control36" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData03" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control36" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData04" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control36" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData05" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control36" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData06" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control36" BitNumber="6" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData07" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control36" BitNumber="7" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVS_Control45" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData08" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control45" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData09" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control45" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData10" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control45" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData11" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control45" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData12" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control45" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData13" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control45" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData14" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control45" BitNumber="6" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData15" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control45" BitNumber="7" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVS_Control54" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData16" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control54" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData17" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control54" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData18" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control54" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData19" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control54" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData20" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control54" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData21" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control54" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData22" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control54" BitNumber="6" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData23" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control54" BitNumber="7" ExternalAccess="Read/Write"/>
+<Member Name="ZZZZZZZZZZVS_Control63" DataType="SINT" Dimension="0" Radix="Decimal" Hidden="true" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData24" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control63" BitNumber="0" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData25" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control63" BitNumber="1" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData26" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control63" BitNumber="2" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData27" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control63" BitNumber="3" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData28" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control63" BitNumber="4" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData29" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control63" BitNumber="5" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData30" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control63" BitNumber="6" ExternalAccess="Read/Write"/>
+<Member Name="AssignableBitData31" DataType="BIT" Dimension="0" Radix="Decimal" Hidden="false" Target="ZZZZZZZZZZVS_Control63" BitNumber="7" ExternalAccess="Read/Write"/>
+<Member Name="ProgramNumber" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="VS_InspectionParameters" Family="NoFamily" Class="User">
+<Members>
+<Member Name="InspectionParameter000" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter001" DataType="REAL" Dimension="0" Radix="Float" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter002" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter003" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter004" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter005" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter006" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter007" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter008" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter009" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter010" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter011" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter012" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter013" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter014" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter015" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter016" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter017" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter018" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter019" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter020" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter021" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter022" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter023" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter024" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter025" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter026" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter027" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter028" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter029" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter030" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter031" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter032" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter033" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter034" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter035" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter036" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter037" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter038" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter039" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter040" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter041" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter042" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter043" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter044" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter045" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter046" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter047" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter048" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter049" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter050" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter051" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter052" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter053" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter054" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter055" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter056" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter057" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter058" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter059" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter060" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter061" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter062" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter063" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter064" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter065" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter066" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter067" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter068" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter069" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter070" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter071" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter072" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter073" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter074" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter075" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter076" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter077" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter078" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter079" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter080" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter081" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter082" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter083" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter084" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter085" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter086" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter087" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter088" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter089" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter090" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter091" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter092" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter093" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter094" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter095" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter096" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter097" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter098" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter099" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter100" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter101" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter102" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter103" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter104" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter105" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter106" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter107" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter108" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter109" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter110" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter111" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter112" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameter113" DataType="DINT" Dimension="0" Radix="Decimal" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+</DataType>
+<DataType Name="VS_O" Family="NoFamily" Class="User">
+<Members>
+<Member Name="Control" DataType="VS_Control" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="CommandRequest" DataType="VS_CommandRequest" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+<Member Name="InspectionParameters" DataType="VS_InspectionParameters" Dimension="0" Radix="NullType" Hidden="false" ExternalAccess="Read/Write"/>
+</Members>
+<Dependencies>
+<Dependency Type="DataType" Name="VS_Control"/>
+<Dependency Type="DataType" Name="VS_CommandRequest"/>
+<Dependency Type="DataType" Name="VS_InspectionParameters"/>
+</Dependencies>
+</DataType>
+</DataTypes>
+<Modules Use="Context">
+<Module Use="Reference" Name="CAM04">
+</Module>
+<Module Use="Reference" Name="Local">
+</Module>
+<Module Use="Reference" Name="OUT">
+</Module>
+</Modules>
+<Tags Use="Context">
+<Tag Name="CAM_JOB_ID_INT" TagType="Base" DataType="INT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[3]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="3"/>
+</Data>
+</Tag>
+<Tag Name="CELL_AUTO_READY" TagType="Base" DataType="BOOL" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AUTO READY ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[AUTO READY 
+COMPONENTS ARE IN PLACE FOR STARTING
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[AUTO READY
+ MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[AUTO READY
+ BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[AUTO READY
+ BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[AUTO READY
+ BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[AUTO READY
+ BARRIER PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[AUTO READY
+ INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[AUTO READY
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[AUTO READY
+ GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[AUTO READY
+ BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[AUTO READY
+ BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[AUTO READY
+ BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[AUTO READY
+ BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[AUTO READY
+ BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[AUTO READY
+ BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[AUTO READY
+ VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[AUTO READY
+ BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[AUTO READY
+ BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[AUTO READY
+ BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[AUTO READY
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[AUTO READY
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[AUTO READY
+ INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+		,2#0,2#0,2#0,2#0,2#0]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="BOOL" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="CELL_EMPTY_COMPLETE" TagType="Base" DataType="INT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CELL EMPTY COMPLETE
+BIT ARRAY
+CELL]]>
+</Description>
+<Comments>
+<Comment Operand=".1">
+<![CDATA[EMPTY
+COMPLETE
+PICK-N-PLACE/CORONA TREAT]]>
+</Comment>
+<Comment Operand=".2">
+<![CDATA[EMPTY
+COMPLETE
+LIGHT TABLE]]>
+</Comment>
+<Comment Operand=".4">
+<![CDATA[EMPTY COMPLETE
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand=".5">
+<![CDATA[EMPTY COMPLETE
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand=".6">
+<![CDATA[EMPTY COMPLETE
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand=".7">
+<![CDATA[EMPTY COMPLETE
+BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand=".8">
+<![CDATA[EMPTY COMPLETE
+BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand=".9">
+<![CDATA[EMPTY COMPLETE
+BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand=".10">
+<![CDATA[EMPTY COMPLETE
+BARRIER PRINT STATION]]>
+</Comment>
+<Comment Operand=".11">
+<![CDATA[EMPTY COMPLETE
+BAG GLUE STATION]]>
+</Comment>
+<Comment Operand=".12">
+<![CDATA[EMPTY COMPLETE
+BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand=".13">
+<![CDATA[EMPTY COMPLETE
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand=".15">
+<![CDATA[EMPTY COMPLETE
+CELL]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_ESTOP_PRESSED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AN ESTOP IS
+PRESSED ON
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_KEY_AUTO_MODE" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CELL KEYSWITCH CONFIGURATION IS IN AUTO MODE
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="CELL_KEY_MAN_MODE" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CELL KEYSWITCH CONFIGURATION IS IN MANUAL MODE
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_MANUAL_MODE" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[SOFTWARE 
+MANUAL MODE
+CELL
+
+(REQUIRES PASSWORD)]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_OVERHEAD_LIGHTS_OFF" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[OVERHEAD LIGHTS OFF DEBOUNCE FOR VISION
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_PRESSURE_OK" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CELL PRESSURE OK
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_PRODUCT_SKU_LOADED" TagType="Base" DataType="STRING" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PRODUCT SKU
+LOADED AND DISPLAYED ON HMI
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[[7,'4081-30$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		]]]>
+</Data>
+<Data Format="String" Length="7">
+<![CDATA['4081-30']]>
+</Data>
+</Tag>
+<Tag Name="CELL_RESET_PRESSED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[RESET BUTTON PRESSED
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_RESET_READY" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CELL IS  
+READY FOR RESET
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="CELL_SAFETY_DOOR_OPEN" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[A SAFETY DOOR IS
+OPEN
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="CELL_SHUTDOWN_REQ" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CELL SHUTDOWN
+REQUEST
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_SINGLE_PART_GLUE_ONLY_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+GLUE ONLY MODE DURING SINGLE PART PROCESS
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_SINGLE_PART_MODE_ACTIVE" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[SINGLE PART MODE
+ACTIVE
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_STARTED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CELL HAS BEEN
+STARTED IN AUTO
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_TIMING_BIT_1000" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[1 SECOND
+TIMING BIT
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="DASH" TagType="Base" DataType="STRING" Constant="false" ExternalAccess="Read/Write">
+<Data Format="L5K">
+<![CDATA[[1,'-$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		]]]>
+</Data>
+<Data Format="String" Length="1">
+<![CDATA['-']]>
+</Data>
+</Tag>
+<Tag Name="GLUE_ACTIVE_RECIPE_LOADED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ACTIVE FROM RECIPE
+AFTER DOWNLOAD
+BAG GLUE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="INKJET_PRINT_ACTIVE_RECIPE_LOADED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ACTIVE FROM RECIPE
+AFTER DOWNLOAD
+INKJET PRINTING STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="INKJET_SKU_DASH_LOCATION" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[STRING DATA LOCATION FOR DASH IN SKU]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[5]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="5"/>
+</Data>
+</Tag>
+<Tag Name="MAIN_DIAL_DATA" TagType="Base" DataType="DIAL_DATA" Dimensions="14" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PART DATA TRACKING
+MAIN DIAL]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[NULL DATA
+MAIN DIAL
+DO NOT CHANGE DATA]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[PART DATA
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[PART DATA 
+EMPTY STATION]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[PART DATA 
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[PART DATA BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[PART DATA
+BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[6]">
+<![CDATA[PART DATA 
+BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[PART DATA 
+BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[8]">
+<![CDATA[PART DATA 
+BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[PART DATA 
+BAG GLUE STATION]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[PART DATA PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[11]">
+<![CDATA[PART DATA 
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[PART DATA
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[PART DATA
+TEMP LOCATION DURING DATA TRANSFER]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[[0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[1,0,0,0,0,0,0,0],[3,0,0,0,0,0,0,0],[63,0,0,32,5,0,0,0],[-1,3,0,32,6,0,0,0],[-1,31,0,0,0,0,0,0],[-1,127,0,0,0,0,0,0
+		],[-1,-1,1,0,0,0,0,0],[-1,-1,-79,7,0,0,0,0],[2,0,-80,7,0,0,0,0],[2,0,-80,31,0,0,0,0],[0,0,0,0,0,0,0,0]]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="DIAL_DATA" Dimensions="14">
+<Element Index="[0]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[4]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[5]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="1"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="5"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[6]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="1"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="6"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[7]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[8]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[9]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[10]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[11]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[12]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="1"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="1"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[13]">
+<Structure DataType="DIAL_DATA">
+<DataValueMember Name="BARRIER_LOADED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_LOADED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT1_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_UP_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_LOW_TEMP_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PREHEAT2_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="FORMING_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PUNCH_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="INKJET_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_REQUIRED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PRINT_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_OPEN_TIME_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_GLUE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_STARTED" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_PRESSURE_OK" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BAG_CURE_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_PASS" DataType="BOOL" Value="0"/>
+<DataValueMember Name="VISION_COMPLETE" DataType="BOOL" Value="0"/>
+<DataValueMember Name="BARRIER_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BARRIER" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="BAG_REJECT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="STATION_POS_REJECT_BAG" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CELL_EMPTY_LAST_BAG" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+</Array>
+</Data>
+</Tag>
+<Tag Name="MAIN_DIAL_IN_POSITION" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MAIN DIAL IS IN POSITION AND READY FOR PROCESSING
+MAIN DIAL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="MAIN_DIAL_INDEX_DONE" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[INDEX DONE
+MAIN DIAL HANDSHAKE TO ALL STATIONS]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="MAJOR_FAULT" TagType="Base" DataType="BOOL" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MAJOR FAULT ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[1]">
+<![CDATA[MAJOR FAULT
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[MAJOR FAULT
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[MAJOR FAULT
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[MAJOR FAULT
+BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[MAJOR FAULT
+BARRIER PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[MAJOR FAULT
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[MAJOR FAULT
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[MAJOR FAULT
+BAG GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[MAJOR FAULT
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[MAJOR FAULT
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[MAJOR FAULT
+ BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[MAJOR FAULT
+BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[MAJOR FAULT
+BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[MAJOR FAULT
+BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[MAJOR FAULT
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[MAJOR FAULT
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[MAJOR FAULT
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[MAJOR FAULT
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[MAJOR FAULT
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[MAJOR FAULT
+BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[MAJOR FAULT
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[MAJOR FAULT
+INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#1,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+		,2#0,2#0,2#0,2#0,2#0]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="BOOL" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="1"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="PNC_ACTIVE_RECIPE_LOADED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ACTIVE IN RECIPE
+AFTER RECIPE DOWNLOAD
+BARRIER PRESS-N-CURE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="PRINT_SKU_PAD_ACTIVE_HW_RECIPE_LOADED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[SKU PAD ACTIVE FROM RECIPE AFTER DOWNLOAD
+HARDWARE CONTROL
+BARRIER PRINTING STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="STEP_ALARM" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM STEP COUNTER ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[ALARM
+STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[ALARM
+STEP COUNTER
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[ALARM
+STEP COUNTER
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[ALARM STEP COUNTER BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[ALARM STEP COUNTER BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[ALARM STEP COUNTER BARRIER PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[ALARM
+STEP COUNTER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[ALARM STEP COUNTER OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[ALARM
+STEP COUNTER
+BAG GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[ALARM STEP COUNTER BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[ALARM STEP COUNTER BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[ALARM STEP COUNTER BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[ALARM STEP COUNTER BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[ALARM STEP COUNTER BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[ALARM STEP COUNTER BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[ALARM STEP COUNTER VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[ALARM STEP COUNTER BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[ALARM STEP COUNTER BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[ALARM
+STEP COUNTER
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[ALARM STEP COUNTER BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[ALARM STEP COUNTER BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[ALARM STEP COUNTER BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[ALARM STEP COUNTER INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[895,0,0,0,0,0,0,895,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="895"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="895"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="STEP_ALARM_CAPTURE" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM CAPTURE STEP COUNTER ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[ALARM CAPTURE STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BAG GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BAG LOAD ROBOT
+(R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[0,0,0,0,0,0,0,895,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="895"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="STEP_ALARM_TRIGGER_WORD_1" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+CELL]]>
+</Description>
+<Comments>
+<Comment Operand=".0">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+CELL]]>
+</Comment>
+<Comment Operand=".1">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+MAIN DIAL]]>
+</Comment>
+<Comment Operand=".2">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand=".3">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand=".4">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand=".5">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand=".7">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand=".9">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand=".10">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BAG GLUE STATION]]>
+</Comment>
+<Comment Operand=".12">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand=".13">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand=".14">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand=".15">
+<![CDATA[ALARM STEP TRIGGER WORD 1 STEP ALARM[0]-[31] BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand=".16">
+<![CDATA[ALARM STEP TRIGGER WORD 1 STEP ALARM[0]-[31] BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand=".17">
+<![CDATA[ALARM STEP TRIGGER WORD 1 STEP ALARM[0]-[31] BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand=".18">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand=".19">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand=".20">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand=".21">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand=".22">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand=".23">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand=".30">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand=".31">
+<![CDATA[ALARM STEP TRIGGER WORD 1 STEP ALARM[0]-[31]
+INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[128]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="128"/>
+</Data>
+</Tag>
+<Tag Name="STEP_AUTO" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AUTO STEP COUNTER ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[AUTO STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[AUTO
+STEP COUNTER
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PICK-N-PLACE/
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[AUTO
+STEP COUNTER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[8]">
+<![CDATA[AUTO
+STEP COUNTER
+GLUE PURGE
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[AUTO
+STEP COUNTER
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[AUTO
+STEP COUNTER
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[11]">
+<![CDATA[AUTO
+STEP COUNTER 
+SAMPLE GLUE WEIGHT
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[AUTO
+STEP COUNTER
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[AUTO
+STEP COUNTER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[AUTO
+STEP COUNTER
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[AUTO
+STEP COUNTER
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[24]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PICK
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[25]">
+<![CDATA[AUTO
+STEP COUNTER
+BAG CURE
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[26]">
+<![CDATA[AUTO
+STEP COUNTER
+PRESS HEAD ROTATION
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[27]">
+<![CDATA[AUTO
+STEP COUNTER
+IR VISION
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[28]">
+<![CDATA[RECIPE LOAD
+STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[29]">
+<![CDATA[RECIPE SYNCHRONIZATION
+STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[AUTO STEP COUNTER
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[AUTO STEP COUNTER INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000
+		,1000,1000,1000,1000,1000,1000,1000,500,500,1000,1000]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="1000"/>
+<Element Index="[1]" Value="1000"/>
+<Element Index="[2]" Value="1000"/>
+<Element Index="[3]" Value="1000"/>
+<Element Index="[4]" Value="1000"/>
+<Element Index="[5]" Value="1000"/>
+<Element Index="[6]" Value="1000"/>
+<Element Index="[7]" Value="1000"/>
+<Element Index="[8]" Value="1000"/>
+<Element Index="[9]" Value="1000"/>
+<Element Index="[10]" Value="1000"/>
+<Element Index="[11]" Value="1000"/>
+<Element Index="[12]" Value="1000"/>
+<Element Index="[13]" Value="1000"/>
+<Element Index="[14]" Value="1000"/>
+<Element Index="[15]" Value="1000"/>
+<Element Index="[16]" Value="1000"/>
+<Element Index="[17]" Value="1000"/>
+<Element Index="[18]" Value="1000"/>
+<Element Index="[19]" Value="1000"/>
+<Element Index="[20]" Value="1000"/>
+<Element Index="[21]" Value="1000"/>
+<Element Index="[22]" Value="1000"/>
+<Element Index="[23]" Value="1000"/>
+<Element Index="[24]" Value="1000"/>
+<Element Index="[25]" Value="1000"/>
+<Element Index="[26]" Value="1000"/>
+<Element Index="[27]" Value="1000"/>
+<Element Index="[28]" Value="500"/>
+<Element Index="[29]" Value="500"/>
+<Element Index="[30]" Value="1000"/>
+<Element Index="[31]" Value="1000"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="STEP_AUTO_RET_ESTOP" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AUTO STEP RET COUNTER ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[AUTO STEP RET COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[AUTO RET STEP COUNTER MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[6]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[AUTO RET STEP COUNTER INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[AUTO RET STEP COUNTER OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[AUTO RET STEP COUNTER
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[11]">
+<![CDATA[AUTO RET STEP COUNTER
+SAMPLE GLUE WEIGHT
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[AUTO RET STEP COUNTER BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[AUTO RET STEP COUNTER VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[AUTO RET STEP COUNTER BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[AUTO RET STEP COUNTER
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[24]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PICK
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[25]">
+<![CDATA[AUTO RET STEP COUNTER BAG CURE
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[26]">
+<![CDATA[AUTO RET STEP COUNTER PRESS HEAD ROTATION
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[27]">
+<![CDATA[AUTO RET STEP COUNTER 
+IR VISION
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[AUTO RET
+STEP COUNTER
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[AUTO RET
+STEP COUNTER
+INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[1000,500,500,500,500,500,1000,40,500,500,500,1000,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500
+		,0,1000,0,500,500]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="1000"/>
+<Element Index="[1]" Value="500"/>
+<Element Index="[2]" Value="500"/>
+<Element Index="[3]" Value="500"/>
+<Element Index="[4]" Value="500"/>
+<Element Index="[5]" Value="500"/>
+<Element Index="[6]" Value="1000"/>
+<Element Index="[7]" Value="40"/>
+<Element Index="[8]" Value="500"/>
+<Element Index="[9]" Value="500"/>
+<Element Index="[10]" Value="500"/>
+<Element Index="[11]" Value="1000"/>
+<Element Index="[12]" Value="500"/>
+<Element Index="[13]" Value="500"/>
+<Element Index="[14]" Value="500"/>
+<Element Index="[15]" Value="500"/>
+<Element Index="[16]" Value="500"/>
+<Element Index="[17]" Value="500"/>
+<Element Index="[18]" Value="500"/>
+<Element Index="[19]" Value="500"/>
+<Element Index="[20]" Value="500"/>
+<Element Index="[21]" Value="500"/>
+<Element Index="[22]" Value="500"/>
+<Element Index="[23]" Value="500"/>
+<Element Index="[24]" Value="500"/>
+<Element Index="[25]" Value="500"/>
+<Element Index="[26]" Value="500"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="1000"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="500"/>
+<Element Index="[31]" Value="500"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="STEP_ESTOP_RESET" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ESTOP RESET STEP COUNTER]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+ BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER PICK-N-PLACE/
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[6]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BAG GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000
+		,1000,1000,1000,0,0,0,0,0,0,1000,1000]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="1000"/>
+<Element Index="[1]" Value="1000"/>
+<Element Index="[2]" Value="1000"/>
+<Element Index="[3]" Value="1000"/>
+<Element Index="[4]" Value="1000"/>
+<Element Index="[5]" Value="1000"/>
+<Element Index="[6]" Value="1000"/>
+<Element Index="[7]" Value="1000"/>
+<Element Index="[8]" Value="1000"/>
+<Element Index="[9]" Value="1000"/>
+<Element Index="[10]" Value="1000"/>
+<Element Index="[11]" Value="1000"/>
+<Element Index="[12]" Value="1000"/>
+<Element Index="[13]" Value="1000"/>
+<Element Index="[14]" Value="1000"/>
+<Element Index="[15]" Value="1000"/>
+<Element Index="[16]" Value="1000"/>
+<Element Index="[17]" Value="1000"/>
+<Element Index="[18]" Value="1000"/>
+<Element Index="[19]" Value="1000"/>
+<Element Index="[20]" Value="1000"/>
+<Element Index="[21]" Value="1000"/>
+<Element Index="[22]" Value="1000"/>
+<Element Index="[23]" Value="1000"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="1000"/>
+<Element Index="[31]" Value="1000"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="STEP_HOME" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[STEP HOME ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[HOME
+STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[HOME
+STEP COUNTER
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[HOME
+STEP COUNTER
+PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[6]">
+<![CDATA[HOME
+STEP COUNTER
+PICK-N-PLACE/ 
+PICK HEAD]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[HOME
+STEP COUNTER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[HOME
+STEP COUNTER
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[HOME
+STEP COUNTER
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[HOME
+STEP COUNTER
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[HOME
+STEP COUNTER
+ BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER PRINT
+STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[HOME
+STEP COUNTER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[HOME
+STEP COUNTER
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[HOME
+STEP COUNTER
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[HOME
+STEP COUNTER
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[HOME
+STEP COUNTER
+INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000
+		,1000,1000,0,0,0,0,0,0,0,1000,1000]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="1000"/>
+<Element Index="[1]" Value="1000"/>
+<Element Index="[2]" Value="1000"/>
+<Element Index="[3]" Value="1000"/>
+<Element Index="[4]" Value="1000"/>
+<Element Index="[5]" Value="1000"/>
+<Element Index="[6]" Value="1000"/>
+<Element Index="[7]" Value="1000"/>
+<Element Index="[8]" Value="1000"/>
+<Element Index="[9]" Value="1000"/>
+<Element Index="[10]" Value="1000"/>
+<Element Index="[11]" Value="1000"/>
+<Element Index="[12]" Value="1000"/>
+<Element Index="[13]" Value="1000"/>
+<Element Index="[14]" Value="1000"/>
+<Element Index="[15]" Value="1000"/>
+<Element Index="[16]" Value="1000"/>
+<Element Index="[17]" Value="1000"/>
+<Element Index="[18]" Value="1000"/>
+<Element Index="[19]" Value="1000"/>
+<Element Index="[20]" Value="1000"/>
+<Element Index="[21]" Value="1000"/>
+<Element Index="[22]" Value="1000"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="1000"/>
+<Element Index="[31]" Value="1000"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="VISION_ACTIVE_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+TOGGLE VISION ACTIVE
+SET DURING INITIAL RECIPE DOWNLOAD
+VISION INSPECTION
+STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="VISION_ACTIVE_PB_VIS" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+VISIBILITY
+TOGGLE VISION ACTIVE
+VISION INSPECTION
+STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_BLUE_LIGHT_ON_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSHBUTTON
+ BLUE LIGHTS ON VISION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_BLUE_LIGHT_VIS" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON VISIBILITY
+BLUE LIGHT ON
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_BYPASS_ANIMATION" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ANIMIATION FOR HMI
+BYPASS STATUS
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_COMPLETE" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[VISION PROCESS COMPLETE
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_CYCLE_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+RUN VISION CYCLE
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_DATA_BAG_LOADED" TagType="Alias" Radix="Decimal" AliasFor="MAIN_DIAL_DATA[11].BAG_LOADED" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BAG LOADED
+MAIN DIAL PART DATA STREAM
+VISION INSPECTION STATION]]>
+</Description>
+</Tag>
+<Tag Name="VISION_DATA_BAG_REJECT" TagType="Alias" Radix="Decimal" AliasFor="MAIN_DIAL_DATA[11].BAG_REJECT" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BAG REJECTED
+MAIN DIAL PART DATA STREAM
+VISION INSPECTION STATION]]>
+</Description>
+</Tag>
+<Tag Name="VISION_DATA_EMPTY_LAST_BAG" TagType="Alias" Radix="Decimal" AliasFor="MAIN_DIAL_DATA[11].CELL_EMPTY_LAST_BAG" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[LAST BAG REQUEST FOR CELL EMPTY
+MAIN DIAL PART DATA STREAM
+VISION INSPECTION STATION]]>
+</Description>
+</Tag>
+<Tag Name="VISION_DATA_GLUE_COMPLETE" TagType="Alias" Radix="Decimal" AliasFor="MAIN_DIAL_DATA[11].BAG_GLUE_COMPLETE" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BAG GLUE STATION COMPLETED
+MAIN DIAL PART DATA STREAM
+VISION INSPECTION STATION]]>
+</Description>
+</Tag>
+<Tag Name="VISION_DATA_PNC_COMPLETE" TagType="Alias" Radix="Decimal" AliasFor="MAIN_DIAL_DATA[11].BAG_CURE_COMPLETE" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PRESS-N-CURE STATION COMPLETED
+MAIN DIAL PART DATA STREAM
+VISION INSPECTION STATION]]>
+</Description>
+</Tag>
+<Tag Name="VISION_DATA_VISION_COMPLETE" TagType="Alias" Radix="Decimal" AliasFor="MAIN_DIAL_DATA[11].VISION_COMPLETE" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[VISION INSPECTION STATION COMPLETED
+MAIN DIAL PART DATA STREAM
+VISION INSPECTION STATION]]>
+</Description>
+</Tag>
+<Tag Name="VISION_DATA_VISION_PASS" TagType="Alias" Radix="Decimal" AliasFor="MAIN_DIAL_DATA[11].VISION_PASS" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[VISION INSPECTION STATION PASSED
+MAIN DIAL PART DATA STREAM
+VISION INSPECTION STATION]]>
+</Description>
+</Tag>
+<Tag Name="VISION_ERROR_RESET_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+CAMERA RESET ERROR
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_HOLE_SIZE_RECIPE" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[VISION HOLE SIZE RECIPE
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_INDEX_DIAL_REQ" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[INDEX REQUEST
+FROM VISION INSPECTION STATION
+ TO MAIN DIAL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_JOB_ID_RECIPE" TagType="Base" DataType="INT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[JOB REQUIRED TO LOAD INTO CAMERA
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[3]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="3"/>
+</Data>
+</Tag>
+<Tag Name="VISION_JOB_LOAD_COMPLETE" TagType="Alias" Radix="Decimal" AliasFor="CAM04:I1.Data[1].5" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[JOB LOAD COMPLETE
+VISION INSPECTION STATION]]>
+</Description>
+</Tag>
+<Tag Name="VISION_JOB_LOAD_FAILED" TagType="Alias" Radix="Decimal" AliasFor="CAM04:I1.Data[1].6" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[JOB LOAD FAILED
+VISION INSPECTION STATION]]>
+</Description>
+</Tag>
+<Tag Name="VISION_JOB_LOAD_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+CAMERA JOB LOAD
+VISION INSPECTION
+STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_JOB_LOAD_PB_VIS" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+VISIBILITY
+CAMERA JOB LOAD
+VISION INSPECTION
+STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_JOB_LOADED" TagType="Alias" Radix="Decimal" AliasFor="CAM_JOB_ID_INT" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[JOB LOADED
+VISION INSPECTION STATION]]>
+</Description>
+</Tag>
+<Tag Name="VISION_JOB_MATCH" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CAMERA JOB ID MATCH
+VISION INSPECTION
+STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="VISION_ONLINE" TagType="Alias" Radix="Decimal" AliasFor="CAM04:I1.Data[0].7" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CAMERA ONLINE
+VISION INSPECTION STATION]]>
+</Description>
+</Tag>
+<Tag Name="VISION_ONLINE_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+FORCE CAMERA ONLINE
+VISION INSPECTION
+STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="VISION_PASSED" TagType="Alias" Radix="Decimal" AliasFor="CAM04:I1.Data[2].4" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[VISION INSPECTION PASSED
+VISION INSPECTION STATION]]>
+</Description>
+</Tag>
+<Tag Name="VISION_PRINT_SIZE_RECIPE" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[VISION PRINT SIZE RECIPE
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0.00000000e+000]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="0.0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_PRINT_SKU_DINT" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PRINT SKU WITH DASH REMOVED (DINT)
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[408130]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="408130"/>
+</Data>
+</Tag>
+<Tag Name="VISION_PRINT_SKU_STRING" TagType="Base" DataType="STRING" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PRINT SKU WITH DASH REMOVED (STRING)
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[[6,'4081304$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+		]]]>
+</Data>
+<Data Format="String" Length="6">
+<![CDATA['408130']]>
+</Data>
+</Tag>
+<Tag Name="VISION_PROCESS_DONE" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CYCLE DONE
+FROM VISION INSPECTION STATION TO MAIN DIAL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_PROG_NUM_RECIPE_LOADED" TagType="Base" DataType="INT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PROGRAM NUMBER
+FROM RECIPE
+AFTER DOWNLOAD
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[3]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="3"/>
+</Data>
+</Tag>
+<Tag Name="VISION_SKU_LOAD_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+CAMERA SKU LOAD
+VISION INSPECTION
+STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_TRIGGER_ON_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+CAMERA TRIGGER ON
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_TRIGGER_ON_PB_VIS" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+VISIBILITY
+CAMER TRIGGER ON
+VISION INSPECTION
+ STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="VISION_TRIGGER_READY" TagType="Alias" Radix="Decimal" AliasFor="CAM04:I1.Data[0].0" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TRIGGER READY
+VISION INSPECTION
+STATION]]>
+</Description>
+</Tag>
+<Tag Name="VS_O" TagType="Base" DataType="VS_O" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[OUTPUTS TO CAMERA
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[[[0,0,16,0,0,0,0,0,1],[0,0,0,0,0,0,0],[0.00000000e+000,0.00000000e+000,0,0,93130,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0]]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="VS_O">
+<StructureMember Name="Control" DataType="VS_Control">
+<DataValueMember Name="Trigger" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved00" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved01" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved02" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved03" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved04" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved05" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved06" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TriggerDisable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OutputDisable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Reset" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved07" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved08" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved09" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved10" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved11" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved12" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved13" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ResultHandshakeEnable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ResultAck" DataType="BOOL" Value="0"/>
+<DataValueMember Name="GoToRun" DataType="BOOL" Value="1"/>
+<DataValueMember Name="GoToSetting" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Error0Clear" DataType="BOOL" Value="0"/>
+<DataValueMember Name="Error1Clear" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CommandRequest" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved14" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved15" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved16" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ProgramLoadExecute" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ProgramLoadExecuteFromSDCard" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved17" DataType="BOOL" Value="0"/>
+<DataValueMember Name="_reserved18" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData00" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData01" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData02" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData03" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData04" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData05" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData06" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData07" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData08" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData09" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData10" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData11" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData12" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData13" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData14" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData15" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData16" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData17" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData18" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData19" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData20" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData21" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData22" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData23" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData24" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData25" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData26" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData27" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData28" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData29" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData30" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AssignableBitData31" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ProgramNumber" DataType="DINT" Radix="Decimal" Value="1"/>
+</StructureMember>
+<StructureMember Name="CommandRequest" DataType="VS_CommandRequest">
+<DataValueMember Name="CommandNumber" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CommandParameter00" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CommandParameter01" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CommandParameter02" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CommandParameter03" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CommandParameter04" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CommandParameter05" DataType="DINT" Radix="Decimal" Value="0"/>
+</StructureMember>
+<StructureMember Name="InspectionParameters" DataType="VS_InspectionParameters">
+<DataValueMember Name="InspectionParameter000" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="InspectionParameter001" DataType="REAL" Radix="Float" Value="0.0"/>
+<DataValueMember Name="InspectionParameter002" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter003" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter004" DataType="DINT" Radix="Decimal" Value="93130"/>
+<DataValueMember Name="InspectionParameter005" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter006" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter007" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter008" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter009" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter010" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter011" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter012" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter013" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter014" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter015" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter016" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter017" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter018" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter019" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter020" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter021" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter022" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter023" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter024" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter025" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter026" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter027" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter028" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter029" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter030" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter031" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter032" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter033" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter034" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter035" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter036" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter037" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter038" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter039" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter040" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter041" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter042" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter043" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter044" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter045" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter046" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter047" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter048" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter049" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter050" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter051" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter052" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter053" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter054" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter055" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter056" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter057" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter058" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter059" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter060" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter061" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter062" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter063" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter064" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter065" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter066" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter067" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter068" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter069" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter070" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter071" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter072" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter073" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter074" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter075" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter076" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter077" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter078" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter079" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter080" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter081" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter082" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter083" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter084" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter085" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter086" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter087" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter088" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter089" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter090" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter091" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter092" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter093" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter094" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter095" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter096" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter097" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter098" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter099" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter100" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter101" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter102" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter103" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter104" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter105" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter106" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter107" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter108" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter109" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter110" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter111" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter112" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="InspectionParameter113" DataType="DINT" Radix="Decimal" Value="0"/>
+</StructureMember>
+</Structure>
+</Data>
+</Tag>
+</Tags>
+<Programs Use="Context">
+<Program Use="Target" Name="_18_VISION" TestEdits="false" MainRoutineName="MAIN" Disabled="false" UseAsFolder="false">
+<Description>
+<![CDATA[VISION INSPECTION STATION]]>
+</Description>
+<Tags>
+<Tag Name="ONS_ARRAY" TagType="Base" DataType="BOOL" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ONE SHOT ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[1]">
+<![CDATA[ONS]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[2#0,2#1,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+		,2#0,2#0,2#0,2#0,2#0]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="BOOL" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="1"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="remove_me" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[Temporary SKU Fix for Wrong Cliches]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="RUN_PROCESS" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[RUN PROCESS
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="TIMER_ALARM" TagType="Base" DataType="TIMER" Dimensions="10" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM TIMERS
+VISION INSPECTION STATION]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[CAMERA OFFLINE
+ALARM TIMER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[CAMERA JOB LOAD
+ALARM TIMER
+VISION INSPECTION
+STATION]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[CAMERA ONLINE
+ALARM TIMER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[CAMERA TRIGGER READY
+ALARM TIMER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[CAMERA TRIGGER ACK
+ALARM TIMER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[8]">
+<![CDATA[VISION COMPLETE
+ALARM TIMER
+VISION INSPECTION STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[[3569694,5000,0],[3569699,15000,0],[2461148,5000,0],[1581995,5000,0],[1831695,5000,0],[0,0,0],[0,0,0],[0,0,0],[1831700,5000
+		,0],[1831660,5000,0]]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="TIMER" Dimensions="10">
+<Element Index="[0]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="5000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="15000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="5000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="5000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[4]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="5000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[5]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[6]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[7]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[8]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="5000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[9]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="5000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+</Array>
+</Data>
+</Tag>
+<Tag Name="TIMER_OPER" TagType="Base" DataType="TIMER" Dimensions="10" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[OPERATIONAL TIMERS
+VISION INSPECTION STATION]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[VISION TRIGGER
+DEBOUNCE TIMER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[VISION COMPLETE DEBOUNCE TIMER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[VISION TRIGGER DEBOUNCE TIMER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[VISION TRIGGER
+DEBOUNCE TIMER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[VISION COMPLETE DEBOUNCE TIMER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[PROCESS DONE
+OPERATIONAL TIMERS
+VISION INSPECTION STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[[1831700,30,0],[1831666,200,0],[1831666,250,0],[4173644,30,0],[4174369,200,0],[1835305,100,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="TIMER" Dimensions="10">
+<Element Index="[0]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="30"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="200"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="250"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="30"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[4]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="200"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[5]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="100"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[6]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[7]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[8]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[9]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+</Array>
+</Data>
+</Tag>
+<Tag Name="Vision_Pass_CNT" TagType="Base" DataType="COUNTER" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[TEST COUNTER VISION PASS SEQUENCE
+VISION INSPECTION STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[[536870912,0,28778]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="COUNTER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="28778"/>
+<DataValueMember Name="CU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="OV" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UN" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+</Tags>
+<Routines>
+<Routine Name="AUTO" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[VISION INSPECTION STATION AUTO ROUTINE
+***************************************************************************
+
+SHUTDOWN REQUEST REQUIREMENTS]]>
+</Comment>
+<Text>
+<![CDATA[XIC(CELL_STARTED)XIC(CELL_SHUTDOWN_REQ)[EQU(STEP_AUTO[1],500) ,EQU(STEP_AUTO[1],1000) ]MOV(500,STEP_AUTO[18]);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[CHECK TO SEE IF STATION CAN RUN BEFORE INITIAL INDEX AFTER STARTING CELL
+
+IF MANUAL CYCLE MOVE TO NEXT STEP]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[18],0)[XIC(CELL_STARTED) [XIO(RUN_PROCESS) MOV(5,STEP_AUTO[18]) ,XIC(RUN_PROCESS) MOV(20,STEP_AUTO[18]) ] ,XIC(CELL_MANUAL_MODE) XIC(MAIN_DIAL_IN_POSITION) XIC(VISION_CYCLE_PB) MOV(20,STEP_AUTO[18]) ];]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[ REQUEST DIAL INDEX
+]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[18],5)[OTE(VISION_INDEX_DIAL_REQ) ,XIC(MAIN_DIAL_INDEX_DONE) MOV(10,STEP_AUTO[18]) ];]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[ANALYZE PART DATA]]>
+</Comment>
+<Text>
+<![CDATA[[XIO(CELL_SHUTDOWN_REQ) XIO(CELL_EMPTY_COMPLETE.13) XIC(VISION_DATA_BAG_LOADED) XIO(VISION_DATA_BAG_REJECT) [XIC(VISION_DATA_GLUE_COMPLETE) ,XIO(GLUE_ACTIVE_RECIPE_LOADED) ] [XIC(VISION_DATA_PNC_COMPLETE) ,XIO(PNC_ACTIVE_RECIPE_LOADED) ] XIC(VISION_ACTIVE_PB) XIO(VISION_DATA_VISION_COMPLETE) OTE(RUN_PROCESS) ,XIC(VISION_DATA_BAG_LOADED) XIC(CELL_SINGLE_PART_MODE_ACTIVE) XIC(CELL_SINGLE_PART_GLUE_ONLY_PB) [MOV(500,STEP_AUTO[18]) ,MOV(897,STEP_ALARM[18]) ] ,EQU(STEP_AUTO[18],10) [XIC(RUN_PROCESS) OTL(CAM04:O1.Data[0].0) MOV(20,STEP_AUTO[18]) ,XIO(RUN_PROCESS) MOV(150,STEP_AUTO[18]) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[TRIGGER CAMERA]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[18],20)XIC(CELL_OVERHEAD_LIGHTS_OFF)XIC(VISION_TRIGGER_READY)[TON(TIMER_OPER[2],?,?) ,XIC(TIMER_OPER[2].DN) OTL(VISION_TRIGGER_ON_PB) ,TON(TIMER_OPER[1],?,?) ,XIC(TIMER_OPER[1].DN) XIC(CAM04:I1.Data[0].1) [OTU(VISION_TRIGGER_ON_PB) ,MOV(40,STEP_AUTO[18]) ] ,XIO(CAM04:I1.Data[0].1) [TON(TIMER_ALARM[4],?,?) ,XIC(TIMER_ALARM[4].DN) MOV(220,STEP_ALARM[18]) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Comment>
+<![CDATA[WAIT FOR INSPECTION PROCESS TO COMPLETE AND DELAY]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[18],40)[XIC(CAM04:I1.Data[1].3) XIC(VISION_TRIGGER_READY) [TON(TIMER_OPER[0],?,?) ,XIC(TIMER_OPER[0].DN) MOV(80,STEP_AUTO[18]) ] ,[TON(TIMER_ALARM[8],?,?) ,XIC(TIMER_ALARM[8].DN) MOV(221,STEP_ALARM[18]) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Comment>
+<![CDATA[WAIT FOR VISION COMPLETE AND ANALYZE RESULTS]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[18],80)[XIC(CELL_STARTED) [XIC(VISION_PASSED) CTU(Vision_Pass_CNT,?,?) OTL(VISION_DATA_VISION_PASS) ,OTL(VISION_DATA_VISION_COMPLETE) ,MOV(150,STEP_AUTO[18]) ] ,XIC(CELL_MANUAL_MODE) XIC(VISION_CYCLE_PB) [OTU(VISION_CYCLE_PB) ,MOV(0,STEP_AUTO[18]) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Comment>
+<![CDATA[SET PROCESS DONE
+MONITOR EMPTY STATUS]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[18],150)[[OTL(VISION_PROCESS_DONE) ,OTU(CAM04:O1.Data[0].0) ] ,XIC(CELL_EMPTY_COMPLETE.12) XIC(VISION_DATA_EMPTY_LAST_BAG) OTL(CELL_EMPTY_COMPLETE.13) ,TON(TIMER_OPER[5],?,?) ,XIC(TIMER_OPER[5].DN) MOV(160,STEP_AUTO[18]) ];]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Comment>
+<![CDATA[WAIT FOR MAIN DIAL TO TURN OFF INDEX DONE]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[18],160)XIO(MAIN_DIAL_INDEX_DONE)[OTU(VISION_PROCESS_DONE) ,MOV(5,STEP_AUTO[18]) ];]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Comment>
+<![CDATA[CAMERA TRIGGER ACK ALARM]]>
+</Comment>
+<Text>
+<![CDATA[[EQU(STEP_AUTO[18],40) ,EQU(STEP_AUTO[18],70) ][TON(TIMER_ALARM[4],?,?) ,XIC(TIMER_ALARM[4].DN) MOV(220,STEP_ALARM[18]) ];]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Comment>
+<![CDATA[VISION COMPLETE TIMEOUT ALARM]]>
+</Comment>
+<Text>
+<![CDATA[[EQU(STEP_AUTO[18],20) ,EQU(STEP_AUTO[18],60) ][TON(TIMER_ALARM[9],?,?) ,XIC(TIMER_ALARM[9].DN) MOV(221,STEP_ALARM[18]) ];]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Comment>
+<![CDATA[BLUE VISION LIGHT CONTROL]]>
+</Comment>
+<Text>
+<![CDATA[AFI()[NEQ(STEP_ESTOP_RESET[0],1000) XIO(CELL_MANUAL_MODE) [XIC(VISION_ACTIVE_PB) OTL(VISION_BLUE_LIGHT_ON_PB) ,XIO(VISION_ACTIVE_PB) OTU(VISION_BLUE_LIGHT_ON_PB) ] ,XIC(VISION_BLUE_LIGHT_ON_PB) OTE(Local:2:O.Pt09.Data) ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="ESTOP_RESET" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[VISION INSPECTION STATION E-STOP RESET
+***************************************************************************
+
+ALARM]]>
+</Comment>
+<Text>
+<![CDATA[[XIC(CELL_KEY_AUTO_MODE) NEQ(STEP_ALARM[18],0) ,EQU(STEP_ESTOP_RESET[0],1000) ]MOV(1000,STEP_ESTOP_RESET[18]);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[CAPTURE INITIAL ALARM
+AND DETERMINE IF THIS IS THE PRIMARY ALARM FOR THE ENTIRE CELL]]>
+</Comment>
+<Text>
+<![CDATA[[EQU(STEP_ESTOP_RESET[18],1000) EQU(STEP_ALARM_CAPTURE[18],0) MOV(STEP_ALARM[18],STEP_ALARM_CAPTURE[18]) ,LIM(900,STEP_ALARM[0],0) NEQ(STEP_ALARM_CAPTURE[18],0) EQU(STEP_ALARM_TRIGGER_WORD_1,0) OTL(STEP_ALARM_TRIGGER_WORD_1.18) ];]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[E-STOP SETTINGS]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_ESTOP_RESET[18],1000)[NEQ(STEP_ALARM[18],0) OTE(MAJOR_FAULT[18]) ,ONS(ONS_ARRAY[1]) MOV(STEP_AUTO[18],STEP_AUTO_RET_ESTOP[18]) ,OTU(CAM04:O1.Data[0].0) ,OTU(VISION_CYCLE_PB) ,OTU(VISION_JOB_LOAD_PB) ,OTU(VISION_TRIGGER_ON_PB) ,OTU(VISION_PROCESS_DONE) ,MOV(1000,STEP_HOME[18]) ,MOV(1000,STEP_AUTO[18]) ];]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[WAIT FOR RESET]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_ESTOP_RESET[18],1000)XIO(CELL_ESTOP_PRESSED)XIO(CELL_SHUTDOWN_REQ)XIC(CELL_RESET_READY)XIC(CELL_RESET_PRESSED)MOV(10,STEP_ESTOP_RESET[18]);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[GENERAL CELL SETTINGS UPON RESET]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_ESTOP_RESET[18],10)[MOV(0,STEP_ALARM[18]) ,MOV(0,STEP_ALARM_CAPTURE[18]) ,MOV(20,STEP_ESTOP_RESET[18]) ];]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Comment>
+<![CDATA[WAIT FOR RESET TO BE RELEASED
+WAIT FOR CELL PRESSURE OK
+RESET BASED ON MACHINE MODE]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_ESTOP_RESET[18],20)XIO(CELL_RESET_PRESSED)XIC(CELL_PRESSURE_OK)XIO(CELL_SAFETY_DOOR_OPEN)[XIC(CELL_KEY_AUTO_MODE) [MOV(0,STEP_HOME[18]) ,MOV(30,STEP_ESTOP_RESET[18]) ] ,XIC(CELL_KEY_MAN_MODE) MOV(500,STEP_ESTOP_RESET[18]) ];]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Comment>
+<![CDATA[WAIT FOR RESET TO COMPLETE]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_ESTOP_RESET[18],30)EQU(STEP_HOME[18],500)MOV(500,STEP_ESTOP_RESET[18]);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="HMI" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[VISION INSPECTION STATION HMI
+***************************************************************************
+
+PUSH BUTTONS ON HMI VISIBILITY]]>
+</Comment>
+<Text>
+<![CDATA[XIO(CELL_STARTED)XIC(CELL_MANUAL_MODE)[XIO(VISION_ONLINE) OTE(VISION_JOB_LOAD_PB_VIS) ,XIC(VISION_ONLINE) XIC(VISION_TRIGGER_READY) OTE(VISION_TRIGGER_ON_PB_VIS) ,OTE(VISION_ACTIVE_PB_VIS) ,OTE(VISION_BLUE_LIGHT_VIS) ];]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[VISION INSPECTION COMPLETE STATUS
+]]>
+</Comment>
+<Text>
+<![CDATA[XIC(VISION_TRIGGER_READY)OTE(VISION_COMPLETE);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[BYPASS ANIMATION FOR HMI]]>
+</Comment>
+<Text>
+<![CDATA[XIO(VISION_ACTIVE_PB)XIC(CELL_TIMING_BIT_1000)OTE(VISION_BYPASS_ANIMATION);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="HOME" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[VISION INSPECTION STATION HOME ROUTINE
+***************************************************************************
+
+
+SEE IF VISION IS ACTIVE OR BYPASSED]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_HOME[18],0)[XIC(VISION_ACTIVE_PB) MOV(10,STEP_HOME[18]) ,XIO(VISION_ACTIVE_PB) MOV(40,STEP_HOME[18]) ];]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[TRANSFER RECIPE HOLE AND PRINT SIZE TO CAMERA
+]]>
+</Comment>
+<Text>
+<![CDATA[AFI()EQU(STEP_HOME[18],5)[MOV(VISION_PRINT_SKU_DINT,VS_O.InspectionParameters.InspectionParameter004) ,MOV(VISION_HOLE_SIZE_RECIPE,VS_O.InspectionParameters.InspectionParameter000) ,MOV(VISION_PRINT_SIZE_RECIPE,VS_O.InspectionParameters.InspectionParameter001) ,XIC(INKJET_PRINT_ACTIVE_RECIPE_LOADED) MOV(1,VS_O.InspectionParameters.InspectionParameter002) ,XIO(INKJET_PRINT_ACTIVE_RECIPE_LOADED) MOV(0,VS_O.InspectionParameters.InspectionParameter002) ,XIC(PRINT_SKU_PAD_ACTIVE_HW_RECIPE_LOADED) MOV(1,VS_O.InspectionParameters.InspectionParameter003) ,XIO(PRINT_SKU_PAD_ACTIVE_HW_RECIPE_LOADED) MOV(0,VS_O.InspectionParameters.InspectionParameter003) ]MOV(10,STEP_HOME[18]);]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[PLACE CAMERA ONLINE]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_HOME[18],10)[OTL(VISION_ONLINE_PB) ,XIC(VISION_ONLINE) [NEQ(VISION_PROG_NUM_RECIPE_LOADED,VISION_JOB_LOADED) MOV(20,STEP_HOME[18]) ,EQU(VISION_PROG_NUM_RECIPE_LOADED,VISION_JOB_LOADED) MOV(30,STEP_HOME[18]) ] ,AFI() [TON(TIMER_ALARM[2],?,?) ,XIC(TIMER_ALARM[2].DN) MOV(218,STEP_ALARM[18]) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[LOAD JOB IN VISION CAMERA]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_HOME[18],20)[OTU(VISION_ERROR_RESET_PB) ,OTL(VISION_JOB_LOAD_PB) ,XIC(VISION_JOB_LOAD_COMPLETE) XIC(VISION_JOB_MATCH) XIO(VISION_JOB_LOAD_FAILED) [OTU(VISION_JOB_LOAD_PB) ,OTU(VISION_SKU_LOAD_PB) ,MOV(30,STEP_HOME[18]) ] ,[TON(TIMER_ALARM[1],?,?) ,XIC(TIMER_ALARM[1].DN) [XIO(VISION_JOB_LOAD_COMPLETE) XIC(VISION_JOB_LOAD_FAILED) MOV(216,STEP_ALARM[18]) ,XIC(VISION_JOB_LOAD_COMPLETE) MOV(217,STEP_ALARM[18]) ] ] ];]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[ENABLE VISION CAMERA TRIGGER]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_HOME[18],30)[OTL(CAM04:O1.Data[0].0) ,XIC(VISION_TRIGGER_READY) MOV(40,STEP_HOME[18]) ,[TON(TIMER_ALARM[3],?,?) ,XIC(TIMER_ALARM[3].DN) MOV(219,STEP_ALARM[18]) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Comment>
+<![CDATA[FINISH ROUTINE
+]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_HOME[18],40)[MOV(0,STEP_AUTO[18]) ,MOV(500,STEP_HOME[18]) ];]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Comment>
+<![CDATA[REMOVE DASH FROM RECIPE SKU FOR VISION OCR
+]]>
+</Comment>
+<Text>
+<![CDATA[FIND(CELL_PRODUCT_SKU_LOADED,DASH,1,INKJET_SKU_DASH_LOCATION)DELETE(CELL_PRODUCT_SKU_LOADED,1,INKJET_SKU_DASH_LOCATION,VISION_PRINT_SKU_STRING)STOD(VISION_PRINT_SKU_STRING,VISION_PRINT_SKU_DINT);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="MAIN" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[MAIN ROUTINE
+***************************************************************************
+
+]]>
+</Comment>
+<Text>
+<![CDATA[[JSR(ESTOP_RESET,0) ,JSR(STATUS,0) ,JSR(HOME,0) ,JSR(AUTO,0) ,JSR(OUTPUTS,0) ,JSR(HMI,0) ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="OUTPUTS" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[VISION INSPECTION STATION OUTPUTS
+***************************************************************************
+
+VISION CONTROL]]>
+</Comment>
+<Text>
+<![CDATA[[XIO(VISION_ONLINE_PB) XIC(CAM04:I1.Data[0].7) OTL(CAM04:O1.Data[0].7) ,XIC(VISION_ONLINE_PB) XIO(CAM04:I1.Data[0].7) XIO(VISION_JOB_LOAD_PB) XIO(VISION_SKU_LOAD_PB) OTU(CAM04:O1.Data[0].7) ,XIC(VISION_ERROR_RESET_PB) OTE(CAM04:O1.Data[2].2) ,[XIC(VISION_JOB_LOAD_PB) ,XIC(VISION_SKU_LOAD_PB) ] [ONS(ONS_ARRAY[2]) MOV(VISION_PROG_NUM_RECIPE_LOADED,VISION_JOB_ID_RECIPE) BTD(VISION_JOB_ID_RECIPE,0,CAM04:O1.Data[4],0,2) OTL(CAM04:O1.Data[0].7) ,XIO(CAM04:I1.Data[0].7) OTL(CAM04:O1.Data[0].4) ,XIC(CAM04:I1.Data[1].5) OTU(CAM04:O1.Data[0].4) OTU(CAM04:O1.Data[0].7) ] ,XIC(VISION_TRIGGER_ON_PB) OTE(CAM04:O1.Data[0].1) ,XIO(CAM04:I1.Data[0].7) XIC(CAM04:O1.Data[0].7) [TON(TIMER_ALARM[0],?,?) ,XIC(TIMER_ALARM[0].DN) MOV(215,STEP_ALARM[18]) ] ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="STATUS" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[VISION INSPECTION STATION STATUS
+***************************************************************************
+
+AUTO READY REQUIREMENTS]]>
+</Comment>
+<Text>
+<![CDATA[[XIC(VISION_ACTIVE_PB) NEQ(STEP_HOME[18],1000) LIM(100,VISION_JOB_ID_RECIPE,-1) MOV(214,STEP_ALARM[18]) ,EQU(VISION_PROG_NUM_RECIPE_LOADED,VISION_JOB_LOADED) OTE(VISION_JOB_MATCH) ,EQU(STEP_HOME[18],500) [XIC(VISION_ONLINE) XIC(VISION_TRIGGER_READY) XIC(VISION_JOB_MATCH) ,XIO(VISION_ACTIVE_PB) ] OTE(CELL_AUTO_READY[18]) ];]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Text>
+<![CDATA[BTD(CAM04:I1.Data[8],0,CAM_JOB_ID_INT,0,8)BTD(CAM04:I1.Data[9],0,CAM_JOB_ID_INT,8,8);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</Program>
+</Programs>
+</Controller>
+</RSLogix5000Content>

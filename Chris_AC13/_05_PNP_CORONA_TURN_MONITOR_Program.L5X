@@ -1,0 +1,190 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="34.01" TargetName="_05_PNP_CORONA_TURN_MONITOR" TargetType="Program" ContainsContext="true" Owner="Windows User" ExportDate="Thu Aug 27 15:43:30 2026" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans LogicalHierarchy">
+<Controller Use="Context" Name="RFCBM_1PC_BAL_AC13">
+<DataTypes Use="Context">
+</DataTypes>
+<Tags Use="Context">
+<Tag Name="DRV06" TagType="Base" DataType="AXIS_CIP_DRIVE" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BARRIER PICK N PLACE PICK HEAD DRIVE]]>
+</Description>
+<Comments>
+<Comment Operand=".AXISHOMEDSTATUS">
+<![CDATA[PICK HEAD DRIVE HAS COMPLETED HOMING REGISTRATION
+BARRIER PICK-N-PLACE/
+CORONA TREAT]]>
+</Comment>
+<Comment Operand=".ACTUALPOSITION">
+<![CDATA[CURRENT ACTUAL POSITION
+PICK HEAD DRIVE
+BARRIER PICK-N-PLACE/CORONA TREATER]]>
+</Comment>
+</Comments>
+<Data Format="Axis">
+<AxisParameters MotionGroup="DRVS_MOT_GRP" CIPDriveSetAttrUpdateBits="16#3fff_fe03 16#9000_0380 16#00f1_007a 16#c000_0000 16#bbf7_fd7f 16#201f_ffff 16#701d_c000 16#c0f4_2065 16#0000_0217 16#0000_0000 16#0000_0000 16#0000_0000 16#0000_0000 16#0000_0000 16#0000_0000 16#0000_0000" CIPDriveGetAttrUpdateBits="16#0000_0071 16#ff7b_f76e 16#f3e0_007f 16#0012_0980 16#0c00_0090 16#0000_2603 16#0000_0000 16#0000_0000 16#0000_0000 16#0000_0000 16#0000_0000 16#0000_0000 16#0000_0000 16#0000_0000 16#0000_0000 16#0000_0000" CIPControllerSetAttrUpdateBits="16#3fef_fe1f 16#edbf_ffff 16#fff5_fbff 16#e001_1aff 16#0000_03e1" CIPControllerGetAttrUpdateBits="16#f7ff_ffff 16#30fe_7fbf 16#effb_fdff 16#0000_07ff 16#0000_0000" MotionModule="DRV06:Ch1" ApplicationCatalogNumberInstance="0" ApplicationCatalogNumberVersion="0" AxisConfiguration="Position Loop" FeedbackConfiguration="Motor Feedback" MotorDataSource="Database"
+ MotorCatalogNumber="VPL-B0631T-P" Feedback1Type="Hiperface DSL" MotorType="Rotary Permanent Magnet" MotionScalingConfiguration="Control Scaling" ConversionConstant="1000.0" OutputCamExecutionTargets="0" PositionUnits="Degrees" AverageVelocityTimebase="0.25" PositionUnwind="360000" HomeMode="Active" HomeDirection="Bi-directional Reverse"
+ HomeSequence="Switch" HomeConfigurationBits="16#0000_0000" HomePosition="0.0" HomeOffset="0.0" HomeSpeed="50.0" HomeReturnSpeed="10.0" MaximumSpeed="40800.0" MaximumAcceleration="5286838.0" MaximumDeceleration="5286838.0" ProgrammedStopMode="Fast Stop" MasterInputConfigurationBits="1"
+ MasterPositionFilterBandwidth="0.1" VelocityFeedforwardGain="100.0" AccelerationFeedforwardGain="0.0" PositionErrorTolerance="162.33803" PositionLockTolerance="3.6" VelocityOffset="0.0" TorqueOffset="0.0" FrictionCompensationWindow="0.0" BacklashReversalOffset="0.0" TuningTravelLimit="360.0" TuningSpeed="20.0"
+ TuningTorque="100.0" DampingFactor="0.8" DriveModelTimeConstant="0.000537069" PositionServoBandwidth="80.0" VelocityServoBandwidth="115.81645" VelocityDroop="0.0" VelocityLimitPositive="54000.0" VelocityLimitNegative="-54000.0" VelocityThreshold="43200.0" VelocityStandstillWindow="480.0" TorqueLimitPositive="294.11765"
+ TorqueLimitNegative="-294.11765" TorqueThreshold="264.70587" StoppingTorque="294.11765" StoppingTimeLimit="1.0" LoadInertiaRatio="0.9981924" RegistrationInputs="2" MaximumAccelerationJerk="685065088.0" MaximumDecelerationJerk="685065088.0" DynamicsConfigurationBits="7" AccelerationLimit="15105251.0" DecelerationLimit="15105251.0"
+ PositionIntegratorBandwidth="0.0" PositionErrorToleranceTime="0.0" PositionIntegratorControl="0" VelocityErrorTolerance="8217.054" VelocityErrorToleranceTime="0.01" VelocityIntegratorControl="0" VelocityLockTolerance="480.0" SystemInertia="0.014019278" TorqueLowPassFilterBandwidth="0.0" TorqueNotchFilterFrequency="0.0" TorqueRateLimit="1000000.0"
+ OvertorqueLimit="200.0" OvertorqueLimitTime="0.0" UndertorqueLimit="10.0" UndertorqueLimitTime="0.0" FluxCurrentReference="0.0" CurrentError="0.0" TorqueLoopBandwidth="1000.0" StoppingAction="Current Decel Disable" MechanicalBrakeControl="Automatic" MechanicalBrakeReleaseDelay="0.0" MechanicalBrakeEngageDelay="0.0"
+ InverterCapacity="0.0" ConverterCapacity="0.0" InverterOverloadAction="None" MotorOverloadAction="None" CIPAxisExceptionAction="Unsupported Unsupported Unsupported Disable Disable Disable Unsupported Disable Disable Disable Disable Disable Unsupported Disable Disable Disable Disable Unsupported Disable Unsupported Disable Disable Unsupported Disable Unsupported Disable Unsupported Unsupported Unsupported Disable Disable Disable Unsupported Disable Disable Disable Unsupported Unsupported Unsupported Disable Disable Unsupported Unsupported Unsupported Unsupported Disable Unsupported Disable Unsupported Disable Disable Disable Unsupported Unsupported Disable Disable Disable Disable Unsupported Unsupported Unsupported Unsupported Disable Unsupported" CIPAxisExceptionActionRA="Unsupported Unsupported Disable Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Disable Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Disable Disable Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported" MotorOverspeedUserLimit="120.0" MotorThermalOverloadUserLimit="110.0" InverterThermalOverloadUserLimit="110.0" PositionLeadLagFilterBandwidth="0.0" PositionLeadLagFilterGain="0.0"
+ VelocityNegativeFeedforwardGain="0.0" BacklashCompensationWindow="0.0" TorqueLeadLagFilterBandwidth="0.0" TorqueLeadLagFilterGain="1.0" MotorDeviceCode="16#0000_094f" MotorUnit="Rev" MotorPolarity="Normal" MotorRatedVoltage="480.0" MotorRatedContinuousCurrent="0.85" MotorRatedPeakCurrent="2.97" MotorRatedOutputPower="0.31"
+ MotorOverloadLimit="100.0" MotorIntegralThermalSwitch="false" MotorMaxWindingTemperature="155.0" MotorWindingToAmbientCapacitance="1336.0" MotorWindingToAmbientResistance="0.52" PMMotorResistance="29.01" PMMotorInductance="0.0397" RotaryMotorPoles="8" RotaryMotorInertia="0.000011" RotaryMotorRatedSpeed="8000.0" RotaryMotorMaxSpeed="8000.0"
+ PMMotorRatedTorque="0.46" PMMotorTorqueConstant="0.58" PMMotorRotaryVoltageConstant="35.05671" Feedback1Unit="Rev" Feedback1StartupMethod="Absolute" Feedback1CycleResolution="262144" Feedback1CycleInterpolation="1" Feedback1Turns="4096" Feedback1VelocityFilterBandwidth="5092.9575" Feedback1AccelFilterBandwidth="0.0" PMMotorFluxSaturation="95.0 88.0 83.0 80.0 70.0 65.0 60.0 55.0"
+ Feedback1VelocityFilterTaps="1" Feedback1AccelFilterTaps="1" CyclicReadUpdateList="TorqueNotchFilterFrequencyEstimate TorqueNotchFilterMagnitudeEstimate" ScalingSource="From Calculator" LoadType="Direct Coupled Rotary" ActuatorType="&lt;none>" TravelMode="Cyclic" PositionScalingNumerator="360.0" PositionScalingDenominator="1.0" PositionUnwindNumerator="360.0" PositionUnwindDenominator="1.0"
+ TravelRange="1000.0" MotionResolution="360000" MotionPolarity="Normal" MotorTestResistance="0.0" MotorTestInductance="0.0" TuneFriction="0.0" TuneLoadOffset="0.0" TotalInertia="0.000011" TuningSelect="Total Inertia" TuningDirection="Uni-directional Forward" ApplicationType="Custom"
+ LoopResponse="High" FeedbackCommutationAligned="Motor Offset" FrictionCompensationSliding="0.0" FrictionCompensationStatic="0.0" FrictionCompensationViscous="0.0" PositionLoopBandwidth="80.0" VelocityLoopBandwidth="204.80002" VelocityIntegratorBandwidth="0.0" FeedbackDataLossUserLimit="4" MotionExceptionAction="Unsupported Disable Disable Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported Unsupported" SoftTravelLimitChecking="false"
+ LoadRatio="0.0" TuneInertiaMass="0.0" SoftTravelLimitPositive="0.0" SoftTravelLimitNegative="0.0" GainTuningConfigurationBits="16#0043" CommutationOffset="0.0" SystemBandwidth="80.0" VelocityLowPassFilterBandwidth="0.0" TransmissionRatioInput="1" TransmissionRatioOutput="1" ActuatorLead="1.0"
+ ActuatorLeadUnit="Millimeter/Rev" ActuatorDiameter="1.0" ActuatorDiameterUnit="Millimeter" SystemAccelerationBase="7133.035" DriveModelTimeConstantBase="0.000505819" DriveRatedPeakCurrent="2.5" HookupTestDistance="360.0" HookupTestFeedbackChannel="Feedback 1" LoadCoupling="Rigid" SystemDamping="0.8" CurrentVectorLimit="294.11765"
+ LoadObserverConfiguration="Load Observer with Velocity Estimate" LoadObserverBandwidth="204.80002" LoadObserverIntegratorBandwidth="0.0" LoadObserverFeedbackGain="0.5" AxisID="4012716598" InterpolatedPositionConfiguration="16#0000_0002" AxisUpdateSchedule="Alternate 1" ProvingConfiguration="Disabled" TorqueProveCurrent="0.0" BrakeTestTorque="0.0" BrakeSlipTolerance="0.0"
+ ZeroSpeed="1.0" ZeroSpeedTime="0.0" AdaptiveTuningConfiguration="Tracking Notch" TorqueNotchFilterHighFrequencyLimit="2000.0" TorqueNotchFilterLowFrequencyLimit="296.33984" TorqueNotchFilterTuningThreshold="5.0" CoastingTimeLimit="0.0" BusOvervoltageOperationalLimit="730.0" CurrentLoopBandwidthScalingFactor="1.0" CurrentLoopBandwidth="1000.0" DriveRatedVoltage="460.0"
+ MaxOutputFrequency="600.0" MotorTestDataValid="False" HookupTestSpeed="0.0"/>
+</Data>
+</Tag>
+<Tag Name="DRVS_MOT_GRP" TagType="Base" DataType="MOTION_GROUP" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DRIVES MOTION GROUP
+CELL]]>
+</Description>
+<Data Format="MotionGroup">
+<MotionGroupParameters CoarseUpdatePeriod="2000" PhaseShift="0" GeneralFaultType="Non Major Fault" AutoTagUpdate="Enabled" Alternate1UpdateMultiplier="15" Alternate2UpdateMultiplier="10"/>
+</Data>
+</Tag>
+<Tag Name="ONS_ARRAY" TagType="Base" DataType="BOOL" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ONE SHOT ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[ONS]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+		,2#0,2#0,2#0,2#0,2#0]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="BOOL" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="PNP_CORONA_PICK_HEAD_DRV_COR_TURNS" TagType="Base" DataType="COUNTER" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PICK HEAD DRIVE COUNTS OF TURNS WHEN MOVING TO CORONA POSITION
+BARRIER PICK-N-PLACE/
+CORONA TREAT]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[[536870912,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="COUNTER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="CU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="OV" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UN" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="PNP_CORONA_PICK_HEAD_TURN_DIGITAL_SENSOR" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PICK HEAD DIGITAL TURN SENSOR
+BARRIER PICK-N-PLACE/
+CORONA TREAT]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="PNP_MOTION_PICK_HEAD_DRV_COR_POS_CONT" TagType="Base" DataType="MOTION_INSTRUCTION" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PICK HEAD DRIVE CORONA POSITION CONTROL WORD
+BARRIER PICK-N-PLACE/
+CORONA TREAT]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[[33554432,0,0,0,0,0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="MOTION_INSTRUCTION">
+<DataValueMember Name="FLAGS" DataType="DINT" Radix="Decimal" Value="33554432"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PC" DataType="BOOL" Value="0"/>
+<DataValueMember Name="IP" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AC" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACCEL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DECEL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TrackingMaster" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CalculatedDataAvailable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ERR" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="STATUS" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="STATE" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="SEGMENT" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EXERR" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+</Tags>
+<Programs Use="Context">
+<Program Use="Target" Name="_05_PNP_CORONA_TURN_MONITOR" TestEdits="false" MainRoutineName="PICK_HEAD_TURN_MONITOR" Disabled="false" UseAsFolder="false">
+<Tags/>
+<Routines>
+<Routine Name="PICK_HEAD_TURN_MONITOR" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[HOME SENSOR DEBOUCE FOR COUNTING TURNS DURING CORONA]]>
+</Comment>
+<Text>
+<![CDATA[XIC(PNP_MOTION_PICK_HEAD_DRV_COR_POS_CONT.EN)[LIM(300,DRV06.ActualPosition,350) OTE(PNP_CORONA_PICK_HEAD_TURN_DIGITAL_SENSOR) ,XIC(PNP_CORONA_PICK_HEAD_TURN_DIGITAL_SENSOR) ONS(ONS_ARRAY[0]) CTU(PNP_CORONA_PICK_HEAD_DRV_COR_TURNS,?,?) ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</Program>
+</Programs>
+</Controller>
+</RSLogix5000Content>

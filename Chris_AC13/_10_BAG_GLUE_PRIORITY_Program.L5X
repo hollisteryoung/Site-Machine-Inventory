@@ -1,0 +1,572 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="34.01" TargetName="_10_BAG_GLUE_PRIORITY" TargetType="Program" ContainsContext="true" Owner="Windows User" ExportDate="Thu Aug 27 15:44:04 2026" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans LogicalHierarchy">
+<Controller Use="Context" Name="RFCBM_1PC_BAL_AC13">
+<DataTypes Use="Context">
+</DataTypes>
+<Modules Use="Context">
+<Module Use="Reference" Name="Local">
+</Module>
+<Module Use="Reference" Name="MAN01">
+</Module>
+<Module Use="Reference" Name="OUT">
+</Module>
+</Modules>
+<Tags Use="Context">
+<Tag Name="CELL_DRY_CYCLE_MODE_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+CELL DRY CYCLE MODE
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_INSERT_LOAD_ONLY_MODE_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+LOAD ONLY
+INSERTS MODE
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="DRVS_MOT_GRP" TagType="Base" DataType="MOTION_GROUP" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DRIVES MOTION GROUP
+CELL]]>
+</Description>
+<Data Format="MotionGroup">
+<MotionGroupParameters CoarseUpdatePeriod="2000" PhaseShift="0" GeneralFaultType="Non Major Fault" AutoTagUpdate="Enabled" Alternate1UpdateMultiplier="15" Alternate2UpdateMultiplier="10"/>
+</Data>
+</Tag>
+<Tag Name="GLUE_MOTION_X_Y_CIRCLE_CONT" TagType="Base" DataType="MOTION_INSTRUCTION" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[COORDINATED GLUE PATH MOVE
+CONTROL WORD
+BAG GLUE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[[704643072,0,0,0,0,0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="MOTION_INSTRUCTION">
+<DataValueMember Name="FLAGS" DataType="DINT" Radix="Decimal" Value="704643072"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="ER" DataType="BOOL" Value="0"/>
+<DataValueMember Name="PC" DataType="BOOL" Value="1"/>
+<DataValueMember Name="IP" DataType="BOOL" Value="0"/>
+<DataValueMember Name="AC" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ACCEL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DECEL" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TrackingMaster" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CalculatedDataAvailable" DataType="BOOL" Value="0"/>
+<DataValueMember Name="ERR" DataType="INT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="STATUS" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="STATE" DataType="SINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="SEGMENT" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EXERR" DataType="SINT" Radix="Decimal" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="GLUE_TEMP_DETECTED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[GLUE TEMPERATURE DETECTED AFTER PROCESSING PART
+BAG GLUE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="GLUE_TEMP_PRESENT" TagType="Alias" Radix="Decimal" AliasFor="MAN01:I.Data[2].9" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[GLUE PRESENT SENSOR
+BAG GLUE STATION]]>
+</Description>
+</Tag>
+<Tag Name="GLUE_X_Y" TagType="Base" DataType="AXIS_VIRTUAL" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[VIRTUAL X-AXIS AND Y-AXIS DRIVE CONTROL
+BAG GLUE STATION]]>
+</Description>
+<Comments>
+<Comment Operand=".ACTUALPOSITION">
+<![CDATA[COORDINATED AXIS
+ACTUAL POSITION
+BAG GLUE STATION]]>
+</Comment>
+</Comments>
+<Data Format="Axis">
+<AxisParameters MotionGroup="DRVS_MOT_GRP" ConversionConstant="100.0" OutputCamExecutionTargets="0" PositionUnits="DEGREES" AverageVelocityTimebase="0.25" RotaryAxis="Rotary" PositionUnwind="360000" HomeMode="Active" HomeDirection="Bi-directional Forward" HomeSequence="Immediate" HomeConfigurationBits="16#0000_0000"
+ HomePosition="0.0" HomeOffset="0.0" MaximumSpeed="550.0" MaximumAcceleration="30300.0" MaximumDeceleration="30300.0" ProgrammedStopMode="Fast Stop" MasterInputConfigurationBits="1" MasterPositionFilterBandwidth="0.1" MaximumAccelerationJerk="4876841.5" MaximumDecelerationJerk="4876841.5" DynamicsConfigurationBits="7"
+ InterpolatedPositionConfiguration="16#0000_0002" AxisUpdateSchedule="Base"/>
+</Data>
+</Tag>
+<Tag Name="GLUE_X_Y_CIRCLE_INDEX" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[INDEX COORDINATED
+CIRCLE GLUE PATH 
+BAG GLUE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="GLUE_X_Y_PATH2_RUN" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[SECONDARY GLUE PATH 
+RUNNING
+BAG GLUE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="GLUE_X_Y_PATH_GLUE_START_DEG" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[GLUE START POINT (DEGREES)
+AFTER COORDINATED AXIS MOVE BEGINS
+BAG GLUE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[6.00000000e+001]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="60.0"/>
+</Data>
+</Tag>
+<Tag Name="GLUE_X_Y_PATH_LENGTH_DEG" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[COORDINATED AXIS
+GLUE PATH LENGTH
+IN DEGREES
+BAG GLUE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[506]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="506"/>
+</Data>
+</Tag>
+<Tag Name="GLUE_X_Y_PATH_STOP_DELTA_DEG" TagType="Base" DataType="REAL" Radix="Float" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[COORDINATED AXIS MOVE STOP POINT DELTA (DEGREES)
+AFTER GLUE TURNS OFF
+BAG GLUE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[9.00000000e+001]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="REAL" Radix="Float" Value="90.0"/>
+</Data>
+</Tag>
+<Tag Name="STEP_ALARM" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM STEP COUNTER ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[ALARM
+STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[ALARM
+STEP COUNTER
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[ALARM
+STEP COUNTER
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[ALARM STEP COUNTER BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[ALARM STEP COUNTER BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[ALARM STEP COUNTER BARRIER PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[ALARM
+STEP COUNTER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[ALARM STEP COUNTER OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[ALARM
+STEP COUNTER
+BAG GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[ALARM STEP COUNTER BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[ALARM STEP COUNTER BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[ALARM STEP COUNTER BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[ALARM STEP COUNTER BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[ALARM STEP COUNTER BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[ALARM STEP COUNTER BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[ALARM STEP COUNTER VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[ALARM STEP COUNTER BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[ALARM STEP COUNTER BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[ALARM
+STEP COUNTER
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[ALARM STEP COUNTER BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[ALARM STEP COUNTER BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[ALARM STEP COUNTER BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[ALARM STEP COUNTER INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[895,0,0,0,0,0,0,895,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="895"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="895"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="STEP_AUTO" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AUTO STEP COUNTER ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[AUTO STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[AUTO
+STEP COUNTER
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PICK-N-PLACE/
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[AUTO
+STEP COUNTER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[8]">
+<![CDATA[AUTO
+STEP COUNTER
+GLUE PURGE
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[AUTO
+STEP COUNTER
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[AUTO
+STEP COUNTER
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[11]">
+<![CDATA[AUTO
+STEP COUNTER 
+SAMPLE GLUE WEIGHT
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[AUTO
+STEP COUNTER
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[AUTO
+STEP COUNTER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[AUTO
+STEP COUNTER
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[AUTO
+STEP COUNTER
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[24]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PICK
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[25]">
+<![CDATA[AUTO
+STEP COUNTER
+BAG CURE
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[26]">
+<![CDATA[AUTO
+STEP COUNTER
+PRESS HEAD ROTATION
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[27]">
+<![CDATA[AUTO
+STEP COUNTER
+IR VISION
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[28]">
+<![CDATA[RECIPE LOAD
+STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[29]">
+<![CDATA[RECIPE SYNCHRONIZATION
+STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[AUTO STEP COUNTER
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[AUTO STEP COUNTER INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000
+		,1000,1000,1000,1000,1000,1000,1000,500,500,1000,1000]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="1000"/>
+<Element Index="[1]" Value="1000"/>
+<Element Index="[2]" Value="1000"/>
+<Element Index="[3]" Value="1000"/>
+<Element Index="[4]" Value="1000"/>
+<Element Index="[5]" Value="1000"/>
+<Element Index="[6]" Value="1000"/>
+<Element Index="[7]" Value="1000"/>
+<Element Index="[8]" Value="1000"/>
+<Element Index="[9]" Value="1000"/>
+<Element Index="[10]" Value="1000"/>
+<Element Index="[11]" Value="1000"/>
+<Element Index="[12]" Value="1000"/>
+<Element Index="[13]" Value="1000"/>
+<Element Index="[14]" Value="1000"/>
+<Element Index="[15]" Value="1000"/>
+<Element Index="[16]" Value="1000"/>
+<Element Index="[17]" Value="1000"/>
+<Element Index="[18]" Value="1000"/>
+<Element Index="[19]" Value="1000"/>
+<Element Index="[20]" Value="1000"/>
+<Element Index="[21]" Value="1000"/>
+<Element Index="[22]" Value="1000"/>
+<Element Index="[23]" Value="1000"/>
+<Element Index="[24]" Value="1000"/>
+<Element Index="[25]" Value="1000"/>
+<Element Index="[26]" Value="1000"/>
+<Element Index="[27]" Value="1000"/>
+<Element Index="[28]" Value="500"/>
+<Element Index="[29]" Value="500"/>
+<Element Index="[30]" Value="1000"/>
+<Element Index="[31]" Value="1000"/>
+</Array>
+</Data>
+</Tag>
+</Tags>
+<Programs Use="Context">
+<Program Use="Target" Name="_10_BAG_GLUE_PRIORITY" TestEdits="false" MainRoutineName="MAIN" Disabled="false" UseAsFolder="false">
+<Tags/>
+<Routines>
+<Routine Name="AUTO" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[BAG GLUE STATION GLUE GUN ROUTINE
+***************************************************************************
+
+CONTROL GLUE GUN DURING AUTO ROUTINE]]>
+</Comment>
+<Text>
+<![CDATA[[XIO(GLUE_X_Y_PATH2_RUN) EQU(STEP_AUTO[10],80) ,XIC(GLUE_X_Y_PATH2_RUN) EQU(STEP_AUTO[10],120) ][XIC(GLUE_MOTION_X_Y_CIRCLE_CONT.PC) XIO(GLUE_X_Y_CIRCLE_INDEX) [XIO(CELL_DRY_CYCLE_MODE_PB) OTU(Local:2:O.Pt00.Data) ,XIO(CELL_DRY_CYCLE_MODE_PB) XIO(GLUE_TEMP_DETECTED) MOV(156,STEP_ALARM[10]) ,XIC(GLUE_TEMP_DETECTED) [XIO(GLUE_X_Y_PATH2_RUN) MOV(90,STEP_AUTO[10]) ,XIC(GLUE_X_Y_PATH2_RUN) MOV(130,STEP_AUTO[10]) ,OTU(GLUE_TEMP_DETECTED) ] ] ,XIO(CELL_DRY_CYCLE_MODE_PB) GRT(GLUE_X_Y.ActualPosition,GLUE_X_Y_PATH_GLUE_START_DEG) OTL(Local:2:O.Pt00.Data) ,[XIO(CELL_INSERT_LOAD_ONLY_MODE_PB) XIC(GLUE_TEMP_PRESENT) ,XIC(CELL_INSERT_LOAD_ONLY_MODE_PB) ,XIC(CELL_DRY_CYCLE_MODE_PB) ] OTL(GLUE_TEMP_DETECTED) ,CMP(GLUE_X_Y.ActualPosition>(GLUE_X_Y_PATH_LENGTH_DEG-GLUE_X_Y_PATH_STOP_DELTA_DEG)) OTU(Local:2:O.Pt00.Data) ];]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[CONTROL GLUE GUN DURING GLUE SAMPLE WEIGHT ROUTINE]]>
+</Comment>
+<Text>
+<![CDATA[[XIO(GLUE_X_Y_PATH2_RUN) EQU(STEP_AUTO[11],20) ,XIC(GLUE_X_Y_PATH2_RUN) EQU(STEP_AUTO[11],60) ][XIC(GLUE_MOTION_X_Y_CIRCLE_CONT.PC) XIO(GLUE_X_Y_CIRCLE_INDEX) [OTU(Local:2:O.Pt00.Data) ,XIO(GLUE_X_Y_PATH2_RUN) MOV(30,STEP_AUTO[11]) ,XIC(GLUE_X_Y_PATH2_RUN) MOV(70,STEP_AUTO[11]) ] ,XIO(CELL_DRY_CYCLE_MODE_PB) GRT(GLUE_X_Y.ActualPosition,GLUE_X_Y_PATH_GLUE_START_DEG) OTL(Local:2:O.Pt00.Data) ,CMP(GLUE_X_Y.ActualPosition>(GLUE_X_Y_PATH_LENGTH_DEG-GLUE_X_Y_PATH_STOP_DELTA_DEG)) OTU(Local:2:O.Pt00.Data) ];]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[UPDATE LOCAL OUTPUT CARD]]>
+</Comment>
+<Text>
+<![CDATA[IOT(Local:2:O);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="MAIN" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[MAIN ROUTINE
+***************************************************************************]]>
+</Comment>
+<Text>
+<![CDATA[[EQU(STEP_AUTO[10],80) ,EQU(STEP_AUTO[10],120) ,EQU(STEP_AUTO[11],20) ,EQU(STEP_AUTO[11],60) ]JSR(AUTO,0);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</Program>
+</Programs>
+</Controller>
+</RSLogix5000Content>

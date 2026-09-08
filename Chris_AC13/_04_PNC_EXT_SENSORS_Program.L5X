@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="34.01" TargetName="_04_PNC_EXT_SENSORS" TargetType="Program" ContainsContext="true" Owner="Windows User" ExportDate="Thu Aug 27 15:43:13 2026" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans LogicalHierarchy">
+<Controller Use="Context" Name="RFCBM_1PC_BAL_AC13">
+<DataTypes Use="Context">
+</DataTypes>
+<Modules Use="Context">
+<Module Use="Reference" Name="MAN02">
+</Module>
+</Modules>
+<Tags Use="Context">
+<Tag Name="PNC_PICK_CYL1_EXT" TagType="Alias" Radix="Decimal" AliasFor="MAN02:I.Data[4].10" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PICK CYLINDER 1 EXTENDED SENSOR
+BARRIER PRESS-N-CURE STATION]]>
+</Description>
+</Tag>
+<Tag Name="PNC_PICK_CYL1_EXT_DETECTED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PICK CYLINDER 1 EXTENDED SENSOR
+DETECTED DURING CYLINDER MOVEMENT
+BARRIER PRESS-N-CURE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="PNC_PICK_CYL1_EXT_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+EXTEND 
+PICK CYLINDER 1
+BARRIER PRESS-N-CURE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="PNC_PICK_CYL1_RET" TagType="Alias" Radix="Decimal" AliasFor="MAN02:I.Data[4].11" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PICK CYLINDER 1 RETRACTED SENSOR
+BARRIER PRESS-N-CURE STATION]]>
+</Description>
+</Tag>
+<Tag Name="PNC_PICK_CYL2_EXT" TagType="Alias" Radix="Decimal" AliasFor="MAN02:I.Data[4].12" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PICK CYLINDER 2 EXTENDED SENSOR
+BARRIER PRESS-N-CURE STATION]]>
+</Description>
+</Tag>
+<Tag Name="PNC_PICK_CYL2_EXT_DETECTED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PICK CYLINDER 2 EXTENDED SENSOR
+DETECTED DURING CYLINDER MOVEMENT
+BARRIER PRESS-N-CURE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="PNC_PICK_CYL2_EXT_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+EXTEND 
+PICK CYLINDER 2
+BARRIER PRESS-N-CURE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="PNC_PICK_CYL2_RET" TagType="Alias" Radix="Decimal" AliasFor="MAN02:I.Data[4].13" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PICK CYLINDER 2 RETRACTED SENSOR
+BARRIER PRESS-N-CURE STATION]]>
+</Description>
+</Tag>
+<Tag Name="PNC_PRESS_CYL_EXT" TagType="Alias" Radix="Decimal" AliasFor="MAN02:I.Data[4].2" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PRESS CYLINDER EXTENDED SENSOR
+BARRIER PRESS-N-CURE STATION]]>
+</Description>
+</Tag>
+<Tag Name="PNC_PRESS_CYL_EXT_DETECTED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PRESS CYLINDER EXTENDED SENSOR
+DETECTED DURING CYLINDER MOVEMENT
+BARRIER PRESS-N-CURE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="PNC_PRESS_CYL_EXT_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+EXTEND 
+PRESS CYLINDER
+BARRIER PRESS-N-CURE STATION]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="PNC_PRESS_CYL_RET" TagType="Alias" Radix="Decimal" AliasFor="MAN02:I.Data[4].3" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[PRESS CYLINDER RETRACTED SENSOR
+BARRIER PRESS-N-CURE STATION]]>
+</Description>
+</Tag>
+</Tags>
+<Programs Use="Context">
+<Program Use="Target" Name="_04_PNC_EXT_SENSORS" TestEdits="false" MainRoutineName="MAIN" Disabled="false" UseAsFolder="false">
+<Tags/>
+<Routines>
+<Routine Name="MAIN" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[MAIN ROUTINE
+***************************************************************************]]>
+</Comment>
+<Text>
+<![CDATA[[XIC(PNC_PICK_CYL1_EXT_PB) ,XIC(PNC_PICK_CYL1_EXT_DETECTED) ,XIC(PNC_PICK_CYL2_EXT_PB) ,XIC(PNC_PICK_CYL2_EXT_DETECTED) ,XIC(PNC_PRESS_CYL_EXT_PB) ,XIC(PNC_PRESS_CYL_EXT_DETECTED) ]JSR(STATUS,0);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="STATUS" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[STATUS ROUTINE
+***************************************************************************
+
+STATUS OF PNC EXTEND CYLINDER SENSORS ARE DETERMINED IN EVENT TASK
+(THIS CODE ALLOWS THE SENSORS TO BE MADE ON THE WAY TO BEING EXTENDED TO ACCOMADATE DIFFERENT STOPPING POSITIONS)]]>
+</Comment>
+<Text>
+<![CDATA[[XIC(PNC_PICK_CYL1_EXT_PB) XIO(PNC_PICK_CYL1_RET) [XIC(PNC_PICK_CYL1_EXT) ,XIC(PNC_PICK_CYL1_EXT_DETECTED) ] OTE(PNC_PICK_CYL1_EXT_DETECTED) ,XIC(PNC_PICK_CYL2_EXT_PB) XIO(PNC_PICK_CYL2_RET) [XIC(PNC_PICK_CYL2_EXT) ,XIC(PNC_PICK_CYL2_EXT_DETECTED) ] OTE(PNC_PICK_CYL2_EXT_DETECTED) ,XIC(PNC_PRESS_CYL_EXT_PB) XIO(PNC_PRESS_CYL_RET) [XIC(PNC_PRESS_CYL_EXT) ,XIC(PNC_PRESS_CYL_EXT_DETECTED) ] OTE(PNC_PRESS_CYL_EXT_DETECTED) ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</Program>
+</Programs>
+</Controller>
+</RSLogix5000Content>

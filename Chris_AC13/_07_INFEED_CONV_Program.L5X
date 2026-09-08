@@ -1,0 +1,2435 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!--INFEED CONVEYOR-->
+<RSLogix5000Content SchemaRevision="1.0" SoftwareRevision="34.01" TargetName="_07_INFEED_CONV" TargetType="Program" ContainsContext="true" Owner="Windows User" ExportDate="Thu Aug 27 15:43:44 2026" ExportOptions="References NoRawData L5KData DecoratedData Context Dependencies ForceProtectedEncoding AllProjDocTrans LogicalHierarchy">
+<Controller Use="Context" Name="RFCBM_1PC_BAL_AC13">
+<DataTypes Use="Context">
+</DataTypes>
+<Modules Use="Context">
+<Module Use="Reference" Name="DRV07">
+</Module>
+<Module Use="Reference" Name="MAN03">
+</Module>
+<Module Use="Reference" Name="R1">
+</Module>
+</Modules>
+<Tags Use="Context">
+<Tag Name="CELL_ALARMS_ACTIVE" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARMS
+ARE ACTIVATED
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_AUTO_READY" TagType="Base" DataType="BOOL" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AUTO READY ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[AUTO READY 
+COMPONENTS ARE IN PLACE FOR STARTING
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[AUTO READY
+ MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[AUTO READY
+ BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[AUTO READY
+ BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[AUTO READY
+ BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[AUTO READY
+ BARRIER PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[AUTO READY
+ INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[AUTO READY
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[AUTO READY
+ GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[AUTO READY
+ BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[AUTO READY
+ BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[AUTO READY
+ BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[AUTO READY
+ BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[AUTO READY
+ BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[AUTO READY
+ BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[AUTO READY
+ VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[AUTO READY
+ BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[AUTO READY
+ BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[AUTO READY
+ BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[AUTO READY
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[AUTO READY
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[AUTO READY
+ INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+		,2#0,2#0,2#0,2#0,2#0]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="BOOL" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="CELL_BARRIER_LOAD_ONLY_MODE_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+LOAD ONLY
+BARRIERS MODE
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_BARRIER_PROD_ONLY_MODE_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+PRODUCE ONLY BARRIERS MODE
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_DRY_CYCLE_MODE_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+CELL DRY CYCLE MODE
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_ESTOP_PRESSED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AN ESTOP IS
+PRESSED ON
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_KEY_AUTO_MODE" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CELL KEYSWITCH CONFIGURATION IS IN AUTO MODE
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="CELL_KEY_MAN_MODE" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CELL KEYSWITCH CONFIGURATION IS IN MANUAL MODE
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_MESSAGE" TagType="Base" DataType="INT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI 
+MESSAGE DISPLAY
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[895]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="895"/>
+</Data>
+</Tag>
+<Tag Name="CELL_PRESSURE_OK" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CELL PRESSURE OK
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_RESET_PRESSED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[RESET BUTTON PRESSED
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_RESET_READY" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CELL IS  
+READY FOR RESET
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="CELL_SAFETY_DOOR_OPEN" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[A SAFETY DOOR IS
+OPEN
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="CELL_SHUTDOWN_REQ" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CELL SHUTDOWN
+REQUEST
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="CELL_STARTED" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[CELL HAS BEEN
+STARTED IN AUTO
+CELL]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="DRV07_ETHERNET_COMMS_OK" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[COMMS OK
+ AC FREQUENCY INFEED CONVEYOR DRIVE]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="1"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_BAG_DROP_BIN_CLEAR" TagType="Alias" Radix="Decimal" AliasFor="MAN03:I.Data[0].6" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[BAG DROP BIN CLEAR SENSOR
+INFEED CONVEYORS]]>
+</Description>
+</Tag>
+<Tag Name="INFEED_CONV_BAG_LANE_EMPTY_VIS" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI INDICATOR LANE EMPTY VISIBILITY
+INDEX
+INFEED CONVEYOR]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_BAG_LANE_FULL" TagType="Alias" Radix="Decimal" AliasFor="MAN03:I.Data[0].7" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI ANIMATION
+BAG LANE FULL INFEED CONVEYOR]]>
+</Description>
+</Tag>
+<Tag Name="INFEED_CONV_BAG_VIS_REQ" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[INFEED CONVEYOR BAG VISION REQUEST TO BAG LOAD ROBOT (R1)]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_DRV_FAULT" TagType="Alias" Radix="Decimal" AliasFor="DRV07:I.Faulted" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DRIVE FAULTED
+INFEED CONVEYOR]]>
+</Description>
+</Tag>
+<Tag Name="INFEED_CONV_DRV_FAULT_PB_VIS" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI VISIBILITY
+DRIVE FAULT RESET PUSH BUTTON
+INFEED CONVEYOR]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_DRV_READY" TagType="Alias" Radix="Decimal" AliasFor="DRV07:I.Ready" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[DRIVE READY
+INFEED CONVEYOR]]>
+</Description>
+</Tag>
+<Tag Name="INFEED_CONV_DRV_RESET_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+RESET DRIVE
+INFEED CONVEYOR]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_FAST_SPEED_HZ" TagType="Base" DataType="INT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[FAST SPEED (HZ)
+FROM RECIPE
+INFEED CONVEYOR 1]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[60]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="60"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_INDEX_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+INDEX
+INFEED CONVEYOR]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_INDEX_PB_VIS" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON VISIBILITY
+INDEX
+INFEED CONVEYOR]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_JOG_FORWARD_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[`HMI PUSH BUTTON
+JOG DRIVE
+INFEED CONVEYOR]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_MOVING_FORWARD" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI ANIMATION
+FORWARD DIRECTION
+INFEED CONVEYOR]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_RUN_FORWARD_PB" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[`HMI PUSH BUTTON
+RUN DRIVE
+INFEED CONVEYOR]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_RUN_FORWARD_PB_VIS" TagType="Base" DataType="BOOL" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[HMI PUSH BUTTON
+VISIBILITY
+RUN DRIVE
+INFEED CONVEYOR]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[0]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="BOOL" Radix="Decimal" Value="0"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_SAFETY_FLAP_CLOSED" TagType="Alias" Radix="Decimal" AliasFor="MAN03:I.Data[0].12" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[SAFETY FLAP CLOSED
+INFEED CONVEYOR]]>
+</Description>
+</Tag>
+<Tag Name="INFEED_CONV_SLOW_POS" TagType="Alias" Radix="Decimal" AliasFor="MAN03:I.Data[0].9" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[SLOW DOWN POSITION
+INFEED CONVEYOR]]>
+</Description>
+</Tag>
+<Tag Name="INFEED_CONV_SLOW_SPEED_HZ" TagType="Base" DataType="INT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[SLOW SPEED (HZ)
+FROM RECIPE
+INFEED CONVEYOR 1]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[10]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="INT" Radix="Decimal" Value="10"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_STOP_POS" TagType="Alias" Radix="Decimal" AliasFor="MAN03:I.Data[0].8" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[STOP POSITION
+INFEED CONVEYOR]]>
+</Description>
+</Tag>
+<Tag Name="MAJOR_FAULT" TagType="Base" DataType="BOOL" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[MAJOR FAULT ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[1]">
+<![CDATA[MAJOR FAULT
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[MAJOR FAULT
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[MAJOR FAULT
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[MAJOR FAULT
+BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[MAJOR FAULT
+BARRIER PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[MAJOR FAULT
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[MAJOR FAULT
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[MAJOR FAULT
+BAG GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[MAJOR FAULT
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[MAJOR FAULT
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[MAJOR FAULT
+ BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[MAJOR FAULT
+BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[MAJOR FAULT
+BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[MAJOR FAULT
+BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[MAJOR FAULT
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[MAJOR FAULT
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[MAJOR FAULT
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[MAJOR FAULT
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[MAJOR FAULT
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[MAJOR FAULT
+BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[MAJOR FAULT
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[MAJOR FAULT
+INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#1,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+		,2#0,2#0,2#0,2#0,2#0]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="BOOL" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="1"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="R1_HOME" TagType="Alias" Radix="Decimal" AliasFor="R1:I.Data[0].11" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AT HOME
+BAG LOAD ROBOT (R1)]]>
+</Description>
+</Tag>
+<Tag Name="STEP_ALARM" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM STEP COUNTER ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[ALARM
+STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[ALARM
+STEP COUNTER
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[ALARM
+STEP COUNTER
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[ALARM STEP COUNTER BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[ALARM STEP COUNTER BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[ALARM STEP COUNTER BARRIER PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[ALARM
+STEP COUNTER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[ALARM STEP COUNTER OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[ALARM
+STEP COUNTER
+BAG GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[ALARM STEP COUNTER BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[ALARM STEP COUNTER BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[ALARM STEP COUNTER BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[ALARM STEP COUNTER BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[ALARM STEP COUNTER BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[ALARM STEP COUNTER BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[ALARM STEP COUNTER VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[ALARM STEP COUNTER BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[ALARM STEP COUNTER BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[ALARM
+STEP COUNTER
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[ALARM STEP COUNTER BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[ALARM STEP COUNTER BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[ALARM STEP COUNTER BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[ALARM STEP COUNTER INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[895,0,0,0,0,0,0,895,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="895"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="895"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="STEP_ALARM_CAPTURE" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM CAPTURE STEP COUNTER ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[ALARM CAPTURE STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BAG GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BAG LOAD ROBOT
+(R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[ALARM CAPTURE
+STEP COUNTER
+INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[0,0,0,0,0,0,0,895,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="0"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="895"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="0"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="STEP_ALARM_TRIGGER_WORD_1" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+CELL]]>
+</Description>
+<Comments>
+<Comment Operand=".0">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+CELL]]>
+</Comment>
+<Comment Operand=".1">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+MAIN DIAL]]>
+</Comment>
+<Comment Operand=".2">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand=".3">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand=".4">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand=".5">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand=".7">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand=".9">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand=".10">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BAG GLUE STATION]]>
+</Comment>
+<Comment Operand=".12">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand=".13">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand=".14">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand=".15">
+<![CDATA[ALARM STEP TRIGGER WORD 1 STEP ALARM[0]-[31] BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand=".16">
+<![CDATA[ALARM STEP TRIGGER WORD 1 STEP ALARM[0]-[31] BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand=".17">
+<![CDATA[ALARM STEP TRIGGER WORD 1 STEP ALARM[0]-[31] BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand=".18">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand=".19">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand=".20">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand=".21">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand=".22">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand=".23">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand=".30">
+<![CDATA[ALARM STEP
+TRIGGER WORD 1
+STEP ALARM[0]-[31]
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand=".31">
+<![CDATA[ALARM STEP TRIGGER WORD 1 STEP ALARM[0]-[31]
+INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[128]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="128"/>
+</Data>
+</Tag>
+<Tag Name="STEP_AUTO" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AUTO STEP COUNTER ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[AUTO STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[AUTO
+STEP COUNTER
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PICK-N-PLACE/
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[AUTO
+STEP COUNTER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[8]">
+<![CDATA[AUTO
+STEP COUNTER
+GLUE PURGE
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[AUTO
+STEP COUNTER
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[AUTO
+STEP COUNTER
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[11]">
+<![CDATA[AUTO
+STEP COUNTER 
+SAMPLE GLUE WEIGHT
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[AUTO
+STEP COUNTER
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[AUTO
+STEP COUNTER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[AUTO
+STEP COUNTER
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[AUTO
+STEP COUNTER
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[24]">
+<![CDATA[AUTO
+STEP COUNTER
+BARRIER PICK
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[25]">
+<![CDATA[AUTO
+STEP COUNTER
+BAG CURE
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[26]">
+<![CDATA[AUTO
+STEP COUNTER
+PRESS HEAD ROTATION
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[27]">
+<![CDATA[AUTO
+STEP COUNTER
+IR VISION
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[28]">
+<![CDATA[RECIPE LOAD
+STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[29]">
+<![CDATA[RECIPE SYNCHRONIZATION
+STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[AUTO STEP COUNTER
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[AUTO STEP COUNTER INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000
+		,1000,1000,1000,1000,1000,1000,1000,500,500,1000,1000]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="1000"/>
+<Element Index="[1]" Value="1000"/>
+<Element Index="[2]" Value="1000"/>
+<Element Index="[3]" Value="1000"/>
+<Element Index="[4]" Value="1000"/>
+<Element Index="[5]" Value="1000"/>
+<Element Index="[6]" Value="1000"/>
+<Element Index="[7]" Value="1000"/>
+<Element Index="[8]" Value="1000"/>
+<Element Index="[9]" Value="1000"/>
+<Element Index="[10]" Value="1000"/>
+<Element Index="[11]" Value="1000"/>
+<Element Index="[12]" Value="1000"/>
+<Element Index="[13]" Value="1000"/>
+<Element Index="[14]" Value="1000"/>
+<Element Index="[15]" Value="1000"/>
+<Element Index="[16]" Value="1000"/>
+<Element Index="[17]" Value="1000"/>
+<Element Index="[18]" Value="1000"/>
+<Element Index="[19]" Value="1000"/>
+<Element Index="[20]" Value="1000"/>
+<Element Index="[21]" Value="1000"/>
+<Element Index="[22]" Value="1000"/>
+<Element Index="[23]" Value="1000"/>
+<Element Index="[24]" Value="1000"/>
+<Element Index="[25]" Value="1000"/>
+<Element Index="[26]" Value="1000"/>
+<Element Index="[27]" Value="1000"/>
+<Element Index="[28]" Value="500"/>
+<Element Index="[29]" Value="500"/>
+<Element Index="[30]" Value="1000"/>
+<Element Index="[31]" Value="1000"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="STEP_AUTO_RET_ESTOP" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[AUTO STEP RET COUNTER ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[AUTO STEP RET COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[AUTO RET STEP COUNTER MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[6]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[AUTO RET STEP COUNTER INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[AUTO RET STEP COUNTER OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[AUTO RET STEP COUNTER
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[11]">
+<![CDATA[AUTO RET STEP COUNTER
+SAMPLE GLUE WEIGHT
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[AUTO RET STEP COUNTER BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[AUTO RET STEP COUNTER VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[AUTO RET STEP COUNTER BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[AUTO RET STEP COUNTER
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[24]">
+<![CDATA[AUTO RET STEP COUNTER BARRIER PICK
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[25]">
+<![CDATA[AUTO RET STEP COUNTER BAG CURE
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[26]">
+<![CDATA[AUTO RET STEP COUNTER PRESS HEAD ROTATION
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[27]">
+<![CDATA[AUTO RET STEP COUNTER 
+IR VISION
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[AUTO RET
+STEP COUNTER
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[AUTO RET
+STEP COUNTER
+INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[1000,500,500,500,500,500,1000,40,500,500,500,1000,500,500,500,500,500,500,500,500,500,500,500,500,500,500,500
+		,0,1000,0,500,500]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="1000"/>
+<Element Index="[1]" Value="500"/>
+<Element Index="[2]" Value="500"/>
+<Element Index="[3]" Value="500"/>
+<Element Index="[4]" Value="500"/>
+<Element Index="[5]" Value="500"/>
+<Element Index="[6]" Value="1000"/>
+<Element Index="[7]" Value="40"/>
+<Element Index="[8]" Value="500"/>
+<Element Index="[9]" Value="500"/>
+<Element Index="[10]" Value="500"/>
+<Element Index="[11]" Value="1000"/>
+<Element Index="[12]" Value="500"/>
+<Element Index="[13]" Value="500"/>
+<Element Index="[14]" Value="500"/>
+<Element Index="[15]" Value="500"/>
+<Element Index="[16]" Value="500"/>
+<Element Index="[17]" Value="500"/>
+<Element Index="[18]" Value="500"/>
+<Element Index="[19]" Value="500"/>
+<Element Index="[20]" Value="500"/>
+<Element Index="[21]" Value="500"/>
+<Element Index="[22]" Value="500"/>
+<Element Index="[23]" Value="500"/>
+<Element Index="[24]" Value="500"/>
+<Element Index="[25]" Value="500"/>
+<Element Index="[26]" Value="500"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="1000"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="500"/>
+<Element Index="[31]" Value="500"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="STEP_ESTOP_RESET" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ESTOP RESET STEP COUNTER]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+ BARRIER PRESS-N-CURE STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER PICK-N-PLACE/
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[6]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER CORONA TREAT]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BAG GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER PRINTING STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[23]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BARRIER LIGHT TABLE]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[ESTOP RESET
+STEP COUNTER
+INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000
+		,1000,1000,1000,0,0,0,0,0,0,1000,1000]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="1000"/>
+<Element Index="[1]" Value="1000"/>
+<Element Index="[2]" Value="1000"/>
+<Element Index="[3]" Value="1000"/>
+<Element Index="[4]" Value="1000"/>
+<Element Index="[5]" Value="1000"/>
+<Element Index="[6]" Value="1000"/>
+<Element Index="[7]" Value="1000"/>
+<Element Index="[8]" Value="1000"/>
+<Element Index="[9]" Value="1000"/>
+<Element Index="[10]" Value="1000"/>
+<Element Index="[11]" Value="1000"/>
+<Element Index="[12]" Value="1000"/>
+<Element Index="[13]" Value="1000"/>
+<Element Index="[14]" Value="1000"/>
+<Element Index="[15]" Value="1000"/>
+<Element Index="[16]" Value="1000"/>
+<Element Index="[17]" Value="1000"/>
+<Element Index="[18]" Value="1000"/>
+<Element Index="[19]" Value="1000"/>
+<Element Index="[20]" Value="1000"/>
+<Element Index="[21]" Value="1000"/>
+<Element Index="[22]" Value="1000"/>
+<Element Index="[23]" Value="1000"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="1000"/>
+<Element Index="[31]" Value="1000"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="STEP_HOME" TagType="Base" DataType="INT" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[STEP HOME ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[HOME
+STEP COUNTER
+CELL]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[HOME
+STEP COUNTER
+MAIN DIAL]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER INFEED MAGAZINE]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER INFEED ELEVATOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER PRESS-N-CURE
+STATION]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[HOME
+STEP COUNTER
+PICK-N-PLACE/ 
+CORONA TREAT]]>
+</Comment>
+<Comment Operand="[6]">
+<![CDATA[HOME
+STEP COUNTER
+PICK-N-PLACE/ 
+PICK HEAD]]>
+</Comment>
+<Comment Operand="[7]">
+<![CDATA[HOME
+STEP COUNTER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[9]">
+<![CDATA[HOME
+STEP COUNTER
+OFFLOAD CONVEYOR]]>
+</Comment>
+<Comment Operand="[10]">
+<![CDATA[HOME
+STEP COUNTER
+GLUE STATION]]>
+</Comment>
+<Comment Operand="[12]">
+<![CDATA[HOME
+STEP COUNTER
+BAG LOAD STATION]]>
+</Comment>
+<Comment Operand="[13]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER PREHEAT STATION 1]]>
+</Comment>
+<Comment Operand="[14]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER PREHEAT STATION 2]]>
+</Comment>
+<Comment Operand="[15]">
+<![CDATA[HOME
+STEP COUNTER
+ BARRIER FORMING STATION]]>
+</Comment>
+<Comment Operand="[16]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER PUNCH STATION]]>
+</Comment>
+<Comment Operand="[17]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER PRINT
+STATION]]>
+</Comment>
+<Comment Operand="[18]">
+<![CDATA[HOME
+STEP COUNTER
+VISION INSPECTION STATION]]>
+</Comment>
+<Comment Operand="[19]">
+<![CDATA[HOME
+STEP COUNTER
+BAG OFFLOAD STATION]]>
+</Comment>
+<Comment Operand="[20]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER LOAD STATION]]>
+</Comment>
+<Comment Operand="[21]">
+<![CDATA[HOME
+STEP COUNTER
+BAG LOAD ROBOT (R1)]]>
+</Comment>
+<Comment Operand="[22]">
+<![CDATA[HOME
+STEP COUNTER
+BARRIER LOAD ROBOT (R2)]]>
+</Comment>
+<Comment Operand="[30]">
+<![CDATA[HOME
+STEP COUNTER
+BAG OFFLOAD ROBOT (R3)]]>
+</Comment>
+<Comment Operand="[31]">
+<![CDATA[HOME
+STEP COUNTER
+INKJET PRINTING STATION]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000,1000
+		,1000,1000,0,0,0,0,0,0,0,1000,1000]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="INT" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="1000"/>
+<Element Index="[1]" Value="1000"/>
+<Element Index="[2]" Value="1000"/>
+<Element Index="[3]" Value="1000"/>
+<Element Index="[4]" Value="1000"/>
+<Element Index="[5]" Value="1000"/>
+<Element Index="[6]" Value="1000"/>
+<Element Index="[7]" Value="1000"/>
+<Element Index="[8]" Value="1000"/>
+<Element Index="[9]" Value="1000"/>
+<Element Index="[10]" Value="1000"/>
+<Element Index="[11]" Value="1000"/>
+<Element Index="[12]" Value="1000"/>
+<Element Index="[13]" Value="1000"/>
+<Element Index="[14]" Value="1000"/>
+<Element Index="[15]" Value="1000"/>
+<Element Index="[16]" Value="1000"/>
+<Element Index="[17]" Value="1000"/>
+<Element Index="[18]" Value="1000"/>
+<Element Index="[19]" Value="1000"/>
+<Element Index="[20]" Value="1000"/>
+<Element Index="[21]" Value="1000"/>
+<Element Index="[22]" Value="1000"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="1000"/>
+<Element Index="[31]" Value="1000"/>
+</Array>
+</Data>
+</Tag>
+</Tags>
+<Programs Use="Context">
+<Program Use="Target" Name="_07_INFEED_CONV" TestEdits="false" MainRoutineName="MAIN" Disabled="false" UseAsFolder="false">
+<Description>
+<![CDATA[INFEED CONVEYOR]]>
+</Description>
+<Tags>
+<Tag Name="INFEED_CONV1_INDEX_TIME" TagType="Base" DataType="DINT" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[INDEX TIME
+INFEED CONVEYOR]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[1524]]>
+</Data>
+<Data Format="Decorated">
+<DataValue DataType="DINT" Radix="Decimal" Value="1524"/>
+</Data>
+</Tag>
+<Tag Name="INFEED_CONV_EMPTY_COUNT" TagType="Base" DataType="COUNTER" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[COUNT INDEXES OF CONVEYOR WITH NO PARTS PRESENT CONSECUTIVELY
+INFEED CONVEYOR]]>
+</Description>
+<Data Format="L5K">
+<![CDATA[[0,20000,20]]]>
+</Data>
+<Data Format="Decorated">
+<Structure DataType="COUNTER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="20000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="20"/>
+<DataValueMember Name="CU" DataType="BOOL" Value="0"/>
+<DataValueMember Name="CD" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="OV" DataType="BOOL" Value="0"/>
+<DataValueMember Name="UN" DataType="BOOL" Value="0"/>
+</Structure>
+</Data>
+</Tag>
+<Tag Name="ONS_ARRAY" TagType="Base" DataType="BOOL" Dimensions="32" Radix="Decimal" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ONE SHOT ARRAY]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[ONS]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[ONS]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[ONS]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[ONS]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[ONS]]>
+</Comment>
+<Comment Operand="[5]">
+<![CDATA[ONS]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[2#0,2#1,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+		,2#0,2#0,2#0,2#0,2#1]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="BOOL" Dimensions="32" Radix="Decimal">
+<Element Index="[0]" Value="0"/>
+<Element Index="[1]" Value="1"/>
+<Element Index="[2]" Value="0"/>
+<Element Index="[3]" Value="0"/>
+<Element Index="[4]" Value="0"/>
+<Element Index="[5]" Value="0"/>
+<Element Index="[6]" Value="0"/>
+<Element Index="[7]" Value="0"/>
+<Element Index="[8]" Value="0"/>
+<Element Index="[9]" Value="0"/>
+<Element Index="[10]" Value="0"/>
+<Element Index="[11]" Value="0"/>
+<Element Index="[12]" Value="0"/>
+<Element Index="[13]" Value="0"/>
+<Element Index="[14]" Value="0"/>
+<Element Index="[15]" Value="0"/>
+<Element Index="[16]" Value="0"/>
+<Element Index="[17]" Value="0"/>
+<Element Index="[18]" Value="0"/>
+<Element Index="[19]" Value="0"/>
+<Element Index="[20]" Value="0"/>
+<Element Index="[21]" Value="0"/>
+<Element Index="[22]" Value="0"/>
+<Element Index="[23]" Value="0"/>
+<Element Index="[24]" Value="0"/>
+<Element Index="[25]" Value="0"/>
+<Element Index="[26]" Value="0"/>
+<Element Index="[27]" Value="0"/>
+<Element Index="[28]" Value="0"/>
+<Element Index="[29]" Value="0"/>
+<Element Index="[30]" Value="0"/>
+<Element Index="[31]" Value="1"/>
+</Array>
+</Data>
+</Tag>
+<Tag Name="TIMER_ALARM" TagType="Base" DataType="TIMER" Dimensions="10" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[ALARM TIMERS
+INFEED CONVEYOR 1]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[DRIVE CLEAR FAULT TIMER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[FLIGHT SENSOR DETECTED ALARM TIMER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[FLIGHT SENSOR NOT DETECTED ALARM TIMER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[SAFETY FLAP OPEN ALARM TIMER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[4]">
+<![CDATA[CONVEYOR NOT STARTED ALARM TIMER
+INFEED CONVEYOR]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[[1586245,2000,0],[2845595,10000,0],[1832809,5000,0],[749811,5000,0],[1973437,5000,0],[1832509,5000,0],[0,0,0],[0,0,0],[0,0,0
+		],[0,0,0]]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="TIMER" Dimensions="10">
+<Element Index="[0]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="2000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="10000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="5000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="5000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[4]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="5000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[5]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="5000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[6]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[7]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[8]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[9]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+</Array>
+</Data>
+</Tag>
+<Tag Name="TIMER_OPER" TagType="Base" DataType="TIMER" Dimensions="5" Constant="false" ExternalAccess="Read/Write">
+<Description>
+<![CDATA[OPERATIONAL TIMERS
+INFEED CONVEYOR 1]]>
+</Description>
+<Comments>
+<Comment Operand="[0]">
+<![CDATA[BAG DROP CLEAR SENSOR TIMER
+INFEED CONVEYORS]]>
+</Comment>
+<Comment Operand="[1]">
+<![CDATA[BAG DROP CLEAR SENSOR REPEAT MESSAGE TIMER
+INFEED CONVEYORS]]>
+</Comment>
+<Comment Operand="[2]">
+<![CDATA[START TIMER
+INFEED CONVEYOR]]>
+</Comment>
+<Comment Operand="[3]">
+<![CDATA[INDEX TIMER
+INFEED CONVEYOR]]>
+</Comment>
+</Comments>
+<Data Format="L5K">
+<![CDATA[[[330045,5000,0],[3798481,300000,0],[1832765,250,0],[1834035,5000,0],[-1606500673,100,102]]]]>
+</Data>
+<Data Format="Decorated">
+<Array DataType="TIMER" Dimensions="5">
+<Element Index="[0]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="5000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[1]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="300000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[2]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="250"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[3]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="5000"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="0"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="0"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="0"/>
+</Structure>
+</Element>
+<Element Index="[4]">
+<Structure DataType="TIMER">
+<DataValueMember Name="PRE" DataType="DINT" Radix="Decimal" Value="100"/>
+<DataValueMember Name="ACC" DataType="DINT" Radix="Decimal" Value="102"/>
+<DataValueMember Name="EN" DataType="BOOL" Value="1"/>
+<DataValueMember Name="TT" DataType="BOOL" Value="0"/>
+<DataValueMember Name="DN" DataType="BOOL" Value="1"/>
+</Structure>
+</Element>
+</Array>
+</Data>
+</Tag>
+</Tags>
+<Routines>
+<Routine Name="AUTO" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[INFEED CONVEYOR AUTO ROUTINE
+*********************************************************************************
+
+SHUTDOWN REQUEST REQUIREMENTS]]>
+</Comment>
+<Text>
+<![CDATA[XIC(CELL_STARTED)XIC(CELL_SHUTDOWN_REQ)[EQU(STEP_AUTO[7],0) ,EQU(STEP_AUTO[7],10) ,EQU(STEP_AUTO[7],12) ]MOV(500,STEP_AUTO[7]);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[REQUEST BAG VISION CHECK TO BAG LOAD ROBOT
+
+IF MANUAL CYCLE MOVE TO NEXT STEP]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[7],0)[XIO(CELL_DRY_CYCLE_MODE_PB) XIC(CELL_STARTED) XIO(CELL_BARRIER_PROD_ONLY_MODE_PB) XIO(CELL_BARRIER_LOAD_ONLY_MODE_PB) XIC(R1:I.Data[0].29) [OTE(INFEED_CONV_BAG_VIS_REQ) ,XIC(R1:I.Data[1].0) MOV(10,STEP_AUTO[7]) ,XIC(R1:I.Data[1].1) MOV(20,STEP_AUTO[7]) ] ,XIO(CELL_STARTED) XIC(INFEED_CONV_INDEX_PB) MOV(30,STEP_AUTO[7]) ,XIC(CELL_DRY_CYCLE_MODE_PB) MOV(12,STEP_AUTO[7]) ];]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[VERIFY ROBOT HANDSHAKE IS OFF]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[7],10)XIO(R1:I.Data[0].20)MOV(12,STEP_AUTO[7]);]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[WAIT FOR BAG PICKED FROM CONVEYOR SIGNAL FROM ROBOT]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[7],12)XIC(R1:I.Data[0].20)MOV(15,STEP_AUTO[7]);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[WAIT FOR ROBOT HANDSHAKES TO BE TURNED OFF]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[7],15)XIO(R1:I.Data[1].1)XIO(R1:I.Data[1].0)[XIO(CELL_DRY_CYCLE_MODE_PB) MOV(0,STEP_AUTO[7]) ,XIC(CELL_DRY_CYCLE_MODE_PB) MOV(20,STEP_AUTO[7]) ];]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Comment>
+<![CDATA[WAIT FOR CLEAR OF CONVEYOR SIGNAL FROM ROBOT]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[7],20)XIC(R1:I.Data[0].27)MOV(30,STEP_AUTO[7]);]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Comment>
+<![CDATA[SET STARTING SPEED OF CONVEYOR]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[7],30)[XIC(INFEED_CONV_STOP_POS) MUL(INFEED_CONV_FAST_SPEED_HZ,100,DRV07:O.FreqCommand) ,XIO(INFEED_CONV_STOP_POS) MUL(INFEED_CONV_SLOW_SPEED_HZ,100,DRV07:O.FreqCommand) ,MOV(35,STEP_AUTO[7]) ];]]>
+</Text>
+</Rung>
+<Rung Number="7" Type="N">
+<Comment>
+<![CDATA[INDEX CONVEYOR]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[7],35)[XIC(INFEED_CONV_SAFETY_FLAP_CLOSED) [[OTL(INFEED_CONV_RUN_FORWARD_PB) ,XIO(INFEED_CONV_STOP_POS) XIO(DRV07:O.Stop) MOV(40,STEP_AUTO[7]) ] ,[TON(TIMER_ALARM[2],?,?) ,XIC(TIMER_ALARM[2].DN) [XIC(INFEED_CONV_STOP_POS) MOV(107,STEP_ALARM[7]) ,XIC(DRV07:O.Stop) MOV(108,STEP_ALARM[7]) ] ] ] ,XIO(INFEED_CONV_SAFETY_FLAP_CLOSED) OTU(INFEED_CONV_RUN_FORWARD_PB) ];]]>
+</Text>
+</Rung>
+<Rung Number="8" Type="N">
+<Comment>
+<![CDATA[SLOW DOWN AND STOP CONVEYOR]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[7],40)XIC(INFEED_CONV_SAFETY_FLAP_CLOSED)[XIC(INFEED_CONV_SLOW_POS) ONS(ONS_ARRAY[4]) MUL(INFEED_CONV_SLOW_SPEED_HZ,100,DRV07:O.FreqCommand) ,[XIC(INFEED_CONV_STOP_POS) ,XIC(DRV07:O.Stop) ] [OTU(INFEED_CONV_RUN_FORWARD_PB) ,XIO(DRV07:I.Active) [XIO(INFEED_CONV_STOP_POS) MOV(45,STEP_AUTO[7]) ,XIC(INFEED_CONV_STOP_POS) MOV(50,STEP_AUTO[7]) ] ] ];]]>
+</Text>
+</Rung>
+<Rung Number="9" Type="N">
+<Comment>
+<![CDATA[RESTART CONVEYOR AFTER SAFETY FLAP INTERUPT]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[7],45)XIC(INFEED_CONV_SAFETY_FLAP_CLOSED)[[OTL(INFEED_CONV_RUN_FORWARD_PB) ,XIO(DRV07:O.Stop) MOV(40,STEP_AUTO[7]) ] ,[TON(TIMER_ALARM[4],?,?) ,XIC(TIMER_ALARM[4].DN) XIC(INFEED_CONV_STOP_POS) MOV(107,STEP_ALARM[7]) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="10" Type="N">
+<Comment>
+<![CDATA[STOP CONVEYOR]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[7],50)XIO(INFEED_CONV_INDEX_PB)MOV(60,STEP_AUTO[7]);]]>
+</Text>
+</Rung>
+<Rung Number="11" Type="N">
+<Comment>
+<![CDATA[WAIT FOR ROBOT HANDSHAKES TO BE TURNED OFF]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_AUTO[7],60)XIO(R1:I.Data[1].1)XIO(R1:I.Data[1].0)MOV(0,STEP_AUTO[7]);]]>
+</Text>
+</Rung>
+<Rung Number="12" Type="N">
+<Comment>
+<![CDATA[CONVEYOR INDEX TIME]]>
+</Comment>
+<Text>
+<![CDATA[LIM(30,STEP_AUTO[7],40)[MOV(TIMER_OPER[3].ACC,INFEED_CONV1_INDEX_TIME) ,TON(TIMER_OPER[3],?,?) ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="ESTOP_RESET" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[
+INFEED CONVEYOR E-STOP RESET
+***************************************************************************
+
+ALARM]]>
+</Comment>
+<Text>
+<![CDATA[[XIC(CELL_KEY_AUTO_MODE) NEQ(STEP_ALARM[7],0) ,EQU(STEP_ESTOP_RESET[0],1000) ]MOV(1000,STEP_ESTOP_RESET[7]);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[
+CAPTURE INITIAL ALARM
+AND DETERMINE IF THIS IS THE PRIMARY ALARM FOR THE ENTIRE CELL]]>
+</Comment>
+<Text>
+<![CDATA[[EQU(STEP_ESTOP_RESET[7],1000) EQU(STEP_ALARM_CAPTURE[7],0) MOV(STEP_ALARM[7],STEP_ALARM_CAPTURE[7]) ,LIM(900,STEP_ALARM[0],0) NEQ(STEP_ALARM_CAPTURE[7],0) EQU(STEP_ALARM_TRIGGER_WORD_1,0) OTL(STEP_ALARM_TRIGGER_WORD_1.7) ];]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[
+E-STOP SETTINGS]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_ESTOP_RESET[7],1000)[NEQ(STEP_ALARM[7],0) OTE(MAJOR_FAULT[7]) ,ONS(ONS_ARRAY[1]) MOV(STEP_AUTO[7],STEP_AUTO_RET_ESTOP[7]) ,OTU(INFEED_CONV_RUN_FORWARD_PB) ,OTU(INFEED_CONV_DRV_RESET_PB) ,OTU(INFEED_CONV_BAG_LANE_EMPTY_VIS) ,MOV(1000,STEP_HOME[7]) ,MOV(1000,STEP_AUTO[7]) ];]]>
+</Text>
+</Rung>
+<Rung Number="3" Type="N">
+<Comment>
+<![CDATA[
+WAIT FOR RESET]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_ESTOP_RESET[7],1000)XIO(CELL_ESTOP_PRESSED)XIO(CELL_SHUTDOWN_REQ)XIC(CELL_RESET_READY)XIC(CELL_RESET_PRESSED)MOV(10,STEP_ESTOP_RESET[7]);]]>
+</Text>
+</Rung>
+<Rung Number="4" Type="N">
+<Comment>
+<![CDATA[
+GENERAL CELL SETTINGS UPON RESET]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_ESTOP_RESET[7],10)[MOV(0,STEP_ALARM[7]) ,MOV(0,STEP_ALARM_CAPTURE[7]) ,MOV(20,STEP_ESTOP_RESET[7]) ];]]>
+</Text>
+</Rung>
+<Rung Number="5" Type="N">
+<Comment>
+<![CDATA[
+WAIT FOR RESET TO BE RELEASED
+WAIT FOR CELL PRESSURE OK
+RESET BASED ON MACHINE MODE]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_ESTOP_RESET[7],20)XIO(CELL_RESET_PRESSED)XIC(CELL_PRESSURE_OK)XIO(CELL_SAFETY_DOOR_OPEN)[XIC(CELL_KEY_AUTO_MODE) [MOV(0,STEP_HOME[7]) ,MOV(30,STEP_ESTOP_RESET[7]) ] ,XIC(CELL_KEY_MAN_MODE) [MOV(0,STEP_AUTO[7]) ,MOV(500,STEP_ESTOP_RESET[7]) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="6" Type="N">
+<Comment>
+<![CDATA[
+WAIT FOR RESET TO COMPLETE]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_ESTOP_RESET[7],30)EQU(STEP_HOME[7],500)MOV(500,STEP_ESTOP_RESET[7]);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="HMI" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[
+INFEED CONVEYOR HMI
+***************************************************************************
+
+DISPLAY ARROWS AND DIRECTION WHEN IN MOTION]]>
+</Comment>
+<Text>
+<![CDATA[XIC(DRV07:I.Active)OTE(INFEED_CONV_MOVING_FORWARD);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[
+HMI CONVEYOR BUTTON AND INDICATOR VISIBILITY]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_ESTOP_RESET[7],500)[XIO(CELL_STARTED) XIC(INFEED_CONV_DRV_READY) [OTE(INFEED_CONV_RUN_FORWARD_PB_VIS) ,OTE(INFEED_CONV_INDEX_PB_VIS) ] ,XIC(INFEED_CONV_DRV_FAULT) OTE(INFEED_CONV_DRV_FAULT_PB_VIS) ,XIC(CELL_STARTED) XIC(INFEED_CONV_STOP_POS) [XIO(INFEED_CONV_BAG_LANE_FULL) [ONS(ONS_ARRAY[5]) [OTL(INFEED_CONV_BAG_LANE_EMPTY_VIS) ,CTU(INFEED_CONV_EMPTY_COUNT,?,?) ] ,XIC(INFEED_CONV_EMPTY_COUNT.DN) MOV(895,STEP_ALARM[7]) ] ,XIC(INFEED_CONV_BAG_LANE_FULL) [OTU(INFEED_CONV_BAG_LANE_EMPTY_VIS) ,RES(INFEED_CONV_EMPTY_COUNT) ] ] ,XIO(CELL_STARTED) RES(INFEED_CONV_EMPTY_COUNT) ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="HOME" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[
+INFEED CONVEYOR HOME ROUTINE
+***************************************************************************
+
+WAIT FOR DRIVE COMMS AND ROBOT HOME COMPLETE]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_HOME[7],0)XIC(DRV07_ETHERNET_COMMS_OK)XIC(R1_HOME)MOV(10,STEP_HOME[7]);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[
+RESET DRIVE FAULT]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_HOME[7],10)[XIC(INFEED_CONV_DRV_FAULT) OTL(INFEED_CONV_DRV_RESET_PB) ,XIO(INFEED_CONV_DRV_FAULT) [MOV(0,STEP_AUTO[7]) ,MOV(500,STEP_HOME[7]) ] ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="MAIN" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[MAIN ROUTINE
+***************************************************************************]]>
+</Comment>
+<Text>
+<![CDATA[[JSR(ESTOP_RESET,0) ,JSR(STATUS,0) ,JSR(HOME,0) ,JSR(AUTO,0) ,JSR(OUTPUTS,0) ,JSR(HMI,0) ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="OUTPUTS" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[INFEED CONVEYOR OUTPUTS
+***************************************************************************
+
+CLEAR DRIVE FAULT]]>
+</Comment>
+<Text>
+<![CDATA[[NEQ(STEP_ESTOP_RESET[7],1000) XIC(INFEED_CONV_DRV_RESET_PB) [[OTE(DRV07:O.ClearFaults) ,XIO(INFEED_CONV_DRV_FAULT) OTU(INFEED_CONV_DRV_RESET_PB) ] ,[TON(TIMER_ALARM[0],?,?) ,XIC(TIMER_ALARM[0].DN) MOV(105,STEP_ALARM[7]) ] ] ,XIC(CELL_STARTED) XIC(INFEED_CONV_DRV_FAULT) MOV(105,STEP_ALARM[7]) ];]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[CONVEYOR MOTOR CONTROL
+]]>
+</Comment>
+<Text>
+<![CDATA[[[EQU(STEP_ESTOP_RESET[7],1000) ,XIO(INFEED_CONV_JOG_FORWARD_PB) XIO(INFEED_CONV_RUN_FORWARD_PB) ,XIO(INFEED_CONV_SAFETY_FLAP_CLOSED) ] OTE(DRV07:O.Stop) ,EQU(STEP_ESTOP_RESET[7],500) [XIO(DRV07:O.Stop) [XIC(INFEED_CONV_RUN_FORWARD_PB) ONS(ONS_ARRAY[2]) ,XIC(DRV07:O.Start) XIO(TIMER_OPER[2].DN) ] OTE(DRV07:O.Start) ,XIC(DRV07:O.Start) [XIC(DRV07:I.Active) TON(TIMER_OPER[2],?,?) ,XIC(CELL_ALARMS_ACTIVE) XIO(DRV07:I.Active) [TON(TIMER_ALARM[5],?,?) ,XIC(TIMER_ALARM[5].DN) MOV(108,STEP_ALARM[7]) ] ] ] ,EQU(STEP_ESTOP_RESET[7],500) XIO(DRV07:O.Stop) XIC(INFEED_CONV_JOG_FORWARD_PB) OTE(DRV07:O.Jog) ,OTE(DRV07:O.Forward) ];]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[SET CONVEYOR SPEED EXCEPT WHEN IN AUTO]]>
+</Comment>
+<Text>
+<![CDATA[LIM(100,STEP_AUTO[7],0)MUL(INFEED_CONV_FAST_SPEED_HZ,100,DRV07:O.FreqCommand);]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+<Routine Name="STATUS" Type="RLL">
+<RLLContent>
+<Rung Number="0" Type="N">
+<Comment>
+<![CDATA[INFEED CONVEYOR STATUS
+***************************************************************************
+
+AUTO READY REQUIREMENTS]]>
+</Comment>
+<Text>
+<![CDATA[EQU(STEP_HOME[7],500)XIC(DRV07_ETHERNET_COMMS_OK)XIC(INFEED_CONV_DRV_READY)XIO(INFEED_CONV_DRV_FAULT)OTE(CELL_AUTO_READY[7]);]]>
+</Text>
+</Rung>
+<Rung Number="1" Type="N">
+<Comment>
+<![CDATA[MONITOR BAG DROP CLEAR SENSOR]]>
+</Comment>
+<Text>
+<![CDATA[XIO(INFEED_CONV_BAG_DROP_BIN_CLEAR)[TON(TIMER_OPER[0],?,?) ,XIC(TIMER_OPER[0].DN) [EQU(CELL_MESSAGE,0) TON(TIMER_OPER[1],?,?) ,[ONS(ONS_ARRAY[0]) ,XIC(TIMER_OPER[1].DN) ONS(ONS_ARRAY[3]) ] MOV(906,CELL_MESSAGE) ] ];]]>
+</Text>
+</Rung>
+<Rung Number="2" Type="N">
+<Comment>
+<![CDATA[MONITOR SAFETY FLAP SENSOR]]>
+</Comment>
+<Text>
+<![CDATA[XIO(INFEED_CONV_SAFETY_FLAP_CLOSED)[TON(TIMER_ALARM[3],?,?) ,XIC(TIMER_ALARM[3].DN) MOV(908,CELL_MESSAGE) ];]]>
+</Text>
+</Rung>
+</RLLContent>
+</Routine>
+</Routines>
+</Program>
+</Programs>
+</Controller>
+</RSLogix5000Content>
